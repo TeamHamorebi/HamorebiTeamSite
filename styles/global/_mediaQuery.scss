@@ -1,0 +1,24 @@
+// レイアウト幅
+$layout-width-inner: 1024px;
+
+//ブレークポイント
+$breakpoints: (
+    //キー  値
+    "sm": "screen and (min-width: 640px)",
+    "md": "screen and (min-width: 768px)",
+    "lg": "screen and (min-width: 1024px)",
+    "xl": "screen and (min-width: 1280px)"
+    // "lg": "screen and (max-width: #{$layout-width-inner - 1px})",
+    // "xl": "screen and (min-width: #{$layout-width-inner})"
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はsm
+@mixin mq($breakpoint: sm) {
+    //map-get(マップ型変数〜第一引数〜, キー〜第二引数〜)で値を取得
+    @media #{map-get($breakpoints, $breakpoint)} {
+        //@contentでこの中をカスタムできる
+        @content;
+    }
+}
+
+

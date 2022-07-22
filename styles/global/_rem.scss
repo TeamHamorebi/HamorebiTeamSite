@@ -1,0 +1,8 @@
+@use "sass:math";
+@use "./typography" as t;
+
+$baseFontSize: t.$fz-standard;
+
+@function rem($pixel) {
+	@return math.div($pixel, $baseFontSize) * 1rem;
+}
