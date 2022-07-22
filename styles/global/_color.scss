@@ -1,0 +1,16 @@
+@use "./palette" as p;
+/**
+* global/_palette.scss参照
+* 参考記事：https://qiita.com/1natsu172/items/ef6b0fcba6bbe380df1e
+*/
+
+// common
+$color-globalHeader-background: p.$palette-white;
+
+// font
+$color-font-main: p.$palette-codGray;
+
+
+// home
+
+// work details
