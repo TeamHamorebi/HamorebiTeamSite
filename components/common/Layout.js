@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/components/common/_Layout.module.scss";
 import Header from "../../components/common/Header";
-import Drawer from "../../components/common/drawer";
+import Drawer from "../../components/common/Drawer";
 
 export default function Layout({ children }) {
   const navItems = [
