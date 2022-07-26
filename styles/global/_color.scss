@@ -4,12 +4,28 @@
 * 参考記事：https://qiita.com/1natsu172/items/ef6b0fcba6bbe380df1e
 */
 
-// common
+// header
 $color-globalHeader-background: p.$palette-white;
+$color-globalHeader-hover-underBar: p.$palette-orangePeel;
+
+// btn
+$color-btn-background-1: p.$palette-fruitSalad;
+$color-btn-background-2: p.$palette-forestGreen;
+$color-btn-hover-background: p.$palette-orangePeel;
+$color-font-btn: p.$palette-white;
+
+// drawer btn
+$color-drawerBtn-background-1: p.$palette-fruitSalad;
+$color-drawerBtn-background-2: p.$palette-forestGreen;
+$color-drawerBtn-openBackground: p.$palette-orangePeel;
+$color-drawerBtn-bar: p.$palette-white;
+// drawer menu
+$color-drawerMenu-background: p.$palette-orangePeel;
+$color-font-drawerMenu: p.$palette-white;
+$color-overlay: p.$palette-transparentOrangePeel-4;
 
 // font
 $color-font-main: p.$palette-codGray;
-
 
 // home
 

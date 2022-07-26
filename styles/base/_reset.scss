@@ -10,13 +10,13 @@ Chrome/Firefox/Edgeなど、各ブラウザはそれぞれデフォルトで効�
 =================================================================== */
 
 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    /* 360px未満ではviewport固定の時に必要 */
-    -webkit-text-size-adjust: 100%;
+  /* 360px未満ではviewport固定の時に必要 */
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -43,13 +43,13 @@ table,
 tr,
 th,
 td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: normal;
-    font-size: 100%;
-    vertical-align: baseline;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+  font: inherit;
 }
 
 header,
@@ -60,32 +60,32 @@ article,
 aside,
 figure,
 figcaption {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
-    list-style-type: none;
+  list-style: none;
+  list-style-type: none;
 }
 
 a {
-    cursor: pointer;
-    text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 img {
-    border: none;
-    vertical-align: bottom;
+  border: none;
+  vertical-align: bottom;
 }
 
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-    border-radius: 0;
-    -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
