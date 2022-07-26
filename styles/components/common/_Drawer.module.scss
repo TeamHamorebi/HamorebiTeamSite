@@ -1,0 +1,212 @@
+@use "../../global" as g;
+@use "sass:math";
+
+.header {
+  width: 100%;
+  height: 55px;
+  background-color: g.$color-globalHeader-background;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: g.zi(sp-menu);
+
+  @include g.mq("xl") {
+    display: none;
+  }
+}
+
+.brand {
+  height: 55px;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  position: relative;
+  left: calc(50vw - 135px);
+}
+
+.brandImgWrap {
+  width: 60px;
+}
+
+.brandName {
+  margin-left: 8px;
+  color: g.$color-font-main;
+  font-weight: 700;
+}
+
+.brandSubName {
+  font-weight: 500;
+  font-size: g.rem(12);
+}
+
+.drawerBtn {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: g.zi(drawer);
+  background: linear-gradient(
+    45deg,
+    g.$color-drawerBtn-background-1 0%,
+    g.$color-drawerBtn-background-2 100%
+  );
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    background-color: g.$color-drawerBtn-openBackground;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  span {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100vh;
+    width: 30px;
+    height: 3px;
+    background-color: g.$color-drawerBtn-bar;
+    transition: all 0.5s;
+
+    &:nth-of-type(1) {
+      top: 9px;
+    }
+
+    &:nth-of-type(2) {
+      top: 24px;
+    }
+
+    &:nth-of-type(3) {
+      bottom: 13px;
+    }
+  }
+}
+
+// ボタンをクルッと回転させる
+.drawerBtnBarWrap {
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s;
+  position: relative;
+  z-index: g.zi(drawerBar);
+}
+
+// ドロワーオープン時
+.drawerBtn.isActive {
+  &::after {
+    opacity: 1;
+  }
+
+  // ボタンをクルッと回転させる
+  .drawerBtnBarWrap {
+    transform: rotate(360deg);
+  }
+
+  span {
+    &:nth-of-type(1) {
+      transform: translateY(15px) rotate(-45deg);
+      left: 15%;
+      width: 39.9px;
+    }
+
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    &:nth-of-type(3) {
+      transform: translateY(-15px) rotate(45deg);
+      left: 15%;
+      width: 39.9px;
+    }
+  }
+}
+
+.navigation {
+  width: calc(
+    100% - 55px
+  ); // 適宜指定 ※nav内で指定したtransform: translateX()の値と合わせる
+  height: auto;
+  background-color: g.$color-drawerMenu-background; // 適宜指定
+  position: fixed;
+  top: 0;
+  right: 55px;
+  z-index: g.zi(drawer);
+  transform: translateX(
+    calc(-100% - 55px)
+  ); // 適宜指定 ※nav内で指定したwidthの値と合わせる
+  transition: all 0.5s;
+
+  &.isOpen {
+    transform: translateZ(0);
+  }
+}
+
+.drawerItems {
+//   width: ((320px - 110px) / 320px * 100%);
+  width: 210px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.drawerItem {
+  line-height: math.div(34.75, 24);
+
+  &:first-child {
+    margin-top: 79px;
+  }
+  &:nth-child(n + 2) {
+    margin-top: 12px;
+  }
+}
+
+.drawerItemLink {
+  font-weight: 500;
+  font-size: g.rem(24);
+  color: g.$color-font-drawerMenu;
+}
+
+.drawerBtnWrap {
+  margin-top: 24px;
+  margin-bottom: 30px;
+  width: 239px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: g.$color-overlay; // 適宜指定
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: g.zi(overlay);
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &.isOpen {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+}

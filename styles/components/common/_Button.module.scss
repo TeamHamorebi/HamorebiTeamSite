@@ -1,0 +1,65 @@
+@use "../../global" as g;
+
+.btn {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 13px 17.5px 13px 30px;
+  border-radius: 100vh;
+  color: g.$color-font-btn;
+  font-weight: 500;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.2, 0.675, 0.626, 1);
+
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::before {
+    background: linear-gradient(
+      87.73deg,
+      g.$color-btn-background-1 4.09%,
+      g.$color-btn-background-2 96.35%
+    );
+    z-index: g.zi(button-base);
+  }
+  &::after {
+    background: g.$color-btn-hover-background;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: g.zi(button-hover);
+  }
+
+  &:hover {
+    transform: translate(-8px, -8px);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.btnTextWrap {
+  position: relative;
+  z-index: g.zi(button-text);
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: -28px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 15px;
+    background: transparent url(../../../public/img/common/arrow-icon.svg)
+      no-repeat center center/contain;
+  }
+}

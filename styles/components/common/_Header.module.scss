@@ -1,0 +1,63 @@
+@use "../../global" as g;
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: g.$color-globalHeader-background;
+  display: none;
+
+  @include g.mq('xl') {
+    display: block;
+  }
+}
+
+.headerWrap {
+  display: flex;
+  align-items: center;
+}
+
+.brandWrap {
+  width: 90px;
+}
+
+.navigation {
+  margin-left: 73px;
+}
+.navItems {
+  display: flex;
+  gap: 24px;
+}
+.navLink {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 400;
+  color: g.$color-font-main;
+  position: relative;
+
+  &::after {
+    transition: width 0.3s ease;
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: g.$color-globalHeader-hover-underBar;
+    border-radius: 100vh;
+    position: absolute;
+    bottom: 21px;
+    left: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.headerBtnWrap {
+  margin-left: 24px;
+  width: 100%;
+  max-width: 239px;
+}
+
