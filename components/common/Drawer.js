@@ -59,18 +59,27 @@ export default function Drawer(props) {
               return (
                 <li key={index} className={styles.drawerItem}>
                   <Link href={`#${value.link}`}>
-                    <a className={styles.drawerItemLink}>{value.name}</a>
+                    <a
+                      className={styles.drawerItemLink}
+                      onClick={() => menuFunction()}
+                    >
+                      {value.name}
+                    </a>
                   </Link>
                 </li>
               );
             })}
           </ul>
           {/* /drawer items */}
-          <Button
-            styles={styles.drawerBtnWrap}
-            text={"お問い合わせをする"}
-            link={"#contact"}
-          ></Button>
+          {/* contact btn */}
+          <div onClick={() => menuFunction()}>
+            <Button
+              styles={styles.drawerBtnWrap}
+              text={"お問い合わせをする"}
+              link={"#contact"}
+            ></Button>
+          </div>
+          {/* /contact btn */}
         </nav>
         {/* /drawer navigation */}
         {/* overlay */}
@@ -78,6 +87,7 @@ export default function Drawer(props) {
           className={`${styles.overlay} ${
             openMenu ? styles.isOpen : undefined
           }`}
+          onClick={() => menuFunction()}
         ></div>
         {/* /overlay */}
       </div>

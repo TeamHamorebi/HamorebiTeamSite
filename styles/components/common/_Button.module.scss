@@ -37,11 +37,13 @@
     z-index: g.zi(button-hover);
   }
 
-  &:hover {
-    transform: translate(-8px, -8px);
+  @include g.mq("lg") {
+    &:hover {
+      transform: translate(-8px, -8px);
 
-    &::after {
-      opacity: 1;
+      &::after {
+        opacity: 1;
+      }
     }
   }
 }
@@ -50,6 +52,7 @@
   position: relative;
   z-index: g.zi(button-text);
 
+  // 矢印
   &::after {
     content: "";
     position: absolute;
