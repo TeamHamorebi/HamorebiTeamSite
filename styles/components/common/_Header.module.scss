@@ -5,6 +5,10 @@
   height: 80px;
   background-color: g.$color-globalHeader-background;
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: g.zi(header);
 
   @include g.mq('xl') {
     display: block;
