@@ -58,7 +58,7 @@ export default function Drawer(props) {
             {data.map((value, index) => {
               return (
                 <li key={index} className={styles.drawerItem}>
-                  <Link href={`#${value.link}`}>
+                  <Link href={`/#${value.link}`}>
                     <a
                       className={styles.drawerItemLink}
                       onClick={() => menuFunction()}
@@ -76,7 +76,7 @@ export default function Drawer(props) {
             <Button
               styles={styles.drawerBtnWrap}
               text={"お問い合わせをする"}
-              link={"#contact"}
+              link={"/#contact"}
             ></Button>
           </div>
           {/* /contact btn */}
