@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Header(props) {
   const data = props.list; // Layout.jsで使用
-
+    
   return (
     <header className={styles.header}>
       <InnerBase>
@@ -26,7 +26,7 @@ export default function Header(props) {
               {data.map((value, index) => {
                 return (
                   <li key={index} className={styles.navItem}>
-                    <Link href={`#${value.link}`}>
+                    <Link href={`/${value.link}`}>
                       <a className={styles.navLink}>{value.name}</a>
                     </Link>
                   </li>

@@ -8,31 +8,31 @@ export default function Layout({ children }) {
   const navItems = [
     {
       name: "TOP",
-      link: "top",
+      link: "#top",
     },
     {
       name: "Hamorebiについて",
-      link: "about",
+      link: "#about",
     },
     {
       name: "実績",
-      link: "work",
+      link: "#work",
     },
     {
       name: "サービス・料金",
-      link: "service-and-price",
+      link: "#service-and-price",
     },
     {
       name: "制作の流れ",
-      link: "work-flow",
+      link: "#work-flow",
     },
     {
       name: "メンバー",
-      link: "member",
+      link: "#member",
     },
     {
       name: "よくあるご質問",
-      link: "qa",
+      link: "#qa",
     },
   ];
 
@@ -49,7 +49,7 @@ export default function Layout({ children }) {
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>
+      <footer id="qa" className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
