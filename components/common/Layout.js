@@ -4,7 +4,7 @@ import styles from "../../styles/components/common/_Layout.module.scss";
 import Header from "../../components/common/Header";
 import Drawer from "../../components/common/Drawer";
 
-export default function Layout({ children }) {
+export default function Layout({ children, home }) {
   const navItems = [
     {
       name: "TOP",
@@ -47,7 +47,7 @@ export default function Layout({ children }) {
       <Header list={navItems}></Header>
       <Drawer list={navItems}></Drawer>
 
-      <main className={styles.main}>{children}</main>
+      <main id={home ? "top" : undefined} className={styles.main}>{children}</main>
 
       <footer id="qa" className={styles.footer}>
         <a
