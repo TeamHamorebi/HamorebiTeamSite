@@ -17,7 +17,7 @@ export default function Drawer(props) {
       <div className={styles.inner}>
         {/* header brand */}
         <div className={styles.brand}>
-          <Link href="./">
+          <Link href="/">
             <a className={styles.brandLink}>
               <div className={styles.brandImgWrap}>
                 <img src="/img/common/hamorebi_logo_color.svg" alt="はもれび" />
@@ -55,6 +55,16 @@ export default function Drawer(props) {
         >
           {/* drawer items */}
           <ul className={styles.drawerItems}>
+            <li className={styles.drawerItem}>
+              <Link href="./">
+                <a
+                  className={styles.drawerItemLink}
+                  onClick={() => menuFunction()}
+                >
+                  TOP
+                </a>
+              </Link>
+            </li>
             {data.map((value, index) => {
               return (
                 <li key={index} className={styles.drawerItem}>

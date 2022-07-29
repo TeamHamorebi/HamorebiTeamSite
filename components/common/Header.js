@@ -14,7 +14,14 @@ export default function Header(props) {
           {/* header brand */}
           <div className={styles.brandWrap}>
             <h1 className={styles.brand}>
-              <img src="/img/common/hamorebi_logo_color.svg" alt="はもれび" />
+              <Link href="/">
+                <a className={styles.brandLink}>
+                  <img
+                    src="/img/common/hamorebi_logo_color.svg"
+                    alt="はもれび"
+                  />
+                </a>
+              </Link>
             </h1>
           </div>
           {/* /header brand */}
