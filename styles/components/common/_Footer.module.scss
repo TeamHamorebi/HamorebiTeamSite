@@ -1,0 +1,132 @@
+@use "../../global" as g;
+@use "sass:math";
+
+.footer {
+  background-color: g.$color-globalFooter-background;
+  color: g.$color-font-globalFooter;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @include g.mq("lg") {
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+}
+
+.contentsWrap {
+  width: calc(100% - 50px);
+  max-width: 1042px;
+  margin: 0 auto;
+
+  @include g.mq("lg") {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.siteInfo {
+  width: 100%;
+
+  @include g.mq("lg") {
+    width: calc(50% - 98px * 1 / 2);
+  }
+}
+
+.brandWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include g.mq("lg") {
+    justify-content: flex-start;
+  }
+}
+
+.brandImgWrap {
+  width: 100px;
+}
+
+.brandName {
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: g.rem(24);
+
+  @include g.mq("sm") {
+    font-size: g.rem(32);
+  }
+}
+.brandSubName {
+  display: block;
+  font-size: g.rem(16);
+  text-align: center;
+  margin-top: 4px;
+
+  @include g.mq("sm") {
+    display: inline;
+    font-size: g.rem(24);
+    text-align: left;
+  }
+}
+
+.infoTextWrap {
+  text-align: center;
+
+  @include g.mq("lg") {
+    text-align: left;
+  }
+}
+.infoText {
+  text-align: left;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: g.rem(12);
+  line-height: math.div(17.38, 12);
+
+  @include g.mq("sm") {
+    margin-top: 21px;
+  }
+}
+
+.navigation {
+  width: 100%;
+  margin-top: 50px;
+
+  @include g.mq("lg") {
+    width: calc(50% - 98px * 1 / 2);
+    margin-top: 40px;
+  }
+}
+
+.navItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px 32px;
+
+  @include g.mq("lg") {
+    justify-content: flex-start;
+    gap: 16px 40px;
+  }
+}
+
+.navLink {
+  font-weight: 400;
+  color: g.$color-font-globalFooter;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: g.$color-font-globalFooter-hover;
+  }
+}
+
+.copyright {
+  font-weight: 500;
+  font-size: g.rem(12);
+  text-align: center;
+  margin-top: 50px;
+
+  @include g.mq("lg") {
+    margin-top: 85px;
+  }
+}

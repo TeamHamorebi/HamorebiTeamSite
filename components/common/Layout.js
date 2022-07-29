@@ -1,21 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../../styles/components/common/_Layout.module.scss";
-import Header from "../../components/common/Header";
-import Drawer from "../../components/common/Drawer";
+import Header from "./Header";
+import Drawer from "./Drawer";
+import Footer from "./Footer";
 
 export default function Layout({ children, home }) {
   const navItems = [
-    {
-      name: "TOP",
-      link: "top",
-    },
     {
       name: "Hamorebiについて",
       link: "about",
     },
     {
-      name: "実績",
+      name: "制作実績",
       link: "work",
     },
     {
@@ -47,20 +43,11 @@ export default function Layout({ children, home }) {
       <Header list={navItems}></Header>
       <Drawer list={navItems}></Drawer>
 
-      <main id={home ? "top" : undefined} className={styles.main}>{children}</main>
+      <main id={home ? "top" : undefined} className={styles.main}>
+        {children}
+      </main>
 
-      <footer id="qa" className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer list={navItems}></Footer>
     </>
   );
 }

@@ -10,7 +10,7 @@
   left: 0;
   z-index: g.zi(header);
 
-  @include g.mq('xl') {
+  @include g.mq("xl") {
     display: block;
   }
 }
@@ -24,8 +24,17 @@
   width: 90px;
 }
 
+.brandLink {
+  display: block;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .navigation {
-  margin-left: 73px;
+  margin-left: auto;
 }
 .navItems {
   display: flex;
@@ -64,4 +73,3 @@
   width: 100%;
   max-width: 239px;
 }
-
