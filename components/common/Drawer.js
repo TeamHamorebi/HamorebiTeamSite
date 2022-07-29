@@ -56,7 +56,7 @@ export default function Drawer(props) {
           {/* drawer items */}
           <ul className={styles.drawerItems}>
             <li className={styles.drawerItem}>
-              <Link href="./">
+              <Link href="/">
                 <a
                   className={styles.drawerItemLink}
                   onClick={() => menuFunction()}

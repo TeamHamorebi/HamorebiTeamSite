@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout>
       <h1>TEST</h1>
       <Link href="/hoge/hoge">
         <a target="_blank" rel="noopener noreferrer">

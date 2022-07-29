@@ -4,7 +4,7 @@ import Header from "./Header";
 import Drawer from "./Drawer";
 import Footer from "./Footer";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
   const navItems = [
     {
       name: "Hamorebiについて",
@@ -43,7 +43,7 @@ export default function Layout({ children, home }) {
       <Header list={navItems}></Header>
       <Drawer list={navItems}></Drawer>
 
-      <main id={home ? "top" : undefined} className={styles.main}>
+      <main id="top" className={styles.main}>
         {children}
       </main>
 
