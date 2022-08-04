@@ -12,15 +12,7 @@
   position: relative;
   transition: transform 0.3s cubic-bezier(0.2, 0.675, 0.626, 1);
 
-  &::before,
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  @extend %button;
   &::before {
     background: linear-gradient(
       87.73deg,
@@ -28,13 +20,6 @@
       g.$color-btn-background-2 96.35%
     );
     z-index: g.zi(button-base);
-  }
-  &::after {
-    background: g.$color-btn-hover-background;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: g.zi(button-hover);
   }
 
   @include g.mq("lg") {
@@ -49,8 +34,7 @@
 }
 
 .btnTextWrap {
-  position: relative;
-  z-index: g.zi(button-text);
+  @extend %buttonContents;
 
   // 矢印
   &::after {

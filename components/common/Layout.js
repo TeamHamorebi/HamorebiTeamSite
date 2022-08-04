@@ -2,6 +2,7 @@ import styles from "../../styles/components/common/_Layout.module.scss";
 import Header from "./Header";
 import Drawer from "./Drawer";
 import Footer from "./Footer";
+import ToTopButton from "./ToTopButton";
 
 export default function Layout({ children }) {
   const navItems = [
@@ -33,14 +34,14 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Header list={navItems}></Header>
-      <Drawer list={navItems}></Drawer>
-
+      <Header list={navItems} />
+      <Drawer list={navItems} />
+      <ToTopButton />
       <main id="top" className={styles.main}>
         {children}
       </main>
 
-      <Footer list={navItems}></Footer>
+      <Footer list={navItems} />
     </>
   );
 }
