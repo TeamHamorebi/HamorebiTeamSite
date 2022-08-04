@@ -1,0 +1,27 @@
+@use "./color" as c;
+@use "./mediaQuery" as m;
+@use "./z-index" as z;
+
+%button {
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    background: c.$color-btn-hover-background;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: z.zi(button-hover);
+  }
+}
+
+%buttonContents {
+  position: relative;
+  z-index: z.zi(button-text);
+}
