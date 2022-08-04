@@ -6,7 +6,7 @@ export default function Home() {
     <Layout>
       <h1>TEST</h1>
       <Link href="/hoge/hoge">
-        <a target="_blank" rel="noopener noreferrer">
+        <a>
           this page!
         </a>
       </Link>
