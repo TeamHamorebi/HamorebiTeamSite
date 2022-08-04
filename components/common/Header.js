@@ -17,7 +17,7 @@ export default function Header(props) {
               <Link href="/">
                 <a className={styles.brandLink}>
                   <img
-                    src="/img/common/hamorebi_logo_color.svg"
+                    src="/img/common/hamorebi_logo_color.png"
                     alt="はもれび"
                   />
                 </a>

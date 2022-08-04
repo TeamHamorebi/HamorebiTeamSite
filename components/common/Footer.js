@@ -14,7 +14,7 @@ export default function Footer(props) {
           <div className={styles.brandWrap}>
             <div className={styles.brandImgWrap}>
               <img
-                src="/img/common/hamorebi_footer-logo_white.svg"
+                src="/img/common/hamorebi_footer-logo_white.png"
                 alt="はもれび"
               />
             </div>

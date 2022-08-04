@@ -20,7 +20,7 @@ export default function Drawer(props) {
           <Link href="/">
             <a className={styles.brandLink}>
               <div className={styles.brandImgWrap}>
-                <img src="/img/common/hamorebi_logo_color.svg" alt="はもれび" />
+                <img src="/img/common/hamorebi_logo_color.png" alt="はもれび" />
               </div>
               <p className={styles.brandName}>
                 Hamorebi{" "}
