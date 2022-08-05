@@ -48,7 +48,7 @@ export default function Header(props) {
             styles={styles.headerBtnWrap}
             text={"お問い合わせをする"}
             link={"/#contact"}
-          ></Button>
+          />
         </div>
         {/* /header wrap */}
       </InnerBase>
