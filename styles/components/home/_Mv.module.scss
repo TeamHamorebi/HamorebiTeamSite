@@ -1,0 +1,117 @@
+@use "../../global" as g;
+@use "sass:math";
+
+.mv {
+  margin-top: 55px;
+  position: relative;
+
+  // 640px~
+  @include g.mq("sm") {
+    height: clamp(350px, 55vw, 415px);
+  }
+  // 768px~
+  @include g.mq("md") {
+    height: clamp(415px, 54vw, 720px);
+  }
+  // 1024px~
+  @include g.mq("lg") {
+    height: clamp(415px, 51vw, 720px);
+  }
+  // 1200px~
+  @include g.mq("xl") {
+    margin-top: 80px;
+  }
+}
+
+.imagesWrap {
+  position: relative;
+  top: 24px;
+  width: math.div(314px, 375px) * 100vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include g.mq("sm") {
+    width: clamp(314px, 53vw, 752px);
+    position: absolute;
+    right: 0;
+    transform: translateX(0);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include g.mq("md") {
+    right: 25px;
+  }
+
+  @include g.mq("lg") {
+    top: 0;
+  }
+}
+
+.peopleImgWrap {
+  width: 100%;
+}
+
+.pcImgWrap {
+  width: math.div(159px, 375px) * 100vw;
+  position: absolute;
+  top: 23%;
+  right: 53%;
+  transform: translateX(50%);
+
+  @include g.mq("sm") {
+    width: clamp(159px, 26vw, 362px);
+    top: 25%;
+    right: 27%;
+    transform: translateX(0);
+  }
+
+  @include g.mq("md") {
+    top: 25%;
+    right: 28%;
+  }
+
+  @include g.mq("layout") {
+    top: 170px;
+    right: 209px;
+  }
+}
+
+.mvContentsWrap {
+  margin-top: 26px;
+  @include g.mq("sm") {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+
+  @include g.mq("md") {
+    margin-left: 6%;
+  }
+
+  @include g.mq("lg") {
+    margin-left: math.div(150px, 1440px) * 100%;
+  }
+}
+
+.mvTitleWrap {
+  margin: auto;
+  width: clamp(313px, 35vw, 509px);
+
+  @include g.mq("sm") {
+    margin: 0;
+  }
+}
+
+.mvBtnWrap {
+  width: 239px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include g.mq("sm") {
+    margin-top: 52px;
+    margin-left: 22px;
+  }
+}
