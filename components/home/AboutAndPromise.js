@@ -5,7 +5,7 @@ export default function AboutAndPromise() {
     {
       img: "/img/top/promise-1.png",
       title: [
-        <span className={styles.cardTitleOrnament} key="index">
+        <span className={styles.cardTitleDecoration} key="index">
           型にとらわれない制作
         </span>,
         "をご提案いたします",
@@ -15,7 +15,7 @@ export default function AboutAndPromise() {
     {
       img: "/img/top/promise-2.png",
       title: [
-        <span className={styles.cardTitleOrnament} key="index">
+        <span className={styles.cardTitleDecoration} key="index">
           末永く継続的にサポート
         </span>,
         "いたします",
@@ -31,10 +31,10 @@ export default function AboutAndPromise() {
     {
       img: "/img/top/promise-3.png",
       title: [
-        <span className={styles.cardTitleOrnament} key="index">
-          型にとらわれない制作
+        <span className={styles.cardTitleDecoration} key="index">
+          同じ目線
         </span>,
-        "をご提案いたします",
+        "で寄り添います",
       ],
       text: "大きな制作会社ではなくフリーランスのクリエーター達が集まった小さな制作チームだからこそ、フレンドリーな距離感で、お客様と同じ目線で、わかりやすい言葉でご対応いたします。ITにあまり詳しくない方でも、どうぞ安心してお気軽にご相談ください。",
     },
@@ -48,7 +48,7 @@ export default function AboutAndPromise() {
           私達はWeb制作を承る
           <br />
           フリーランスチームの
-          <span className={styles.textBoldface}>Hamorebiーはもれびー</span>です
+          <span className={styles.textBoldface}>Hamorebi ーはもれびー</span>です
         </p>
         <p className={styles.textBottom}>
           Webサイト、ECサイト、ランディングページ

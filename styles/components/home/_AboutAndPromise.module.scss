@@ -1,1 +1,136 @@
 @use "../../global" as g;
+@use "sass:math";
+
+.aboutAndPromise {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background: transparent url(/img/top/Hamorebi_sun--sp.png) no-repeat top 85px
+    left 0 / 67.024%;
+
+  @include g.mq("lg") {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    background: transparent url(/img/top/Hamorebi_sun--full.png) no-repeat top 0
+      center / cover;
+  }
+
+  @include g.mq("xxl") {
+    background: transparent url(/img/top/Hamorebi_sun--full.png) no-repeat top 0
+      left calc(50vw - 804px) / 1524px auto;
+  }
+}
+
+.contentsWrap {
+  text-align: center;
+  line-height: math.div(44.8, 28);
+}
+
+.textTop {
+  font-size: clamp(g.rem(24), 3vw, g.rem(28));
+}
+.textBoldface {
+  font-weight: 700;
+}
+.textBottom {
+  margin-top: 25px;
+  font-size: clamp(g.rem(16), 3vw, g.rem(28));
+
+  @include g.mq("lg") {
+    margin-top: 40px;
+  }
+}
+
+.promiseTitle {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: g.rem(24);
+  text-align: center;
+
+  @include g.mq("lg") {
+    margin-top: 100px;
+  }
+}
+.titleBoldface {
+  font-size: g.rem(40);
+  color: g.$color-font-promiseTitle-decoration;
+}
+
+.promiseCardWrap {
+  margin-top: 50px;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include g.mq("md") {
+    gap: 25px 20px;
+  }
+
+  @include g.mq("lg") {
+    gap: 40px;
+  }
+}
+.promiseCard {
+  width: 100%;
+  background-color: g.$color-promiseCard-background;
+  box-shadow: 0 0 10px 2px g.$color-promiseCard-shadow;
+  border-radius: 20px 20px 60px 20px;
+  padding: 35px 15px 40px 15px;
+
+  @include g.mq("md") {
+    width: 50%;
+    max-width: 350px;
+  }
+
+  @include g.mq("lg") {
+    width: calc(100% / 3 - 40px * 2 / 3);
+  }
+}
+.cardImgWrap {
+  width: 130px;
+  margin: 0 auto;
+}
+.cardTitle {
+  margin-top: 35px;
+  font-weight: 500;
+  font-size: g.rem(24);
+  line-height: math.div(34.75, 24);
+  width: 100%;
+  min-height: 73px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include g.mq('sm') {
+    min-height: auto;
+  }
+  @include g.mq('md') {
+    min-height: 73px;
+  }
+}
+.promiseCard:nth-child(1) .cardTitle,
+.promiseCard:nth-child(2) .cardTitle {
+    max-width: 280px;
+  @include g.mq("sm") {
+    max-width: 100%;
+    text-align: center;
+  }
+  @include g.mq("md") {
+    max-width: 280px;
+    text-align: left;
+  }
+}
+.promiseCard:nth-child(3) .cardTitle {
+  text-align: center;
+}
+.cardTitleDecoration {
+  font-weight: 700;
+  color: g.$color-font-promiseCardTitle-decoration;
+}
+.cardText {
+  margin-top: 20px;
+  line-height: math.div(25.6, 16);
+}

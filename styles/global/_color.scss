@@ -4,6 +4,9 @@
 * 参考記事：https://qiita.com/1natsu172/items/ef6b0fcba6bbe380df1e
 */
 
+/*=======================
+common
+====================== */
 // header
 $color-globalHeader-background: p.$palette-white;
 $color-globalHeader-hover-underBar: p.$palette-orangePeel;
@@ -36,6 +39,13 @@ $color-overlay: p.$palette-transparentOrangePeel-4;
 // font
 $color-font-main: p.$palette-codGray;
 
-// home
+/*=======================
+home
+====================== */
+// promise
+$color-font-promiseTitle-decoration: p.$palette-orangePeel;
+$color-promiseCard-background: p.$palette-white;
+$color-font-promiseCardTitle-decoration: p.$palette-orangePeel;
+$color-promiseCard-shadow: p.$palette-transparentOrangePeel-4;
 
 // work details
