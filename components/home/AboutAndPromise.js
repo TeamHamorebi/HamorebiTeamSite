@@ -3,22 +3,40 @@ import styles from "../../styles/components/home/_AboutAndPromise.module.scss";
 export default function AboutAndPromise() {
   const cardInfo = [
     {
-      img: "/img/top/promise-1.svg",
-      title:
-        "<span span className={ styles.cardTitleOrnament } > 型にとらわれない制作</span> をご提案いたします",
+      img: "/img/top/promise-1.png",
+      title: [
+        <span className={styles.cardTitleOrnament} key="index">
+          型にとらわれない制作
+        </span>,
+        "をご提案いたします",
+      ],
       text: "お客様が叶えたい夢や解決したいお悩みは何かを詳しく伺い、それを実現するために最適な構成のWebサイトをご提案いたします。コミュニケーションを大切にしているHamorebiは制作開始前のヒアリングを丁寧に行い、ホームページに近いLP、LPに近いショピングサイトなど一般的な構成や型にとらわれないWeb制作もお作りいたします。",
     },
     {
-      img: "/img/top/promise-2.svg",
-      title:
-        "<span className={styles.cardTitleOrnament}>末永く継続的にサポート</span>いたします",
-      text: "Webサイトは「完成がはじまり」です。見た目が美しいもの、インパクトが強いものを作ってそれでおしまい、ではありません。<br />改善を重ねアップデートをして、最新の情報を届けたい人に届けられるWebサイトを作り続けることが重要です。<br />Hamorebiは納品して終わり！ではなく、お客様のサービス・事業のメンバーのひとりであるという心構えで、末永くその後の改善やサポートをご提案いたします。",
+      img: "/img/top/promise-2.png",
+      title: [
+        <span className={styles.cardTitleOrnament} key="index">
+          末永く継続的にサポート
+        </span>,
+        "いたします",
+      ],
+      text: [
+        "Webサイトは「完成がはじまり」です。見た目が美しいもの、インパクトが強いものを作ってそれでおしまい、ではありません。",
+        <br key="index" />,
+        "改善を重ねアップデートをして、最新の情報を届けたい人に届けられるWebサイトを作り続けることが重要です。",
+        <br key="index" />,
+        "Hamorebiは納品して終わり！ではなく、お客様のサービス・事業のメンバーのひとりであるという心構えで、末永くその後の改善やサポートをご提案いたします。",
+      ],
     },
     {
-      img: "/img/top/promise-3.svg",
-      title:
-        "<span className={styles.cardTitleOrnament}>型にとらわれない制作</span>をご提案いたします",
-      text: "お客様が叶えたい夢や解決したいお悩みは何かを詳しく伺い、それを実現するために最適な構成のWebサイトをご提案いたします。コミュニケーションを大切にしているHamorebiは制作開始前のヒアリングを丁寧に行い、ホームページに近いLP、LPに近いショピングサイトなど一般的な構成や型にとらわれないWeb制作もお作りいたします。",
+      img: "/img/top/promise-3.png",
+      title: [
+        <span className={styles.cardTitleOrnament} key="index">
+          型にとらわれない制作
+        </span>,
+        "をご提案いたします",
+      ],
+      text: "大きな制作会社ではなくフリーランスのクリエーター達が集まった小さな制作チームだからこそ、フレンドリーな距離感で、お客様と同じ目線で、わかりやすい言葉でご対応いたします。ITにあまり詳しくない方でも、どうぞ安心してお気軽にご相談ください。",
     },
   ];
 
