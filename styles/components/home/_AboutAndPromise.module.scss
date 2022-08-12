@@ -9,9 +9,14 @@
   background: transparent url(/img/top/Hamorebi_sun--sp.png) no-repeat top 85px
     left 0 / 67.024%;
 
-  @include g.mq("lg") {
+    @include g.mq('md') {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      
+    }
+    
+    @include g.mq("lg") {
     padding-top: 150px;
-    padding-bottom: 100px;
     background: transparent url(/img/top/Hamorebi_sun--full.png) no-repeat top 0
       center / cover;
   }

@@ -1,0 +1,60 @@
+@use "../../global" as g;
+@use "sass:math";
+
+.teamName {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background: g.$color-teamName-background url(/img/top/hamorebi_logo_white.png)
+    no-repeat bottom 0 right -16px / 74.4% auto;
+
+  @include g.mq("sm") {
+    background: g.$color-teamName-background
+      url(/img/top/hamorebi_logo_white.png) no-repeat center right -25px / 80% auto;
+  }
+
+  @include g.mq("md") {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: g.$color-teamName-background
+      url(/img/top/hamorebi_logo_white.png) no-repeat center right -35px / 90% auto;
+  }
+
+  @include g.mq("lg") {
+    background: g.$color-teamName-background
+      url(/img/top/hamorebi_logo_white.png) no-repeat top -116px right -50px /
+      812px auto;
+  }
+
+  @include g.mq("layout") {
+    background: g.$color-teamName-background
+      url(/img/top/hamorebi_logo_white.png) no-repeat top -116px left calc(
+        50vw - 65px
+      ) / 825px auto;
+  }
+}
+
+.textWrap {
+  width: 100%;
+  max-width: 816px;
+  margin: 0 auto;
+}
+.text {
+  font-weight: 500;
+}
+.textBoldface {
+  display: block;
+  margin-top: 16px;
+  font-size: clamp(g.rem(20), 3vw, g.rem(24));
+  line-height: math.div(34.75, 24);
+}
+.textBottom {
+  display: block;
+  margin-top: 16px;
+  padding-left: 6px;
+
+  @include g.mq("md") {
+    padding-left: 0;
+  }
+}
