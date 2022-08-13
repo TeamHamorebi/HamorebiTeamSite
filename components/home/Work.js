@@ -6,7 +6,13 @@ import WorkStatusItem from "./WorkStatusItem";
 export default function Work() {
   return (
     <section className={styles.work}>
-      <SectionTitle title={"Hamorebiのお仕事状況"} />
+      <SectionTitle
+        title={
+          <>
+            Hamorebi<span>の</span>お仕事状況
+          </>
+        }
+      />
       <p className={styles.lead}>
         ご相談・ご依頼 お待ちしております
         <br />

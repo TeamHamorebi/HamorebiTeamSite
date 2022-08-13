@@ -2,18 +2,9 @@
 @use "sass:math";
 
 .aboutAndPromise {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 24px;
-  padding-right: 24px;
+  @extend %sectionLayout;
   background: transparent url(/img/top/Hamorebi_sun--sp.png) no-repeat top 85px
     left 0 / 67.024%;
-
-    @include g.mq('md') {
-      padding-top: 100px;
-      padding-bottom: 100px;
-      
-    }
     
     @include g.mq("lg") {
     padding-top: 150px;
