@@ -25,3 +25,15 @@
   position: relative;
   z-index: z.zi(button-text);
 }
+
+%sectionLayout {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @include m.mq("md") {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

@@ -1,0 +1,25 @@
+@use "../../global" as g;
+@use "sass:math";
+
+.sectionTitle {
+  position: relative;
+  padding-top: 44px;
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(g.rem(24), 4vw, g.rem(36));
+
+  span {
+    font-size: clamp(g.rem(16), 3vw, g.rem(24));
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 58px;
+    background: transparent url(/img/common/title-reception.svg) no-repeat center center /cover;
+  }
+}
