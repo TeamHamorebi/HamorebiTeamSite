@@ -41,7 +41,7 @@ export default function AboutAndPromise() {
   ];
 
   return (
-    <section className={styles.aboutAndPromise}>
+    <section id="about" className={styles.aboutAndPromise}>
       {/* contents wrap */}
       <div className={styles.contentsWrap}>
         <p className={styles.textTop}>
