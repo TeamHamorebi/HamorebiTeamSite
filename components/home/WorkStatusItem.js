@@ -1,5 +1,4 @@
 import styles from "../../styles/components/home/_WorkStatusItem.module.scss";
-import { useEffect } from "react";
 
 export default function WorkStatusItem(props) {
   // fetch date
