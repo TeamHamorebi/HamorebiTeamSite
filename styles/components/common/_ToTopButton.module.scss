@@ -10,6 +10,7 @@
   border-radius: 9999px;
   overflow: hidden;
   transition: opacity 0.3s ease;
+  z-index: g.zi(toTopBtn);
 //   opacity: 0;
 
   @include g.mq("3xl") {
