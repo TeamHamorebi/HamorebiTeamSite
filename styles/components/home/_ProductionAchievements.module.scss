@@ -14,7 +14,7 @@
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-    justify-content: space-around;
+  justify-content: space-around;
   gap: 25px 15px;
 
   @include g.mq("md") {
@@ -27,16 +27,19 @@
 
   @include g.mq("sm") {
     width: calc(50% - 15px * 1 / 2);
+  }
+
+  @include g.mq("lg") {
+    width: calc(100% / 3 - 15px * 2 / 3);
+  }
 }
 
-@include g.mq("lg") {
-      width: calc(100% / 3 - 15px * 2 / 3);
-  }
+.link {
+  color: g.$color-font-main;
 }
 
 .imgWrap {
   width: 100%;
-  //   max-width: 370px;
   position: relative;
 
   &::before {
@@ -58,8 +61,8 @@
   }
 }
 
-@include g.mq("lg") {
-  .link:hover .imgWrap {
+.link:hover .imgWrap {
+  @include g.mq("lg") {
     &::before {
       visibility: visible;
       opacity: 1;
