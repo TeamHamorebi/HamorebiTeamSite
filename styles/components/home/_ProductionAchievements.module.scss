@@ -1,0 +1,84 @@
+@use "../../global" as g;
+@use "sass:math";
+
+.productionAchievements {
+  @extend %sectionLayout;
+  background-color: g.$color-productionAchievements-background;
+}
+
+.list {
+  width: 100%;
+  max-width: 1140px;
+  margin-top: 54px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+    justify-content: space-around;
+  gap: 25px 15px;
+
+  @include g.mq("md") {
+    gap: 50px 15px;
+  }
+}
+
+.item {
+  width: 100%;
+
+  @include g.mq("sm") {
+    width: calc(50% - 15px * 1 / 2);
+}
+
+@include g.mq("lg") {
+      width: calc(100% / 3 - 15px * 2 / 3);
+  }
+}
+
+.imgWrap {
+  width: 100%;
+  //   max-width: 370px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -7%;
+    left: -6%;
+    width: 100%;
+    height: 100%;
+    background: transparent url(/img/top/hamorebi_logo_color--big.png) no-repeat
+      center center / contain;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  img {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+}
+
+@include g.mq("lg") {
+  .link:hover .imgWrap {
+    &::before {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1.16);
+    }
+
+    img {
+      transform: scale(0.8);
+    }
+  }
+}
+
+.clientName {
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: math.div(23.17, 16);
+}
+
+.category {
+  margin-top: 8px;
+  font-size: g.rem(14);
+}
