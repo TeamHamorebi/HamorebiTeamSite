@@ -19,22 +19,13 @@
 
 .date {
   font-weight: 500;
-  font-size: g.rem(12);
+  font-size: clamp(g.rem(12), 3vw, g.rem(16));
   min-width: 94px;
-
-  @include g.mq("sm") {
-    font-size: g.rem(16);
-  }
 }
 .dateBoldface {
-  font-size: g.rem(20);
-
-  @include g.mq("sm") {
-    font-size: g.rem(24);
-  }
+  font-size: clamp(g.rem(20), 5vw, g.rem(24));
 }
 .dateYearText {
-  // letter-spacing: 0.05em;
   padding-left: 0.05em;
   padding-right: 0.05em;
 
@@ -67,6 +58,7 @@
 }
 .imgWrap {
   width: 47px;
+  width: clamp(47px, 12vw, 70px);
   position: relative;
 
   @include g.mq("sm") {
