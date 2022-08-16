@@ -14,7 +14,6 @@
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-around;
   gap: 25px 15px;
 
   @include g.mq("md") {

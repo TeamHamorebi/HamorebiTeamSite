@@ -4,17 +4,15 @@
 .mv {
   margin-top: 55px;
   position: relative;
+  padding-bottom: 50px;
 
-  // 640px~
-  @include g.mq("sm") {
-    height: clamp(350px, 55vw, 415px);
-  }
   // 768px~
   @include g.mq("md") {
     height: clamp(415px, 54vw, 720px);
   }
   // 1024px~
   @include g.mq("lg") {
+    padding-bottom: 0;
     height: clamp(415px, 51vw, 720px);
   }
   // 1200px~
@@ -30,17 +28,13 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include g.mq("sm") {
+  @include g.mq("md") {
+    right: 25px;
     width: clamp(314px, 53vw, 752px);
     position: absolute;
-    right: 0;
     transform: translateX(0);
     margin-left: 0;
     margin-right: 0;
-  }
-
-  @include g.mq("md") {
-    right: 25px;
   }
 
   @include g.mq("lg") {
@@ -59,14 +53,9 @@
   right: 53%;
   transform: translateX(50%);
 
-  @include g.mq("sm") {
-    width: clamp(159px, 26vw, 362px);
-    top: 25%;
-    right: 27%;
-    transform: translateX(0);
-  }
-
   @include g.mq("md") {
+    width: clamp(159px, 26vw, 362px);
+    transform: translateX(0);
     top: 25%;
     right: 28%;
   }
@@ -79,15 +68,13 @@
 
 .mvContentsWrap {
   margin-top: 26px;
-  @include g.mq("sm") {
+
+  @include g.mq("md") {
+    margin-left: 6%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     margin-top: 0;
-  }
-
-  @include g.mq("md") {
-    margin-left: 6%;
   }
 
   @include g.mq("lg") {
@@ -99,7 +86,7 @@
   margin: auto;
   width: clamp(313px, 35vw, 509px);
 
-  @include g.mq("sm") {
+  @include g.mq("md") {
     margin: 0;
   }
 }
@@ -110,7 +97,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include g.mq("sm") {
+  @include g.mq("md") {
     margin-top: 52px;
     margin-left: 22px;
   }
