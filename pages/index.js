@@ -5,6 +5,7 @@ import AboutAndPromise from "../components/home/AboutAndPromise";
 import TeamName from "../components/home/TeamName";
 import Work from "../components/home/Work";
 import ProductionAchievements from "../components/home/ProductionAchievements";
+import ServiceAndPrice from "../components/home/ServiceAndPrice";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <TeamName />
       <Work />
       <ProductionAchievements />
+      <ServiceAndPrice />
       <Link href="/hoge/hoge">
         <a>this page!</a>
       </Link>
