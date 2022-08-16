@@ -3,6 +3,48 @@ import SectionTitle from "../common/SectionTitle";
 import Button from "../common/Button";
 
 export default function ServiceAndPrice() {
+  const data = [
+    {
+      serviceName: "LP",
+      priceAndAttention: [
+        <span key="lp" className={styles.boldface}>
+          33
+        </span>,
+        "万円〜",
+      ],
+      description:
+        "LP(ランディングページ)は、集客・商品やサービスの購入・お問い合わせへの誘導に特化した縦に長い1枚のページです",
+      img: "/img/top/service_site-lp.png",
+    },
+    {
+      serviceName: "ECサイト",
+      priceAndAttention: [
+        <span key="ec" className={styles.boldface}>
+          40
+        </span>,
+        "万円〜",
+      ],
+      description:
+        "商品を販売するための通販サイトです。オンラインショッププラットフォーム「Shopify」で制作いたします",
+      img: "/img/top/service_site-ec.png",
+    },
+    {
+      serviceName: "UIデザイン",
+      priceAndAttention: [
+        <span key="ui" className={styles.boldface}>
+          21
+        </span>,
+        "万円〜",
+        <span key="attention" className={styles.attention}>
+          10画面 / スマートフォンまたはパソコンのいずれか
+        </span>,
+      ],
+      description:
+        "ユーザーにとって使いやすいWebサービスやアプリのデザインを提供します",
+      img: "/img/top/service_site-ui.png",
+    },
+  ];
+
   return (
     <section id="service-and-price" className={styles.serviceAndPrice}>
       <SectionTitle
@@ -91,25 +133,36 @@ export default function ServiceAndPrice() {
         {/* /item (site) */}
 
         {/* item (other) */}
-        <li className={styles.serviceItem}>
-          <h3 className={styles.serviceName}>サイト制作</h3>
-          <div className={styles.serviceContentsWrap}>
-            <div className={styles.serviceTextWrap}>
-              <p className={styles.servicePrice}>
-                <span className={styles.boldface}>33</span>万円〜
-              </p>
-              <p className={styles.serviceDescription}>
-                Webサイトは商品やサービス・企業の詳細、ブランドなどユーザーに情報を提供することを目的とした複数のWebページで構成されたものです
-              </p>
-            </div>
-            <div className={styles.serviceImgWrap}>
-              <img src="/img/top/service_site-site.png" />
-            </div>
-          </div>
-        </li>
+        {data.map((value, index) => {
+          return (
+            <li key={index} className={styles.serviceItem}>
+              <h3 className={styles.serviceName}>{value.serviceName}</h3>
+              <div className={styles.serviceContentsWrap}>
+                <div className={styles.serviceTextWrap}>
+                  <p className={styles.servicePrice}>
+                    {value.priceAndAttention}
+                  </p>
+                  <p className={styles.serviceDescription}>
+                    {value.description}
+                  </p>
+                </div>
+                <div className={styles.serviceImgWrap}>
+                  <img src={value.img} />
+                </div>
+              </div>
+            </li>
+          );
+        })}
         {/* /item (other) */}
       </ul>
       {/* /list */}
+      {/* contact btn */}
+      <Button
+        styles={styles.contactBtnWrap}
+        text={"お問い合わせをする"}
+        link={"#contact"}
+      ></Button>
+      {/* /contact btn */}
     </section>
   );
 }
