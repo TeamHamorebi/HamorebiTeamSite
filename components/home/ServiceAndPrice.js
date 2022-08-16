@@ -8,7 +8,7 @@ export default function ServiceAndPrice() {
       serviceName: "LP",
       priceAndAttention: [
         <span key="lp" className={styles.boldface}>
-          33
+          21
         </span>,
         "万円〜",
       ],
@@ -65,69 +65,71 @@ export default function ServiceAndPrice() {
       <ul className={styles.serviceList}>
         {/* item (site) */}
         <li className={styles.serviceItem}>
-          <h3 className={styles.serviceName}>サイト制作</h3>
-          <p className={styles.servicePrice}>
-            <span className={styles.boldface}>33</span>万円〜
-          </p>
-          <p className={styles.serviceDescription}>
-            Webサイトは商品やサービス・企業の詳細、ブランドなどユーザーに情報を提供することを目的とした複数のWebページで構成されたものです
-          </p>
-          {/* example list */}
-          <ul className={styles.siteExampleList}>
-            {/* example item */}
-            <li className={styles.siteExampleItem}>
-              <p className={styles.exampleName}>【例】ホームページ</p>
-              <div className={styles.examplePriceWrap}>
-                <p className={styles.servicePrice}>
-                  <span className={styles.boldface}>33</span>万円〜
-                </p>
-              </div>
-              <p className={styles.configurationExample}>
-                トップページ＋下層4ページ
-                <br />
-                TOP
-                <br />
-                商品情報
-                <br />
-                店舗情報
-                <br />
-                お問い合わせ
-                <br />
-                プライバシーポリシー
-                <br />
-                （ショッピング機能は含みません）
+          <div className={styles.serviceNameWrap}>
+            <h3 className={styles.serviceName}>サイト制作</h3>
+          </div>
+          <div className={styles.serviceContentsWrap}>
+            <p className={styles.servicePrice}>
+              <span className={styles.boldface}>33</span>万円〜
+            </p>
+            <div className={styles.serviceDescriptionWrap}>
+              <p className={styles.serviceDescription}>
+                Webサイトは商品やサービス・企業の詳細、ブランドなどユーザーに情報を提供することを目的とした複数のWebページで構成されたものです
               </p>
-            </li>
-            {/* /example item */}
-            {/* example item */}
-            <li className={styles.siteExampleItem}>
-              <p className={styles.exampleName}>【例】コーポレートサイト</p>
-              <div className={styles.examplePriceWrap}>
-                <p className={styles.servicePrice}>
-                  <span className={styles.boldface}>43</span>万円〜
+            </div>
+            {/* example list */}
+            <ul className={styles.siteExampleList}>
+              {/* example item */}
+              <li className={styles.siteExampleItem}>
+                <p className={styles.exampleName}>【例】ホームページ</p>
+                <p className={styles.examplePrice}>
+                  <span className={styles.exampleBoldface}>33</span>万円〜
                 </p>
-              </div>
-              <p className={styles.configurationExample}>
-                トップページ＋下層5ページ
-                <br />
-                TOP
-                <br />
-                企業情報
-                <br />
-                会社概要
-                <br />
-                お知らせ
-                <br />
-                お問い合わせ
-                <br />
-                プライバシーポリシー
-              </p>
-            </li>
-            {/* /example item */}
-          </ul>
-          {/* example list */}
-          <div className={styles.serviceImgWrap}>
-            <img src="/img/top/service_site-site.png" />
+                <p className={styles.configurationExample}>
+                  トップページ＋下層4ページ
+                  <br />
+                  TOP
+                  <br />
+                  商品情報
+                  <br />
+                  店舗情報
+                  <br />
+                  お問い合わせ
+                  <br />
+                  プライバシーポリシー
+                  <br />
+                  （ショッピング機能は含みません）
+                </p>
+              </li>
+              {/* /example item */}
+              {/* example item */}
+              <li className={styles.siteExampleItem}>
+                <p className={styles.exampleName}>【例】コーポレートサイト</p>
+                <p className={styles.examplePrice}>
+                  <span className={styles.exampleBoldface}>43</span>万円〜
+                </p>
+                <p className={styles.configurationExample}>
+                  トップページ＋下層5ページ
+                  <br />
+                  TOP
+                  <br />
+                  企業情報
+                  <br />
+                  会社概要
+                  <br />
+                  お知らせ
+                  <br />
+                  お問い合わせ
+                  <br />
+                  プライバシーポリシー
+                </p>
+              </li>
+              {/* /example item */}
+            </ul>
+            {/* example list */}
+            <div className={styles.serviceImgWrap}>
+              <img src="/img/top/service_site-site.png" />
+            </div>
           </div>
         </li>
         {/* /item (site) */}
@@ -136,15 +138,19 @@ export default function ServiceAndPrice() {
         {data.map((value, index) => {
           return (
             <li key={index} className={styles.serviceItem}>
-              <h3 className={styles.serviceName}>{value.serviceName}</h3>
+              <div className={styles.serviceNameWrap}>
+                <h3 className={styles.serviceName}>{value.serviceName}</h3>
+              </div>
               <div className={styles.serviceContentsWrap}>
                 <div className={styles.serviceTextWrap}>
                   <p className={styles.servicePrice}>
                     {value.priceAndAttention}
                   </p>
-                  <p className={styles.serviceDescription}>
-                    {value.description}
-                  </p>
+                  <div className={styles.serviceDescriptionWrap}>
+                    <p className={styles.serviceDescription}>
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
                 <div className={styles.serviceImgWrap}>
                   <img src={value.img} />

@@ -1,2 +1,217 @@
 @use "../../global" as g;
 @use "sass:math";
+
+.serviceAndPrice {
+  @extend %sectionLayout;
+}
+
+.lead {
+  margin-top: 43.83px;
+  text-align: center;
+  line-height: math.div(25.6, 16);
+
+  @include g.mq("md") {
+    margin-top: 54px;
+  }
+}
+
+.serviceList {
+  margin-top: 50px;
+  display: grid;
+  gap: 25px;
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+
+  @include g.mq("md") {
+    gap: 16px;
+  }
+
+  @include g.mq("lg") {
+    justify-content: space-between;
+  }
+}
+
+.serviceItem {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  @extend %cardRadius;
+  box-shadow: 0 0 10px 2px g.$color-card-shadow;
+  overflow: hidden;
+  // border: 2px solid g.$color-card-border;
+
+  @include g.mq("lg") {
+    max-width: 520px;
+    &:not(:first-child) {
+      grid-column: 2/3;
+    }
+
+    &:first-child {
+      grid-row: 1/4;
+      grid-column: 1/2;
+    }
+
+    &:nth-child(2) {
+      grid-row: 1/2;
+    }
+    &:nth-child(3) {
+      grid-row: 2/3;
+    }
+    &:nth-child(4) {
+      grid-row: 3/4;
+    }
+  }
+}
+
+.serviceNameWrap {
+  background-color: g.$color-cardTitle-background;
+  height: 68px;
+  border: 2px solid g.$color-card-border;
+}
+.serviceName {
+  color: g.$color-font-cardTitle;
+  text-align: center;
+  line-height: 68px;
+  font-weight: 500;
+  font-size: clamp(g.rem(24), 3vw, g.rem(36));
+}
+
+.serviceContentsWrap {
+  padding: 24px 18px;
+
+  @include g.mq("md") {
+    padding: 15px 24px 16px 24px;
+  }
+}
+
+.servicePrice {
+  font-weight: 500;
+  text-align: center;
+}
+.boldface {
+  font-size: g.rem(24);
+  color: g.$color-font-price;
+}
+
+.serviceDescriptionWrap {
+  text-align: center;
+}
+.serviceDescription {
+  line-height: math.div(23.17, 16);
+  margin-top: 15px;
+  display: inline-block;
+  text-align: left;
+}
+
+.siteExampleList {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 425px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 25px;
+}
+.siteExampleItem {
+  width: 100%;
+  max-width: 192px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include g.mq("sm") {
+    margin: 0;
+  }
+}
+.exampleName {
+  font-weight: 500;
+}
+.examplePrice {
+  margin-top: 15px;
+  font-weight: 500;
+}
+.exampleBoldface {
+  font-weight: 700;
+  font-size: g.rem(24);
+  color: g.$color-font-price;
+}
+.configurationExample {
+  margin-top: 10px;
+  font-size: g.rem(12);
+  line-height: math.div(17.38, 12);
+}
+
+// サイト制作のみ
+.serviceItem:first-child {
+  .serviceContentsWrap {
+    padding-top: 24px;
+
+    @include g.mq("md") {
+      padding-top: 32px;
+    }
+  }
+
+  .serviceImgWrap {
+    margin-top: 18px;
+    width: 195px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include g.mq("md") {
+      margin-top: 35px;
+    }
+  }
+}
+
+// LP, ECサイト, UIデザインのみ
+.serviceItem:not(:first-child) {
+  @include g.mq("lg") {
+    .serviceContentsWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .serviceTextWrap {
+      width: calc(100% - 156px);
+    }
+  }
+  .serviceImgWrap {
+    width: 195px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+
+    @include g.mq("lg") {
+      width: 132px;
+      margin: 0;
+    }
+  }
+}
+
+// UIデザインのみ
+.serviceItem:last-child {
+  .serviceImgWrap {
+    margin-top: 42px;
+
+    @include g.mq("lg") {
+      margin: 0;
+    }
+  }
+}
+.attention {
+  display: block;
+  font-size: g.rem(12);
+  margin-top: 6px;
+}
+
+.contactBtnWrap {
+  margin-top: 50px;
+  width: 239px;
+  margin-left: auto;
+  margin-right: auto;
+}
