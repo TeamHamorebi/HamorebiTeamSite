@@ -22,7 +22,7 @@
     z-index: g.zi(button-base);
   }
 
-  @include g.mq("lg") {
+  @media (hover: hover) {
     &:hover {
       transform: translate(-8px, -8px);
 

@@ -11,7 +11,7 @@
   overflow: hidden;
   transition: opacity 0.3s ease;
   z-index: g.zi(toTopBtn);
-//   opacity: 0;
+  //   opacity: 0;
 
   @include g.mq("3xl") {
     right: calc(50vw - 750px);
@@ -34,7 +34,7 @@
     z-index: g.zi(button-base);
   }
 
-  @include g.mq("lg") {
+  @media (hover: hover) {
     &:hover::after {
       opacity: 1;
     }
@@ -60,9 +60,13 @@
     margin: 14.65px auto 0;
   }
 }
-@include g.mq("lg") {
+@media (hover: hover) {
   .toTopLink:hover .toTopArrowWrap {
-    transform: translateY(-5px);
+    transform: translateY(-20px);
+
+    @include g.mq("lg") {
+      transform: translateY(-5px);
+    }
   }
 }
 

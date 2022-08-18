@@ -42,7 +42,6 @@
   @extend %cardRadius;
   box-shadow: 0 0 10px 2px g.$color-card-shadow;
   overflow: hidden;
-  // border: 2px solid g.$color-card-border;
 
   @include g.mq("lg") {
     max-width: 520px;
@@ -70,7 +69,6 @@
 .serviceNameWrap {
   background-color: g.$color-cardTitle-background;
   height: 68px;
-  border: 2px solid g.$color-card-border;
 }
 .serviceName {
   color: g.$color-font-cardTitle;

@@ -115,8 +115,10 @@
   color: g.$color-font-globalFooter;
   transition: color 0.3s ease;
 
-  &:hover {
-    color: g.$color-font-globalFooter-hover;
+  @media (hover: hover) {
+    &:hover {
+      color: g.$color-font-globalFooter-hover;
+    }
   }
 }
 
