@@ -62,9 +62,9 @@
 }
 @media (hover: hover) {
   .toTopLink:hover .toTopArrowWrap {
-    transform: translateY(-20px);
+    transform: translateY(-70%);
 
-    @include g.mq("lg") {
+    @include g.mq("xl") {
       transform: translateY(-5px);
     }
   }
