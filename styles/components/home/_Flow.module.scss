@@ -1,2 +1,236 @@
 @use "../../global" as g;
 @use "sass:math";
+
+.flow {
+  @extend %sectionLayout;
+}
+
+.list {
+  margin-top: 54px;
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  position: relative;
+  min-height: 280px;
+  padding-left: 98px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  gap: 9.6px 15px;
+
+  @include g.mq("sm") {
+    min-height: 230px;
+  }
+
+  @include g.mq("md") {
+    min-height: 180px;
+    justify-content: space-between;
+    padding-left: 100px;
+  }
+
+  @include g.mq("lg") {
+    min-height: 160px;
+  }
+
+  // flow icon
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 80px;
+    height: 100%;
+    border-bottom-left-radius: 100vw;
+    border-bottom-right-radius: 100vw;
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    font-size: g.rem(28);
+    font-weight: 800;
+    font-family: g.$font-family--number;
+  }
+  &:nth-child(-n + 3) {
+    &::after {
+      color: g.$color-font-flowIcon-number-orange;
+    }
+  }
+  &:nth-child(n + 4) {
+    &::after {
+      color: g.$color-font-flowIcon-number-white;
+    }
+  }
+  &:not(:first-child) {
+    margin-top: -39px;
+    padding-top: 27px;
+    &::after {
+      top: calc(50% + 16px);
+    }
+  }
+  &:first-child {
+    z-index: g.zi(flowIcon1);
+    &::before {
+      background-color: g.$color-flowIcon-background1;
+    }
+    &::after {
+      content: "1";
+    }
+  }
+  &:nth-child(2) {
+    z-index: g.zi(flowIcon2);
+    &::before {
+      background-color: g.$color-flowIcon-background2;
+    }
+    &::after {
+      content: "2";
+    }
+  }
+  &:nth-child(3) {
+    z-index: g.zi(flowIcon3);
+    &::before {
+      background-color: g.$color-flowIcon-background3;
+    }
+    &::after {
+      content: "3";
+    }
+  }
+  &:nth-child(4) {
+    z-index: g.zi(flowIcon4);
+    &::before {
+      background-color: g.$color-flowIcon-background4;
+    }
+    &::after {
+      content: "4";
+    }
+  }
+  &:nth-child(5) {
+    z-index: g.zi(flowIcon5);
+    &::before {
+      background-color: g.$color-flowIcon-background5;
+    }
+    &::after {
+      content: "5";
+    }
+  }
+  &:nth-child(6) {
+    z-index: g.zi(flowIcon6);
+    &::before {
+      background-color: g.$color-flowIcon-background6;
+    }
+    &::after {
+      content: "6";
+    }
+  }
+  &:nth-child(7) {
+    z-index: g.zi(flowIcon7);
+    &::before {
+      background-color: g.$color-flowIcon-background7;
+    }
+    &::after {
+      content: "7";
+    }
+  }
+  &:nth-child(8) {
+    z-index: g.zi(flowIcon8);
+    &::before {
+      background-color: g.$color-flowIcon-background8;
+    }
+    &::after {
+      content: "8";
+    }
+  }
+  &:nth-child(9) {
+    z-index: g.zi(flowIcon9);
+    &::before {
+      background-color: g.$color-flowIcon-background9;
+    }
+    &::after {
+      content: "9";
+    }
+  }
+}
+
+.itemName {
+  font-weight: 500;
+  font-size: clamp(g.rem(20), 3vw, g.rem(28));
+}
+// 「無料」アイコン
+.item:nth-child(-n + 3) {
+  .itemName {
+    position: relative;
+    padding-left: 48px;
+
+    &::before {
+      content: "無料";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: inline-block;
+      width: 44px;
+      height: 26.4px;
+      line-height: 26.4px;
+      text-align: center;
+      border-radius: 100vw;
+      background-color: g.$color-item-freeIcon-background;
+      font-size: g.rem(16);
+      color: g.$color-font-item-freeIcon;
+    }
+  }
+}
+
+.itemDescription {
+  width: 100%;
+  max-width: 586px;
+  font-weight: 500;
+  line-height: math.div(23.17, 16);
+
+  @include g.mq("md") {
+    width: calc(100% - 280px);
+  }
+}
+
+// contact link
+.contactLink {
+  position: relative;
+  display: inline-block;
+  color: g.$color-fontAndUnderline-item-contactLink;
+  line-height: inherit;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: g.$color-fontAndUnderline-item-contactLink;
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    &:hover::after {
+      opacity: 0;
+    }
+  }
+}
+
+// contact button
+.btnWrap {
+  margin-top: 50px;
+  width: 239px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include g.mq("md") {
+    margin-top: 80px;
+  }
+}
