@@ -68,7 +68,7 @@ export default function Flow() {
   ];
 
   return (
-    <section className={styles.flow}>
+    <section id="work-flow" className={styles.flow}>
       <SectionTitle title={"制作の流れ"} />
       <ul className={styles.list}>
         {data.map((value, index) => {
