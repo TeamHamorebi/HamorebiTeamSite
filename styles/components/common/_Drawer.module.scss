@@ -74,6 +74,12 @@
     outline: none;
   }
 
+  @media (hover: hover) {
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
   span {
     display: inline-block;
     box-sizing: border-box;
@@ -160,7 +166,6 @@
 }
 
 .drawerItems {
-//   width: ((320px - 110px) / 320px * 100%);
   width: 210px;
   margin-left: auto;
   margin-right: auto;
@@ -181,6 +186,15 @@
   font-weight: 500;
   font-size: g.rem(24);
   color: g.$color-font-drawerMenu;
+  display: inline-block;
+  width: 100%;
+  transition: color 0.3s ease;
+      
+  @media (hover: hover) {
+    &:hover {
+      color: g.$color-font-hover-drawerMenu;
+    }
+  }
 }
 
 .drawerBtnWrap {
@@ -203,6 +217,7 @@
   z-index: g.zi(overlay);
   opacity: 0;
   transition: opacity 0.5s;
+  cursor: pointer;
 
   &.isOpen {
     width: 100%;
