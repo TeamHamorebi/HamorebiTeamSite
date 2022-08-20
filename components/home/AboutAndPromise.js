@@ -42,7 +42,6 @@ export default function AboutAndPromise() {
 
   return (
     <section id="about" className={styles.aboutAndPromise}>
-      {/* contents wrap */}
       <div className={styles.contentsWrap}>
         <p className={styles.textTop}>
           私達はWeb制作を承る
@@ -62,7 +61,7 @@ export default function AboutAndPromise() {
           解決のお手伝いをします
         </p>
       </div>
-      {/* /contents wrap */}
+
       {/* promise */}
       <h2 className={styles.promiseTitle}>
         Hamorebiの

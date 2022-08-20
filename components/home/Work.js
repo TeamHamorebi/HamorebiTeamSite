@@ -13,11 +13,13 @@ export default function Work() {
           </>
         }
       />
+
       <p className={styles.lead}>
         ご相談・ご依頼 お待ちしております
         <br />
         どうぞお気軽にお問い合わせください
       </p>
+
       {/* work status list */}
       <ul className={styles.workStatusList}>
         <WorkStatusItem date={"thisMonth"} />
@@ -25,6 +27,7 @@ export default function Work() {
         <WorkStatusItem date={"comeAgainMonth"} />
       </ul>
       {/* /work status list */}
+
       <Button
         styles={styles.workBtnWrap}
         text={"お問い合わせをする"}

@@ -19,7 +19,6 @@ export default function TeamName() {
             というチームの思いが込められております
           </span>
         </p>
-
       </div>
     </section>
   );

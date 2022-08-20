@@ -70,6 +70,7 @@ export default function Flow() {
   return (
     <section id="work-flow" className={styles.flow}>
       <SectionTitle title={"制作の流れ"} />
+
       <ul className={styles.list}>
         {data.map((value, index) => {
           return (
@@ -80,11 +81,12 @@ export default function Flow() {
           );
         })}
       </ul>
+
       <Button
         styles={styles.btnWrap}
         text={"お問い合わせをする"}
         link={"#contact"}
-      ></Button>
+      />
     </section>
   );
 }
