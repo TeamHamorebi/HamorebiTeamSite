@@ -26,6 +26,7 @@ export default function Mv() {
           {/* /pc image */}
         </div>
         {/* /image wrap */}
+
         {/* contents */}
         <div className={styles.mvContentsWrap}>
           <div className={styles.mvTitleWrap}>
@@ -44,7 +45,7 @@ export default function Mv() {
             styles={styles.mvBtnWrap}
             text={"お問い合わせをする"}
             link={"/#contact"}
-          ></Button>
+          />
         </div>
         {/* /contents */}
       </div>

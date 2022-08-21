@@ -87,7 +87,7 @@ export default function Drawer(props) {
               styles={styles.drawerBtnWrap}
               text={"お問い合わせをする"}
               link={"/#contact"}
-            ></Button>
+            />
           </div>
           {/* /contact btn */}
         </nav>

@@ -7,6 +7,7 @@ import Work from "../components/home/Work";
 import ProductionAchievements from "../components/home/ProductionAchievements";
 import ServiceAndPrice from "../components/home/ServiceAndPrice";
 import Flow from "../components/home/Flow";
+import Member from "../components/home/Member";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <ProductionAchievements />
       <ServiceAndPrice />
       <Flow />
+      <Member />
       <Link href="/hoge/hoge">
         <a>this page!</a>
       </Link>

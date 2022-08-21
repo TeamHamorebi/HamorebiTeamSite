@@ -8,6 +8,7 @@ body {
   font-family: g.$font-family--base;
   color: g.$color-font-main;
   font-weight: 400;
+  background-color: g.$color-body-background;
 }
 
 img {
@@ -20,20 +21,3 @@ a {
   text-decoration: none;
   transition: all 0.3s ease 0s;
 }
-
-// section {
-//   padding-top: 70px; //適宜指定
-//   padding-bottom: 30px; //適宜指定
-
-//   // 768px以上
-//   @include g.mq("md") {
-//     padding-top: 90px; //適宜指定
-//     padding-bottom: 50px; //適宜指定
-//   }
-
-//   // 1024px以上
-//   @include g.mq("lg") {
-//     padding-top: 100px; //適宜指定
-//     padding-bottom: 120px; //適宜指定
-//   }
-// }

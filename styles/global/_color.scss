@@ -7,6 +7,9 @@
 /*=======================
 common
 ====================== */
+// body
+$color-body-background: p.$palette-white;
+
 // header
 $color-globalHeader-background: p.$palette-white;
 $color-globalHeader-hover-underBar: p.$palette-orangePeel;
@@ -78,4 +81,9 @@ $color-flowIcon-background9: p.$palette-tangerine;
 $color-font-flowIcon-number-orange: p.$palette-orangePeel;
 $color-font-flowIcon-number-white: p.$palette-white;
 
+// member
+$color-member-lead-marker: p.$palette-transparentOrangePeel-8;
+$color-memberItem-shadow: p.$palette-transparentCodGray-15;
+$color-memberItem-background: p.$palette-white;
+$color-font-memberName-hover: p.$palette-orangePeel;
 // work details

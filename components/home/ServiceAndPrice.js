@@ -61,7 +61,7 @@ export default function ServiceAndPrice() {
         <br />
         まずはぜひ一度お問い合わせくださいませ
       </p>
-      {/* list */}
+
       <ul className={styles.serviceList}>
         {/* item (site) */}
         <li className={styles.serviceItem}>
@@ -161,14 +161,12 @@ export default function ServiceAndPrice() {
         })}
         {/* /item (other) */}
       </ul>
-      {/* /list */}
-      {/* contact btn */}
+
       <Button
         styles={styles.contactBtnWrap}
         text={"お問い合わせをする"}
         link={"#contact"}
-      ></Button>
-      {/* /contact btn */}
+      />
     </section>
   );
 }
