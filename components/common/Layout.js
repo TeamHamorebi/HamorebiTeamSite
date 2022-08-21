@@ -37,6 +37,7 @@ export default function Layout({ children }) {
       <Header list={navItems} />
       <Drawer list={navItems} />
       <ToTopButton />
+
       <main id="top" className={styles.main}>
         {children}
       </main>

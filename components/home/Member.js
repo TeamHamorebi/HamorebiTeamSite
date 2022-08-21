@@ -109,7 +109,7 @@ export default function Member() {
   ];
 
   return (
-    <section className={styles.member}>
+    <section id="member" className={styles.member}>
       <SectionTitle title={"チームメンバー"} />
 
       <div className={styles.leadWrap}>
