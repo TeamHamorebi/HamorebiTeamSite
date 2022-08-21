@@ -115,9 +115,15 @@ export default function Member() {
       <div className={styles.leadWrap}>
         <p className={styles.leadTop}>
           Hamorebiは
+          <br />
           <span className={styles.leadBoldface}>
-            ディレクター、エンジニア、デザイナー の８名
+            ディレクター、エンジニア、
           </span>
+          <br className={styles.leadBoldfaceBr} />
+          <span className={styles.leadBoldface}>
+            デザイナー <span className={styles.leadSmallFace}>の</span>８名
+          </span>
+          <br />
           で制作を行っております
         </p>
         <p className={styles.leadBottom}>
@@ -140,7 +146,14 @@ export default function Member() {
               </div>
               <p className={styles.memberName}>
                 {value.portfolioLink !== "" ? (
-                  <a href={value.portfolioLink}>{value.memberName}</a>
+                  <a
+                    className={styles.portfolioLink}
+                    href={value.portfolioLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {value.memberName}
+                  </a>
                 ) : (
                   value.memberName
                 )}
@@ -157,28 +170,48 @@ export default function Member() {
                 <ul className={styles.snsList}>
                   {value.twitterUrl !== "" ? (
                     <li className={styles.snsItem}>
-                      <a href={value.twitterUrl}>
+                      <a
+                        className={styles.snsItemLink}
+                        href={value.twitterUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <img src="img/top/twitter-icon.png" />
                       </a>
                     </li>
                   ) : undefined}
                   {value.instagramUrl !== "" ? (
                     <li className={styles.snsItem}>
-                      <a href={value.instagramUrl}>
+                      <a
+                        className={styles.snsItemLink}
+                        href={value.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <img src="img/top/instagram-icon.png" />
                       </a>
                     </li>
                   ) : undefined}
                   {value.facebookUrl !== "" ? (
                     <li className={styles.snsItem}>
-                      <a href={value.facebookUrl}>
+                      <a
+                        className={styles.snsItemLink}
+                        href={value.facebookUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <img src="img/top/facebook-icon.png" />
                       </a>
                     </li>
                   ) : undefined}
                   {value.mailAddress !== "" ? (
                     <li className={styles.snsItem}>
-                      <a href={value.mailAddress}>
+                      <a
+                        className={styles.snsItemLink}
+                        href={`mailto:${value.mailAddress}?subject=はもれびサイトからのお問い合わせ&body=%E4%B8%8B%E8%A8%98%E9%A0%85%E7%9B%AE%E3%82%92%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E3%81%94%E8%A8%98%E5%85%A5%E3%81%AE%E4%B8%8A%E3%80%81%E9%80%81%E4%BF%A1%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0D%0A%0D%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0D%0A%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%0D%0A%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0D%0A%0D%0A%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E5%86%85%E5%AE%B9%EF%BC%9A%0D%0A%0D%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <img src="img/top/mail-icon.png" />
                       </a>
                     </li>
@@ -192,7 +225,7 @@ export default function Member() {
       </ul>
 
       <Button
-        styles={styles.BtnWrap}
+        styles={styles.btnWrap}
         text={"お問い合わせをする"}
         link={"#contact"}
       />
