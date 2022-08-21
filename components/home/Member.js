@@ -37,7 +37,7 @@ export default function Member() {
       positionName: "フロントエンジニア",
       tradeName: "",
       skills: "HTML / CSS(Sass) / JavaScript / React / Next.js / GitHub etc…",
-      twitterUrl: "https://twitter.com/tanusen",
+      twitterUrl: "https://twitter.com/tanusen17",
       instagramUrl: "https://www.instagram.com/asukahosen",
       facebookUrl: "",
       mailAddress: "araaiko.122@gmail.com",
