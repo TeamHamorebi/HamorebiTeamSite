@@ -1,6 +1,8 @@
 import styles from "../../styles/components/home/_QandA.module.scss";
 import SectionTitle from "../common/SectionTitle";
 import Button from "../common/Button";
+import { useState } from "react";
+// import { useEffect } from "react";
 
 export default function QandA() {
   const data = [
@@ -32,7 +34,20 @@ export default function QandA() {
       answer:
         "はい、承ります。デザインのみを納品してコーディングは他社様、またはあらかじめご用意いただいたデザインでコーディングのみを承るなど、ご要望に応じて柔軟にご対応いたします。",
     },
+    {
+      question: "どの地域からでも依頼できますか？",
+      answer:
+        "はい、承ります。Hamorebiは全国対応です。Zoomなどのアプリケーションを使用し、オンラインでご相談やお話し合いを行い、対面と同じようなご対応をさせていただきますので、どうぞ安心してお問い合わせくださいませ。",
+    },
   ];
+
+  const [openAnswer, setOpenAnswer] = useState(100);
+  const answerFunction = (index) => {
+    if (openAnswer === index) {
+      return setOpenAnswer(100);
+    }
+    setOpenAnswer(index);
+  };
 
   return (
     <section id="qa" className={styles.qa}>
@@ -42,7 +57,14 @@ export default function QandA() {
         {data.map((value, index) => {
           return (
             <div key={index} className={styles.item}>
-              <dt className={styles.itemHead}>{value.question}</dt>
+              <dt
+                className={`${styles.itemHead} ${
+                  openAnswer === index ? styles.isActive : undefined
+                }`}
+                onClick={() => answerFunction(index)}
+              >
+                {value.question}
+              </dt>
               <dd className={styles.itemBody}>{value.answer}</dd>
             </div>
           );
@@ -50,9 +72,12 @@ export default function QandA() {
       </dl>
 
       <p className={styles.contactLead}>
-        その他、ご質問やご不明な点がございましたら
-        <br className={styles.contactLeadBr} />
-        こちらのボタンよりお気軽にお問い合わせくださいませ
+              その他、ご質問やご不明な点が<br className={styles.contactLeadBrSP} />
+              ございましたら
+        <br className={styles.contactLeadBrPC} />
+              こちらの<br className={styles.contactLeadBrSP} />
+              ボタンよりお気軽に<br className={styles.contactLeadBrSP} />
+              お問い合わせくださいませ
       </p>
 
       <Button

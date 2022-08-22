@@ -1,2 +1,121 @@
 @use "../../global" as g;
 @use "sass:math";
+
+.qa {
+  @extend %sectionLayout;
+
+  background: transparent url(/img/top/qa-background.jpg) no-repeat bottom 0
+    center/ 100% auto;
+
+  @include g.mq("3xl") {
+    background: transparent url(/img/top/qa-background.jpg) no-repeat bottom
+      calc(-50vw + 650px) center/ 100% auto;
+  }
+}
+
+.list {
+  margin-top: 54px;
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.item {
+  &:not(:first-child) {
+    margin-top: 20px;
+
+    @include g.mq("md") {
+      margin-top: 30px;
+    }
+  }
+}
+
+.itemHead,
+.itemBody {
+  font-size: clamp(g.rem(16), 2.5vw, g.rem(24));
+  transition: all 0.3s;
+}
+.itemHead {
+  padding: 16px 16px 16px 52px;
+  background-color: g.$color-qa-itemHead-background;
+  font-weight: 500;
+  line-height: math.div(34.75, 24);
+  position: relative;
+  cursor: pointer;
+
+  @include g.mq("lg") {
+    padding: 16px 50px 16px 133px;
+  }
+
+  // 矢印
+  &::before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 19px;
+    background: transparent url(/img/top/qa_arrow-icon.svg) no-repeat center
+      center/contain;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%) rotate(180deg);
+    transition: all 0.3s;
+
+    @include g.mq("lg") {
+      left: 50px;
+    }
+  }
+}
+.itemBody {
+  padding: 0 16px 0 52px;
+  line-height: math.div(38.4, 24);
+  background-color: g.$color-qa-itemBody-background;
+  height: 0;
+  overflow: hidden;
+
+  @include g.mq("lg") {
+    padding: 0 50px 0 133px;
+  }
+}
+// アコーディオンが開いた時
+.itemHead.isActive {
+  // 矢印
+  &::before {
+    transform: rotate(0);
+    top: 35%;
+  }
+
+  & + .itemBody {
+    padding: 16px 16px 16px 52px;
+    height: auto;
+    transition: all 0.4s;
+
+    @include g.mq("lg") {
+      padding: 16px 50px 16px 133px;
+    }
+  }
+}
+
+.contactLead {
+  margin-top: 50px;
+  text-align: center;
+  line-height: math.div(25.6, 16);
+}
+.contactLeadBrPC {
+  display: none;
+  @include g.mq("sm") {
+    display: block;
+  }
+}
+.contactLeadBrSP {
+  @include g.mq("sm") {
+    display: none;
+  }
+}
+
+.btnWrap {
+  margin-top: 50px;
+  width: 239px;
+  margin-left: auto;
+  margin-right: auto;
+}
