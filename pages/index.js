@@ -9,6 +9,7 @@ import ServiceAndPrice from "../components/home/ServiceAndPrice";
 import Flow from "../components/home/Flow";
 import Member from "../components/home/Member";
 import QandA from "../components/home/QandA";
+import Contact from "../components/home/Contact";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Flow />
       <Member />
       <QandA />
+      <Contact />
       <Link href="/hoge/hoge">
         <a>this page!</a>
       </Link>
