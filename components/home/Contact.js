@@ -135,7 +135,7 @@ export default function Contact() {
                 }`}
                 onChange={bgChange}
               />
-              <p className={`${styles.placeholderText} jsPlaceholder`}>
+              <p className={styles.placeholderText}>
                 新しく飲食店をオープンするのでホームページを作りたい
                 <br className={styles.placeholderTextareaBr} />
                 ネットショップを開店したい

@@ -17,19 +17,25 @@
 }
 
 .form {
-  margin-top: 50px;
+  margin-top: 26px;
   width: 100%;
   max-width: 616px;
   margin-left: auto;
   margin-right: auto;
+
+  @include g.mq("sm") {
+    margin-top: 50px;
+  }
 }
 .formItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include g.mq("sm") {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  &:nth-last-child(-n + 2) {
-    align-items: flex-start;
+    &:nth-last-child(-n + 2) {
+      align-items: flex-start;
+    }
   }
 
   &:not(:first-child) {
@@ -39,9 +45,12 @@
 
 .formLabel {
   font-weight: 500;
-  width: 200px;
   display: flex;
-  justify-content: space-between;
+
+  @include g.mq("sm") {
+    width: 200px;
+    justify-content: space-between;
+  }
 }
 .optionalLabel,
 .requiredLabel {
@@ -53,6 +62,7 @@
     text-align: center;
     border-radius: 2px;
     color: g.$color-font-itemLabel;
+    margin-left: 8px;
   }
 }
 .optionalLabel {
@@ -71,7 +81,12 @@
 .formInputWrap,
 .formRadioWrap,
 .formTextareaWrap {
-  width: calc(100% - 216px);
+  width: 100%;
+  margin-top: 9px;
+  @include g.mq("sm") {
+    width: calc(100% - 216px);
+    margin-top: 0;
+  }
 
   /* ▼自動補完時の背景色を変更する */
   input:-webkit-autofill {
@@ -124,10 +139,14 @@
 .textarea {
   line-height: math.div(23.17, 16);
   min-height: 200px;
-  padding: 13px 16px;
+  padding: 8px;
   background-color: transparent;
   position: relative;
   z-index: g.zi(textarea-base);
+
+  @include g.mq("sm") {
+    padding: 13px 16px;
+  }
 
   &.isActive {
     background-color: g.$color-itemInput-background;
@@ -137,13 +156,17 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 16px 29px 16px 16px;
+  padding: 8px;
   line-height: math.div(23.17, 16);
   color: g.$color-font-placeholder;
   background-color: g.$color-itemInput-background;
   z-index: g.zi(textarea-placeholder);
   width: 100%;
   min-height: 200px;
+
+  @include g.mq("sm") {
+    padding: 16px 29px 16px 16px;
+  }
 }
 .placeholderTextareaBr {
   content: "";
@@ -239,4 +262,70 @@
       }
     }
   }
+}
+
+//contact btn
+.contactBtnWrap {
+  margin-top: 25px;
+  width: 319px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+
+  @include g.mq("sm") {
+    margin-top: 50px;
+  }
+
+  // 矢印に触れてもカーソルがポインタのままであるように
+  cursor: pointer;
+
+  @extend %buttonArrow;
+  &::after {
+    z-index: g.zi(button-text);
+    right: 30px;
+  }
+
+  @media (hover: hover) {
+    transition: transform 0.3s cubic-bezier(0.2, 0.675, 0.626, 1);
+
+    &:hover {
+      transform: translate(-8px, -8px);
+
+      // 矢印に触れても背景色が変わるように
+      .contactBtnDecoration::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+.contactBtn {
+  width: 100%;
+  font-size: g.rem(16);
+  font-weight: 400;
+  font-family: g.$font-family--base;
+  color: g.$color-font-btn;
+  position: relative;
+  z-index: g.zi(button-text);
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 13px 65px 13px 30px;
+
+  @media (hover: hover) {
+    &:hover {
+      + .contactBtnDecoration::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.contactBtnDecoration {
+  @extend %button;
+  @extend %buttonDecoration;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: g.zi(button-hover);
 }
