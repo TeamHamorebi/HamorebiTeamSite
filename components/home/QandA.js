@@ -2,7 +2,7 @@ import styles from "../../styles/components/home/_QandA.module.scss";
 import SectionTitle from "../common/SectionTitle";
 import Button from "../common/Button";
 import { useState } from "react";
-// import { useEffect } from "react";
+import QandAItem from "./QandAItem";
 
 export default function QandA() {
   const data = [
@@ -69,15 +69,22 @@ export default function QandA() {
             </div>
           );
         })}
+
+        <QandAItem question={"これはテストです"} answer={"回答です"} />
+        <QandAItem question={"これはテストです"} answer={"回答です"} />
+        <QandAItem question={"これはテストです"} answer={"回答です"} />
       </dl>
 
       <p className={styles.contactLead}>
-              その他、ご質問やご不明な点が<br className={styles.contactLeadBrSP} />
-              ございましたら
+        その他、ご質問やご不明な点が
+        <br className={styles.contactLeadBrSP} />
+        ございましたら
         <br className={styles.contactLeadBrPC} />
-              こちらの<br className={styles.contactLeadBrSP} />
-              ボタンよりお気軽に<br className={styles.contactLeadBrSP} />
-              お問い合わせくださいませ
+        こちらの
+        <br className={styles.contactLeadBrSP} />
+        ボタンよりお気軽に
+        <br className={styles.contactLeadBrSP} />
+        お問い合わせくださいませ
       </p>
 
       <Button
