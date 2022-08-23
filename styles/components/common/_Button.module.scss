@@ -1,26 +1,9 @@
 @use "../../global" as g;
 
 .btn {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  padding: 16.5px 17.5px 16.5px 30px;
-  border-radius: 100vh;
-  color: g.$color-font-btn;
-  font-weight: 500;
-  position: relative;
-  transition: transform 0.3s cubic-bezier(0.2, 0.675, 0.626, 1);
-
   @extend %button;
-  &::before {
-    background: linear-gradient(
-      87.73deg,
-      g.$color-btn-background-1 4.09%,
-      g.$color-btn-background-2 96.35%
-    );
-    z-index: g.zi(button-base);
-  }
+  @extend %buttonDecoration;
+  position: relative;
 
   @media (hover: hover) {
     &:hover {
@@ -37,16 +20,8 @@
   @extend %buttonContents;
 
   // 矢印
+  @extend %buttonArrow;
   &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 50%;
     right: -28px;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 15px;
-    background: transparent url(../../../public/img/common/arrow-icon.svg)
-      no-repeat center center/contain;
   }
 }

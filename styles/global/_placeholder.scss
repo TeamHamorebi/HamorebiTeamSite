@@ -2,6 +2,27 @@
 @use "./mediaQuery" as m;
 @use "./z-index" as z;
 
+// button
+%buttonDecoration {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 16.5px 17.5px 16.5px 30px;
+  border-radius: 100vh;
+  color: c.$color-font-btn;
+  font-weight: 500;
+  transition: transform 0.3s cubic-bezier(0.2, 0.675, 0.626, 1);
+
+  &::before {
+    background: linear-gradient(
+      87.73deg,
+      c.$color-btn-background-1 4.09%,
+      c.$color-btn-background-2 96.35%
+    );
+    z-index: z.zi(button-base);
+  }
+}
 %button {
   &::before,
   &::after {
@@ -20,12 +41,25 @@
     z-index: z.zi(button-hover);
   }
 }
-
 %buttonContents {
   position: relative;
   z-index: z.zi(button-text);
 }
+%buttonArrow {
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 15px;
+    background: transparent url(/img/common/arrow-icon.svg)
+      no-repeat center center/contain;
+  }
+}
 
+// section
 %sectionLayout {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -38,6 +72,7 @@
   }
 }
 
+// card
 %cardRadius {
   border-radius: 20px 20px 60px 20px;
 }
