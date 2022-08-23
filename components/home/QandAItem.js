@@ -1,4 +1,4 @@
-import styles from "../../styles/components/home/_QandA.module.scss";
+import styles from "../../styles/components/home/_QandAItem.module.scss";
 import { useState } from "react";
 
 export default function QandAItem(props) {
