@@ -1,2 +1,48 @@
 @use "../../global" as g;
 @use "sass:math";
+
+.contact {
+  @extend %sectionLayout;
+}
+
+.lead {
+  margin-top: 54px;
+  text-align: center;
+  line-height: math.div(25.6, 16);
+}
+
+.form {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 616px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formLabel {
+  font-weight: 500;
+  position: relative;
+  width: 200px;
+}
+.optionalLabel,
+.requiredLabel {
+  &::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    position: absolute;
+    right: 0;
+    background-color: #000;
+  }
+}
+
+.formInput,
+.formRadio,
+.formTextarea {
+    width: calc(100% - 216px);
+}
