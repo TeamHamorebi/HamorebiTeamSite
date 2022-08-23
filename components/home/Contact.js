@@ -3,6 +3,7 @@ import SectionTitle from "../common/SectionTitle";
 import { useState, useRef } from "react";
 
 export default function Contact() {
+  // テキストエリアのplaceholderの改行対応
   const textarea = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
@@ -130,7 +131,7 @@ export default function Contact() {
                 id="textarea"
                 name="dummy"
                 placeholder=""
-                className={`${styles.textarea} jsTextarea ${
+                className={`${styles.textarea} ${
                   isActive ? styles.isActive : undefined
                 }`}
                 onChange={bgChange}

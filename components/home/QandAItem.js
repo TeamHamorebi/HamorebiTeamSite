@@ -2,6 +2,7 @@ import styles from "../../styles/components/home/_QandAItem.module.scss";
 import { useState } from "react";
 
 export default function QandAItem(props) {
+  // アコーディオンの開閉
   const [openAnswer, setOpenAnswer] = useState(false);
   const answerFunction = () => {
     setOpenAnswer(!openAnswer);
