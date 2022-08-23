@@ -1,14 +1,16 @@
 import styles from "../../styles/components/home/_Contact.module.scss";
 import SectionTitle from "../common/SectionTitle";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function Contact() {
   // テキストエリアのplaceholderの改行対応
-  const textarea = useRef(null);
   const [isActive, setIsActive] = useState(false);
 
   const bgChange = (e) => {
     if (e.target.value.length !== 0) {
+      if (isActive === true) {
+        return;
+      }
       setIsActive(true);
     } else {
       setIsActive(false);
@@ -127,7 +129,6 @@ export default function Contact() {
             </dt>
             <dd className={styles.formTextareaWrap}>
               <textarea
-                ref={textarea}
                 id="textarea"
                 name="dummy"
                 placeholder=""
