@@ -1,7 +1,19 @@
 import styles from "../../styles/components/home/_Contact.module.scss";
 import SectionTitle from "../common/SectionTitle";
+import { useState, useRef } from "react";
 
 export default function Contact() {
+  const textarea = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+
+  const bgChange = (e) => {
+    if (e.target.value.length !== 0) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  };
+
   return (
     <section id="contact" className={styles.contact}>
       <SectionTitle title={"お問い合わせ"} />
@@ -21,14 +33,15 @@ export default function Contact() {
           {/* 社名 */}
           <div className={styles.formItem}>
             <dt className={`${styles.formLabel} ${styles.optionalLabel}`}>
-              <label htmlFor="companyName">会社名</label>
+              <label htmlFor="companyName">貴社名</label>
             </dt>
-            <dd className={styles.formInput}>
+            <dd className={styles.formInputWrap}>
               <input
                 id="companyName"
                 type="text"
                 name="dummy"
                 placeholder="株式会社ハモレビ"
+                className={styles.input}
               />
             </dd>
           </div>
@@ -39,13 +52,14 @@ export default function Contact() {
             <dt className={`${styles.formLabel} ${styles.requiredLabel}`}>
               <label htmlFor="name">お名前</label>
             </dt>
-            <dd className={styles.formInput}>
+            <dd className={styles.formInputWrap}>
               <input
                 id="name"
                 type="text"
                 name="dummy"
                 required
                 placeholder="山田 太郎"
+                className={styles.input}
               />
             </dd>
           </div>
@@ -56,13 +70,14 @@ export default function Contact() {
             <dt className={`${styles.formLabel} ${styles.requiredLabel}`}>
               <label htmlFor="mail">メールアドレス</label>
             </dt>
-            <dd className={styles.formInput}>
+            <dd className={styles.formInputWrap}>
               <input
                 id="mail"
                 type="email"
                 name="dummy"
                 required
                 placeholder="000000000@gmail.com"
+                className={styles.input}
               />
             </dd>
           </div>
@@ -73,7 +88,7 @@ export default function Contact() {
             <dt className={`${styles.formLabel} ${styles.optionalLabel}`}>
               <label>お問い合わせの種類</label>
             </dt>
-            <dd className={styles.formRadio}>
+            <dd className={styles.formRadioWrap}>
               <label>
                 <input
                   type="radio"
@@ -104,16 +119,27 @@ export default function Contact() {
 
           {/* お問い合わせ内容 */}
           <div className={styles.formItem}>
-            <dt className={`${styles.formLabel} ${styles.optionalLabel}`}>
+            <dt
+              className={`${styles.formLabel} ${styles.optionalLabel} ${styles.formLabelTextarea}`}
+            >
               <label htmlFor="textarea">お問い合わせ内容</label>
             </dt>
-            <dd className={styles.formTextarea}>
-              <textarea id="textarea" name="dummy" placeholder="" />
-              <p className={styles.placeholderText}>
+            <dd className={styles.formTextareaWrap}>
+              <textarea
+                ref={textarea}
+                id="textarea"
+                name="dummy"
+                placeholder=""
+                className={`${styles.textarea} jsTextarea ${
+                  isActive ? styles.isActive : undefined
+                }`}
+                onChange={bgChange}
+              />
+              <p className={`${styles.placeholderText} jsPlaceholder`}>
                 新しく飲食店をオープンするのでホームページを作りたい
-                <br />
+                <br className={styles.placeholderTextareaBr} />
                 ネットショップを開店したい
-                <br />
+                <br className={styles.placeholderTextareaBr} />
                 コーポレートサイトの詳しい料金を知りたい
               </p>
             </dd>
@@ -123,7 +149,11 @@ export default function Contact() {
 
         {/* 送信ボタン */}
         <div className={`${styles.contactBtnWrap} ${styles.contactBtnArrow}`}>
-          <input type="submit" className={styles.contactBtn} value="この内容でお問い合わせをする" />
+          <input
+            type="submit"
+            className={styles.contactBtn}
+            value="この内容でお問い合わせをする"
+          />
           <div className={styles.contactBtnDecoration}></div>
         </div>
         {/* /送信ボタン */}

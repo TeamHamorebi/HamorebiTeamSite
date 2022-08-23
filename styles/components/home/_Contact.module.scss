@@ -3,6 +3,11 @@
 
 .contact {
   @extend %sectionLayout;
+  background: linear-gradient(
+    56.57deg,
+    g.$color-contactSection-background1 0%,
+    g.$color-contactSection-background2 100%
+  );
 }
 
 .lead {
@@ -21,28 +26,217 @@
 .formItem {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  &:nth-last-child(-n + 2) {
+    align-items: flex-start;
+  }
+
+  &:not(:first-child) {
+    margin-top: 24px;
+  }
 }
 
 .formLabel {
   font-weight: 500;
-  position: relative;
   width: 200px;
+  display: flex;
+  justify-content: space-between;
 }
 .optionalLabel,
 .requiredLabel {
-  &::before {
-    content: "";
+  &::after {
     width: 32px;
-    height: 32px;
+    height: 21px;
+    line-height: 21px;
+    font-size: g.rem(12);
+    text-align: center;
     border-radius: 2px;
-    position: absolute;
-    right: 0;
-    background-color: #000;
+    color: g.$color-font-itemLabel;
+  }
+}
+.optionalLabel {
+  &::after {
+    content: "任意";
+    background-color: g.$color-itemLabel-optional-background;
+  }
+}
+.requiredLabel {
+  &::after {
+    content: "必須";
+    background-color: g.$color-itemLabel-required-background;
   }
 }
 
-.formInput,
-.formRadio,
-.formTextarea {
-    width: calc(100% - 216px);
+.formInputWrap,
+.formRadioWrap,
+.formTextareaWrap {
+  width: calc(100% - 216px);
+
+  /* ▼自動補完時の背景色を変更する */
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px
+      g.$color-itemInput-autoCompletion-background inset;
+  }
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid g.$color-itemInput-border;
+  font-size: g.rem(16);
+  font-weight: 400;
+  font-family: g.$font-family--base;
+
+  &::placeholder {
+    color: g.$color-font-placeholder;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      outline: none;
+      border: 1px solid g.$color-itemInput-border-applicable;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid g.$color-itemInput-border-applicable;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid g.$color-itemInput-border-applicable;
+  }
+}
+.input {
+  padding: 3.5px 8px;
+}
+
+// textarea
+.formLabelTextarea {
+  margin-top: 7px;
+}
+.formTextareaWrap {
+  position: relative;
+}
+.textarea {
+  line-height: math.div(23.17, 16);
+  min-height: 200px;
+  padding: 13px 16px;
+  background-color: transparent;
+  position: relative;
+  z-index: g.zi(textarea-base);
+
+  &.isActive {
+    background-color: g.$color-itemInput-background;
+  }
+}
+.placeholderText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px 29px 16px 16px;
+  line-height: math.div(23.17, 16);
+  color: g.$color-font-placeholder;
+  background-color: g.$color-itemInput-background;
+  z-index: g.zi(textarea-placeholder);
+  width: 100%;
+  min-height: 200px;
+}
+.placeholderTextareaBr {
+  content: "";
+  display: block;
+  height: 16px;
+}
+
+// radio
+.formRadioWrap {
+  label {
+    display: block;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    /* オリジナルボタンを設置するため、paddingでテキストの左側にスペースを確保 */
+    + span {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 0 0 24px;
+      position: relative;
+
+      /* 擬似要素beforeとafterを共通でセット */
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 58%;
+        transform: translateY(-50%);
+      }
+
+      /* beforeをラジオボタンの枠として利用するため、デザインを適用する */
+      &::before {
+        background: g.$color-radio-background-base;
+        border: 1px solid g.$color-radio-border;
+        display: block;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 999px;
+      }
+
+      /* afterは枠の中のチェックマークとして利用するため、デザインを適用する
+    デフォルトのチェックマークはopacity:0で透明にしておく*/
+      &::after {
+        border: 1px solid transparent;
+        width: 8px;
+        height: 8px;
+        left: 1px;
+        background-color: g.$color-radio-background-check2;
+        border-radius: 999px;
+        transition: opacity 0.3s ease 0s;
+        opacity: 0;
+        border: 4px solid g.$color-radio-background-check1;
+      }
+    }
+
+    /* 非表示にしたデフォルトのラジオボタンにチェックが入ると、オリジナルボタンのチェックも透明を解除して表示する */
+    &:checked {
+      + span::after {
+        opacity: 1;
+      }
+    }
+
+    // ホバー、フォーカス時
+    @media (hover: hover) {
+      &:hover {
+        + span::before {
+          outline: none;
+          border: 1px solid g.$color-itemInput-border-applicable;
+        }
+      }
+    }
+    &:focus {
+      + span::before {
+        outline: none;
+        border: 1px solid g.$color-itemInput-border-applicable;
+      }
+    }
+    &:focus-visible {
+      + span::before {
+        outline: none;
+        border: 1px solid g.$color-itemInput-border-applicable;
+      }
+    }
+  }
 }
