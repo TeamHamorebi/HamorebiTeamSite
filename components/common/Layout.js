@@ -33,7 +33,7 @@ export default function Layout({ children }) {
   ];
 
   return (
-    <>
+    <div className={styles.contentsWrap}>
       <Header list={navItems} />
       <Drawer list={navItems} />
       <ToTopButton />
@@ -43,6 +43,6 @@ export default function Layout({ children }) {
       </main>
 
       <Footer list={navItems} />
-    </>
+    </div>
   );
 }
