@@ -24,8 +24,8 @@ export default function Home() {
       <Member />
       <QandA />
       <Contact />
-      <Link href="/hoge/hoge">
-        <a>this page!</a>
+      <Link href="/work-details/work-details">
+        <a>制作実績ページのリンク（microCMSと連携したら削除するよ）</a>
       </Link>
     </Layout>
   );
