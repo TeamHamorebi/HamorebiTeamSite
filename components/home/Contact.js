@@ -128,22 +128,24 @@ export default function Contact() {
               <label htmlFor="textarea">お問い合わせ内容</label>
             </dt>
             <dd className={styles.formTextareaWrap}>
-              <textarea
-                id="textarea"
-                name="dummy"
-                placeholder=""
-                className={`${styles.textarea} ${
-                  isActive ? styles.isActive : undefined
-                }`}
-                onChange={bgChange}
-              />
-              <p className={styles.placeholderText}>
-                新しく飲食店をオープンするのでホームページを作りたい
-                <br className={styles.placeholderTextareaBr} />
-                ネットショップを開店したい
-                <br className={styles.placeholderTextareaBr} />
-                コーポレートサイトの詳しい料金を知りたい
-              </p>
+              <div className={styles.dedicatedTextareaAndPlaceholderWrap}>
+                <textarea
+                  id="textarea"
+                  name="dummy"
+                  placeholder=""
+                  className={`${styles.textarea} ${
+                    isActive ? styles.isActive : undefined
+                  }`}
+                  onChange={bgChange}
+                />
+                <p className={styles.placeholderText}>
+                  新しく飲食店をオープンするのでホームページを作りたい
+                  <br className={styles.placeholderTextareaBr} />
+                  ネットショップを開店したい
+                  <br className={styles.placeholderTextareaBr} />
+                  コーポレートサイトの詳しい料金を知りたい
+                </p>
+              </div>
             </dd>
           </div>
           {/* /お問い合わせ内容 */}

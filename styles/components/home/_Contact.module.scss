@@ -136,22 +136,33 @@
 .formTextareaWrap {
   position: relative;
 }
+// placeholderの改行&textareaの可変に合わせてplaceholderも伸縮
+.dedicatedTextareaAndPlaceholderWrap {
+  display: table;
+  position: relative;
+  width: 100%;
+}
 .textarea {
   line-height: math.div(23.17, 16);
+  width: 100%;
   min-height: 200px;
+  resize: vertical;
   padding: 8px;
-  background-color: transparent;
-  position: relative;
-  z-index: g.zi(textarea-base);
 
   @include g.mq("sm") {
     padding: 13px 16px;
   }
 
+  // placeholder改行対応
+  background-color: transparent;
+  position: relative;
+  z-index: g.zi(textarea-base);
+
   &.isActive {
     background-color: g.$color-itemInput-background;
   }
 }
+// placeholder改行対応
 .placeholderText {
   position: absolute;
   top: 0;
@@ -162,7 +173,8 @@
   background-color: g.$color-itemInput-background;
   z-index: g.zi(textarea-placeholder);
   width: 100%;
-  min-height: 200px;
+  height: calc(100% - 2px); // textareaから2pxはみ出すので調整
+  border-radius: 2px; // textareaの角丸に合わせて
 
   @include g.mq("sm") {
     padding: 16px 29px 16px 16px;
