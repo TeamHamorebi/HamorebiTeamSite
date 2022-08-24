@@ -1,0 +1,59 @@
+@use "../global" as g;
+@use "sass:math";
+
+.contentsWrap {
+  margin-top: 105px;
+  padding-bottom: 50px;
+  padding-left: 24px;
+  padding-right: 24px;
+  
+  @include g.mq("sm") {
+      margin-top: 180px;
+      padding-bottom: 100px;
+  }
+}
+
+.imgWrap {
+    width: clamp(250px, 40vw, 336px);
+    margin-left: auto;
+    margin-right: auto;
+}
+.imgDecorationText {
+    font-weight: 700;
+    font-size: clamp(g.rem(30), 4.5vw, g.rem(40));
+    text-align: center;
+    line-height: math.div(57.92, 40);
+    margin-top: 20px;
+}
+
+.title {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    text-align: center;
+    font-size: g.rem(24);
+    line-height: math.div(38.4, 24);
+    width: calc(100% - 77px);
+}
+
+.detailsText {
+    margin-top: 50px;
+    text-align: center;
+    line-height: math.div(25.6, 16);
+}
+.brPC {
+    display: none;
+
+    @include g.mq('sm') {
+        display: block;
+    }
+}
+
+.btnWrap {
+    margin-top: 50px;
+    width: 239px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
