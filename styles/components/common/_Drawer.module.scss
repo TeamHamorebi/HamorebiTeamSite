@@ -28,18 +28,19 @@
 }
 
 .brandImgWrap {
-  width: 60px;
+  width: clamp(60px, 8.4vw, 68px);
 }
 
 .brandName {
   margin-left: 8px;
   color: g.$color-font-main;
   font-weight: 700;
+  font-size: clamp(g.rem(16), 2.4vw, g.rem(20));
 }
 
 .brandSubName {
   font-weight: 500;
-  font-size: g.rem(12);
+  font-size: clamp(g.rem(12), 1.6vw, g.rem(14));
 }
 
 .drawerBtn {
