@@ -5,32 +5,32 @@ import Link from "next/link";
 export default function ProductionAchievements() {
   const data = [
     {
-      img: "/img/works-details/works-details_dummy.jpg",
+      img: "/img/work-details/works-details_dummy.jpg",
       clientName: "株式会社プロフィットバンク様",
       category: "コーポレートサイト",
     },
     {
-      img: "/img/works-details/works-details_dummy.jpg",
+      img: "/img/work-details/works-details_dummy.jpg",
       clientName: "プロフィットバンク様",
       category: "コーポレートサイト",
     },
     {
-      img: "/img/works-details/works-details_dummy.jpg",
+      img: "/img/work-details/works-details_dummy.jpg",
       clientName: "プロフィットバンク様",
       category: "コーポレートサイト",
     },
     {
-      img: "/img/works-details/works-details_dummy.jpg",
+      img: "/img/work-details/works-details_dummy.jpg",
       clientName: "プロフィットバンク様",
       category: "コーポレートサイト",
     },
     {
-      img: "/img/works-details/works-details_dummy.jpg",
+      img: "/img/work-details/works-details_dummy.jpg",
       clientName: "プロフィットバンク様",
       category: "コーポレートサイト",
     },
     {
-      img: "/img/works-details/works-details_dummy.jpg",
+      img: "/img/work-details/works-details_dummy.jpg",
       clientName: "プロフィットバンク様",
       category: "コーポレートサイト",
     },
