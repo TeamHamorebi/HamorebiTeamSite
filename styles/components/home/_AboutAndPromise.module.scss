@@ -45,7 +45,7 @@
   text-align: center;
 
   @include g.mq("lg") {
-    margin-top: 100px;
+    margin-top: 108px;
   }
 }
 .titleBoldface {
@@ -54,7 +54,7 @@
 }
 
 .promiseCardWrap {
-  margin-top: 50px;
+  margin-top: 60px;
   display: flex;
   gap: 25px;
   flex-direction: column;
@@ -75,7 +75,7 @@
   background-color: g.$color-promiseCard-background;
   box-shadow: 0 0 10px 2px g.$color-promiseCard-shadow;
   @extend %cardRadius;
-  padding: 35px 15px 40px 15px;
+  padding: 39px 15px 40px 15px;
 
   @include g.mq("md") {
     width: 50%;
@@ -87,11 +87,11 @@
   }
 }
 .cardImgWrap {
-  width: 130px;
+  width: 120px;
   margin: 0 auto;
 }
 .cardTitle {
-  margin-top: 35px;
+  margin-top: 42px;
   font-weight: 500;
   font-size: g.rem(24);
   line-height: math.div(34.75, 24);
@@ -107,8 +107,7 @@
     min-height: 73px;
   }
 }
-.promiseCard:nth-child(1) .cardTitle,
-.promiseCard:nth-child(2) .cardTitle {
+.promiseCard:nth-child(1) .cardTitle {
     max-width: 280px;
   @include g.mq("sm") {
     max-width: 100%;
@@ -119,8 +118,20 @@
     text-align: left;
   }
 }
+.promiseCard:nth-child(2) .cardTitle {
+    max-width: 292px;
+  @include g.mq("sm") {
+    max-width: 100%;
+    text-align: center;
+  }
+  @include g.mq("md") {
+    max-width: 292px;
+    text-align: left;
+  }
+}
 .promiseCard:nth-child(3) .cardTitle {
-  text-align: center;
+  text-align: left;
+  max-width: 275px;
 }
 .cardTitleDecoration {
   font-weight: 700;
@@ -128,5 +139,5 @@
 }
 .cardText {
   margin-top: 20px;
-  line-height: math.div(25.6, 16);
+  line-height: math.div(25.9, 16);
 }
