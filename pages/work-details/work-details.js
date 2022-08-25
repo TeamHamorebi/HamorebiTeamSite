@@ -2,6 +2,7 @@ import styles from "../../styles/pages/work-details/_WorkDetails.module.scss";
 import Layout from "../../components/common/Layout";
 import Breadcrumb from "../../components/common/Breadcrumb";
 import SectionTitle from "../../components/common/SectionTitle";
+import Button from "../../components/common/Button";
 
 export default function WorkDetails() {
   const infoData = [
@@ -43,31 +44,63 @@ export default function WorkDetails() {
 
   return (
     <Layout>
-      <div className={styles.contentsWrap}>
+      <section className={styles.workDetails}>
         <Breadcrumb />
-        <SectionTitle title={"制作実績"} />
 
-        <div className={styles.workDetailsContentsWrap}>
+        <div className={styles.sectionTitleWrap}>
+          <SectionTitle title={"制作実績"} />
+        </div>
+
+        <div className={styles.contentsWrap}>
           {infoData.map((value, index) => {
             return (
               <>
+                {/* 2カラム */}
                 <div key={index} className={styles.mainInfo}>
+                  {/* img */}
                   <div className={styles.mainImgWrap}>
                     <img src={value.mainImg} />
                   </div>
+                  {/* /img */}
+
+                  {/* main info */}
                   <div className={styles.mainInfoTextWrap}>
+                    {/* 案件名 */}
                     <p className={styles.caseName}>{value.caseName}</p>
-                    <a className={styles.siteLink} href={value.siteUrl}>
+                    {/* /案件名 */}
+
+                    {/* サイトリンク */}
+                    <a
+                      className={styles.siteLink}
+                      href={value.siteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {value.siteUrl}
                     </a>
+                    {/* /サイトリンク */}
+
+                    {/* クライアント名 */}
                     <p
                       className={styles.infoText}
                     >{`クライアント：${value.clientName}`}</p>
+                    {/* /クライアント名 */}
+
+                    {/* カテゴリ */}
                     <p className={styles.infoText}>{value.category}</p>
+                    {/* /カテゴリ */}
+
+                    {/* 制作期間 */}
                     <p
                       className={styles.infoText}
                     >{`制作期間：${value.productionTimeTotal}（デザイン：${value.productionTimeDesign}、構築：${value.productionTimeConstruction}）`}</p>
+                    {/* /制作期間 */}
+
+                    {/* 使用ツール */}
                     <p className={styles.infoText}>{value.tools}</p>
+                    {/* /使用ツール */}
+
+                    {/* 担当者 */}
                     <div className={styles.personWrap}>
                       <p
                         className={styles.personName}
@@ -79,22 +112,30 @@ export default function WorkDetails() {
                         className={styles.personName}
                       >{`Webデザイナー：${value.webDesigner}`}</p>
                     </div>
+                    {/* /担当者 */}
                   </div>
+                  {/* /main info */}
                 </div>
+                {/* /2カラム */}
 
-                <p className={styles.caseSummary}>{value.caseSummary}</p>
+                {/* 概要 */}
+                <div className={styles.outlineInfo}>
+                  <p className={styles.caseSummary}>{value.caseSummary}</p>
 
-                <p className={styles.productionOutlineTile}>制作概要</p>
-                <p className={styles.engineerComments}>
-                  {value.engineerComments}
-                </p>
-                <p className={styles.webDesignerComments}>
-                  {value.webDesignerComments}
-                </p>
+                  <p className={styles.productionOutlineTile}>制作概要</p>
+                  <p className={styles.engineerComments}>
+                    {value.engineerComments}
+                  </p>
+                  <p className={styles.webDesignerComments}>
+                    {value.webDesignerComments}
+                  </p>
+                </div>
+                {/* /概要 */}
               </>
             );
           })}
 
+          {/* カンプ */}
           <ul className={styles.compImgList}>
             {compData.map((value, index) => {
               return (
@@ -109,8 +150,15 @@ export default function WorkDetails() {
               );
             })}
           </ul>
+          {/* /カンプ */}
         </div>
-      </div>
+
+        <Button
+          styles={styles.btnWrap}
+          text={"トップページに戻る"}
+          link={"/"}
+        />
+      </section>
     </Layout>
   );
 }

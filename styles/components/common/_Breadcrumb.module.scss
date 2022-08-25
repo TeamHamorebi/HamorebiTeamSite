@@ -1,2 +1,39 @@
 @use "../../global" as g;
 @use "sass:math";
+
+.list {
+  display: none;
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include g.mq("lg") {
+    display: flex;
+  }
+}
+
+.item {
+  position: relative;
+  font-size: g.rem(12);
+  font-weight: 500;
+
+  &:not(:first-child) {
+    padding-left: 28px;
+
+    &::before {
+      content: "＞";
+      position: absolute;
+      left: 8px;
+    }
+  }
+}
+
+.itemLink {
+  color: g.$color-font-main;
+  display: block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

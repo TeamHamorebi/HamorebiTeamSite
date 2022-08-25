@@ -1,6 +1,81 @@
 @use "../../global" as g;
 @use "sass:math";
 
-.contentsWrap {
-    margin-top: 130px;
+.workDetails {
+  margin-top: 130px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
+
+.sectionTitleWrap {
+  margin-top: 50px;
+}
+
+.contentsWrap {
+  margin-top: 54px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 983px;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  gap: 25px;
+
+  @include g.mq("lg") {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.mainImgWrap {
+  width: 100%;
+
+  @include g.mq("lg") {
+    width: math.div(485px, 983px) * 100%;
+    max-width: 485px;
+  }
+}
+.mainInfoTextWrap {
+  width: 100%;
+
+  @include g.mq("lg") {
+    width: math.div(434px, 983px) * 100%;
+    max-width: 434px;
+  }
+}
+
+.caseName {
+    font-weight: 700;
+    font-size: g.rem(24);
+    line-height: math.div(34.75, 24);
+}
+
+.siteLink {
+    display: inline-block;
+    margin-top: 8px;
+    color: g.$color-font-main;
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.siteLink,
+.infoText,
+.personName,
+.caseSummary {
+    line-height: math.div(23.17, 16);
+}
+
+.engineerComments,
+.webDesignerComments {
+    line-height: math.div(25.6, 16);
+}
+
