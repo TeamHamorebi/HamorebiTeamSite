@@ -1,0 +1,199 @@
+@use "../../global" as g;
+@use "sass:math";
+
+.workDetails {
+  padding-top: 105px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 50px;
+
+  @include g.mq("md") {
+    padding-top: 130px;
+    padding-bottom: 100px;
+  }
+}
+
+.sectionTitleWrap {
+  @include g.mq("lg") {
+    margin-top: 50px;
+  }
+}
+
+.contentsWrap {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 983px;
+
+  @include g.mq("lg") {
+    margin-top: 54px;
+  }
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  gap: 25px;
+
+  @include g.mq("lg") {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.mainImgWrap {
+  width: 100%;
+
+  @include g.mq("lg") {
+    width: math.div(485px, 983px) * 100%;
+    max-width: 485px;
+  }
+}
+.mainInfoTextWrap {
+  width: 100%;
+
+  @include g.mq("lg") {
+    width: math.div(434px, 983px) * 100%;
+    max-width: 434px;
+  }
+}
+
+.caseName {
+  font-weight: 700;
+  font-size: clamp(g.rem(20), 5vw, g.rem(24));
+  line-height: math.div(34.75, 24);
+}
+
+.siteLink {
+  display: inline-block;
+  margin-top: 16px;
+  color: g.$color-font-main;
+
+  @include g.mq("lg") {
+    margin-top: 8px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// 各line-hight
+.siteLink,
+.infoText,
+.caseSummary {
+  line-height: math.div(23.17, 16);
+}
+.personName,
+.engineerComments,
+.webDesignerComments {
+  line-height: math.div(25.6, 16);
+}
+
+// 最初の.infoTextのみ適用
+.infoText {
+  margin-top: 16px;
+
+  @include g.mq("lg") {
+    margin-top: 8px;
+  }
+}
+
+.personWrap,
+.infoText ~ .infoText {
+  margin-top: 16px;
+}
+
+.infoTextBr {
+  @include g.mq("sm") {
+    display: none;
+  }
+}
+
+// 概要
+.outlineInfo {
+  margin-top: 50px;
+  width: 100%;
+
+  @include g.mq("xxl") {
+    max-width: 932px;
+  }
+}
+
+.productionOutlineTile {
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: g.rem(24);
+  line-height: math.div(34.75, 24);
+  
+  @include g.mq('lg') {
+      margin-top: 25px;
+    
+  }
+}
+
+.engineerComments {
+  margin-top: 8px;
+}
+.webDesignerComments {
+  margin-top: 25.59px;
+}
+
+// カンプ
+.compImgList {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px 18px;
+  width: 100%;
+
+  @include g.mq("md") {
+    flex-direction: row;
+  }
+
+  @include g.mq("xxl") {
+    max-width: 930px;
+  }
+}
+
+.compImgItem {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  max-width: 456px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include g.mq("md") {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.compImgWrapPc {
+  width: math.div(300px, 456px) * 100%;
+  max-width: 300px;
+}
+.compImgWrapSp {
+  width: math.div(138px, 456px) * 100%;
+  max-width: 138px;
+}
+
+.btnWrap {
+  margin-top: 50px;
+  width: 239px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 後で削除予定 エンジニアコメントで使用
+.br {
+  content: "";
+  display: block;
+  margin-top: 25.59px;
+}
