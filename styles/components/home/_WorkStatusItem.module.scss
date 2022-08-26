@@ -7,7 +7,7 @@
   justify-content: space-around;
 
   &:not(:first-child) {
-    margin-top: 25px;
+    margin-top: 28px;
   }
 
   @include g.mq("sm") {
@@ -58,11 +58,11 @@
 }
 .imgWrap {
   width: 47px;
-  width: clamp(47px, 12vw, 70px);
+  width: clamp(46px, 12vw, 70px);
   position: relative;
 
   @include g.mq("sm") {
-    width: clamp(47px, 9vw, 70px);
+    width: clamp(46px, 9vw, 70px);
   }
 
   &.isActive {
@@ -96,6 +96,7 @@
   font-size: g.rem(12);
   text-align: center;
   margin-top: 4px;
+  margin-left: -5px;
 
   @include g.mq("sm") {
     min-width: 144px;

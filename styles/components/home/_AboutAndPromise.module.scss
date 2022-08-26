@@ -3,10 +3,15 @@
 
 .aboutAndPromise {
   @extend %sectionLayout;
+
+  @include g.mq('md') {
+    padding-top: 100px;
+  }
+
   background: transparent url(/img/top/Hamorebi_sun--sp.png) no-repeat top 85px
     left 0 / 67.024%;
-    
-    @include g.mq("lg") {
+
+  @include g.mq("lg") {
     padding-top: 150px;
     background: transparent url(/img/top/Hamorebi_sun--full.png) no-repeat top 0
       center / cover;
@@ -39,7 +44,7 @@
 }
 
 .promiseTitle {
-  margin-top: 50px;
+  margin-top: 60px;
   font-weight: 700;
   font-size: g.rem(24);
   text-align: center;
@@ -57,7 +62,7 @@
   margin-top: 60px;
   display: flex;
   gap: 25px;
-  flex-direction: column;
+  // flex-direction: column;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -100,15 +105,15 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include g.mq('sm') {
+  @include g.mq("sm") {
     min-height: auto;
   }
-  @include g.mq('md') {
+  @include g.mq("md") {
     min-height: 73px;
   }
 }
 .promiseCard:nth-child(1) .cardTitle {
-    max-width: 280px;
+  max-width: 280px;
   @include g.mq("sm") {
     max-width: 100%;
     text-align: center;
@@ -119,7 +124,7 @@
   }
 }
 .promiseCard:nth-child(2) .cardTitle {
-    max-width: 292px;
+  max-width: 280px;
   @include g.mq("sm") {
     max-width: 100%;
     text-align: center;
@@ -131,7 +136,11 @@
 }
 .promiseCard:nth-child(3) .cardTitle {
   text-align: left;
-  max-width: 275px;
+  max-width: 270px;
+
+  @include g.mq("md") {
+    max-width: 275px;
+  }
 }
 .cardTitleDecoration {
   font-weight: 700;
@@ -140,4 +149,18 @@
 .cardText {
   margin-top: 20px;
   line-height: math.div(25.9, 16);
+}
+.cardTextBr,
+.cardTextBr2 {
+  display: none;
+}
+.cardTextBr {
+  @include g.mq("md") {
+    display: block;
+  }
+}
+.cardTextBr2 {
+  @include g.mq("sm") {
+    display: block;
+  }
 }

@@ -3,7 +3,7 @@
 
 .member {
   @extend %sectionLayout;
-  background: transparent url(/img/top/Hamorebi_sun--sp.png) no-repeat top 273px
+  background: transparent url(/img/top/Hamorebi_sun--sp.png) no-repeat top 312px
     left 0 / 67.024%;
 
   @include g.mq("md") {
@@ -18,14 +18,14 @@
 }
 
 .leadWrap {
-  margin-top: 54px;
+  margin-top: 59px;
   width: 100%;
   max-width: 330px;
   margin-left: auto;
   margin-right: auto;
 
   @include g.mq("sm") {
-    margin-top: 63px;
+    margin-top: 62px;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -45,16 +45,24 @@
   position: relative;
   z-index: g.zi(base);
 
+  ~ .leadBoldface {
+    margin-top: 7px;
+
+    @include g.mq("sm") {
+      margin-top: 3px;
+    }
+  }
+
   // marker
   &::after {
     content: "";
     display: inline;
-    width: 100%;
+    width: calc(100% - 4px);
     height: 7px;
     background-color: g.$color-member-lead-marker;
     position: absolute;
-    bottom: 6px;
-    left: -5px;
+    bottom: 4px;
+    left: -4px;
     z-index: g.zi(memberLeadBoldface);
     border-top-left-radius: 100vw;
     border-bottom-left-radius: 100vw;
@@ -63,6 +71,8 @@
     padding-left: 0px;
 
     @include g.mq("sm") {
+      width: 100%;
+      bottom: 6px;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       left: -13px;
@@ -71,6 +81,7 @@
   }
 
   ~ .leadBoldface::after {
+    width: calc(100% + 2px);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 100vw;
@@ -82,6 +93,7 @@
     left: -5px;
 
     @include g.mq("sm") {
+      width: 100%;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       left: 0;
@@ -100,9 +112,11 @@
 }
 .leadBottom {
   margin-top: 25px;
+  line-height: 1.63;
 
   @include g.mq("sm") {
     margin-top: 22px;
+    line-height: 1.6;
   }
 }
 
@@ -117,7 +131,7 @@
     auto-fit,
     minmax(273px, math.div(273px, 375px) * 100vw)
   );
-  gap: 25px 16px;
+  gap: 24.5px 16px;
   justify-content: center;
 
   @include g.mq("sm") {
@@ -130,7 +144,11 @@
   box-shadow: 0 0 10px 2px g.$color-memberItem-shadow;
   background-color: g.$color-memberItem-background;
   @extend %cardRadius;
-  padding: 30px;
+  padding: 30px 23px 25px 24px;
+
+  @include g.mq("lg") {
+    padding: 30px;
+  }
 }
 .memberImgWrap {
   width: 160px;
@@ -173,26 +191,41 @@
   line-height: math.div(17.38, 12);
   font-size: g.rem(12);
   text-align: center;
-  min-height: 68px;
+  min-height: 69.5px;
   width: 100%;
   max-width: 205px;
   margin-left: auto;
   margin-right: auto;
+
+  @include g.mq("lg") {
+    min-height: 68px;
+  }
 }
 .snsList {
-  margin-top: 12px;
+  margin-top: 9px;
   width: 100%;
-  max-width: 188px;
+  max-width: 226px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  gap: 20px;
+  gap: 22px;
   justify-content: center;
+
+  @include g.mq("lg") {
+    gap: 20px;
+    max-width: 188px;
+    margin-top: 12px;
+  }
 }
 .snsItem {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   transition: all 0.3s ease;
+
+  @include g.mq("lg") {
+    width: 32px;
+    height: 32px;
+  }
 
   @media (hover: hover) {
     &:hover {
@@ -202,8 +235,12 @@
 }
 
 .btnWrap {
-  margin-top: 77px;
+  margin-top: 51px;
   width: 239px;
   margin-left: auto;
   margin-right: auto;
+
+  @include g.mq("md") {
+    margin-top: 77px;
+  }
 }

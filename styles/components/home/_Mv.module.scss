@@ -23,8 +23,8 @@
 
 .imagesWrap {
   position: relative;
-  top: 24px;
-  width: math.div(314px, 375px) * 100vw;
+  top: 18px;
+  width: math.div(332px, 375px) * 100vw;
   margin-left: auto;
   margin-right: auto;
 
@@ -50,7 +50,7 @@
   width: math.div(159px, 375px) * 100vw;
   position: absolute;
   top: 23%;
-  right: 53%;
+  right: 52%;
   transform: translateX(50%);
 
   @include g.mq("md") {
@@ -67,7 +67,7 @@
 }
 
 .mvContentsWrap {
-  margin-top: 26px;
+  margin-top: 23px;
 
   @include g.mq("md") {
     margin-left: 6%;

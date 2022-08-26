@@ -13,15 +13,16 @@
 .list {
   width: 100%;
   max-width: 1140px;
-  margin-top: 63px;
+  margin-top: 59px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px 15px;
+  gap: 28.1px 15px;
 
   @include g.mq("md") {
     gap: 53px 15px;
+    margin-top: 63px;
   }
 }
 
@@ -65,19 +66,19 @@
   }
 }
 
-// @media (hover: hover) {
-  .link:hover .imgWrap {
-    &::before {
-      visibility: visible;
-      opacity: 1;
-      transform: scale(1.12);
-    }
-
-    img {
-      transform: scale(0.8);
-    }
+@media (hover: hover) {
+.link:hover .imgWrap {
+  &::before {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.12);
   }
-// }
+
+  img {
+    transform: scale(0.8);
+  }
+}
+}
 
 .clientName {
   margin-top: 8px;
@@ -86,6 +87,10 @@
 }
 
 .category {
-  margin-top: 11px;
+  margin-top: 7px;
   font-size: g.rem(14);
+
+  @include g.mq("md") {
+    margin-top: 11px;
+  }
 }

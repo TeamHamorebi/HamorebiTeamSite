@@ -22,9 +22,9 @@ export default function AboutAndPromise() {
       ],
       text: [
         "Webサイトは「完成がはじまり」です。見た目が美しいもの、インパクトが強いものを作ってそれでおしまい、ではありません。",
-        <br key="index" />,
+        <br key="index" className={styles.cardTextBr} />,
         "改善を重ねアップデートをして、最新の情報を届けたい人に届けられるWebサイトを作り続けることが重要です。",
-        <br key="index" />,
+        <br key="index" className={styles.cardTextBr2} />,
         "Hamorebiは納品して終わり！ではなく、お客様のサービス・事業のメンバーのひとりであるという心構えで、末永くその後の改善やサポートをご提案いたします。",
       ],
     },

@@ -54,8 +54,8 @@
     transform: translateY(-50%);
     width: 12px;
     height: 19px;
-    background: transparent url(/img/common/arrow-icon.svg)
-      no-repeat center center/contain;
+    background: transparent url(/img/common/arrow-icon.svg) no-repeat center
+      center/contain;
   }
 }
 
@@ -67,8 +67,11 @@
   padding-right: 24px;
 
   @include m.mq("md") {
-    padding-top: 100px;
     padding-bottom: 100px;
+  }
+  
+  @include m.mq("lg") {
+    padding-top: 100px;
   }
 }
 

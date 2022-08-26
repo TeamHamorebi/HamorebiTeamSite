@@ -6,11 +6,15 @@
 }
 
 .list {
-  margin-top: 61px;
+  margin-top: 59px;
   width: 100%;
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+
+  @include g.mq("md") {
+    margin-top: 61px;
+  }
 }
 
 .item {
@@ -20,8 +24,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  align-content: center;
+  align-content: flex-start;
   gap: 9.6px 15px;
+  gap: 9px 15px;
+  align-content: center;
 
   @include g.mq("sm") {
     min-height: 230px;
@@ -39,6 +45,7 @@
 
   // flow icon
   &::before {
+    // background
     content: "";
     position: absolute;
     top: 0;
@@ -50,13 +57,18 @@
     border-bottom-right-radius: 100vw;
   }
   &::after {
+    // number
     position: absolute;
-    top: calc(50% + 1px);
+    top: calc(50% - 7px);
     transform: translateY(-50%);
     left: 30px;
     font-size: g.rem(28);
     font-weight: 800;
     font-family: g.$font-family--number;
+
+    @include g.mq("sm") {
+      top: calc(50% + 1px);
+    }
   }
   &:nth-child(-n + 3) {
     &::after {
@@ -71,11 +83,19 @@
   &:not(:first-child) {
     padding-top: 31px;
     &::after {
-      top: calc(50% + 17px);
+      top: calc(50% + 12px);
+
+      @include g.mq("md") {
+        top: calc(50% + 17px);
+      }
     }
   }
-  &:nth-child(n + 3) {
-    margin-top: -40px;
+  &:nth-child(n + 2) {
+    margin-top: -50px;
+
+    @include g.mq("md") {
+      margin-top: -40px;
+    }
   }
   &:first-child {
     z-index: g.zi(flowIcon1);
@@ -87,8 +107,10 @@
     }
   }
   &:nth-child(2) {
-    margin-top: -39px;
     z-index: g.zi(flowIcon2);
+    @include g.mq("md") {
+      margin-top: -39px;
+    }
     &::before {
       background-color: g.$color-flowIcon-background2;
     }
@@ -164,7 +186,72 @@
 .itemName {
   font-weight: 500;
   font-size: clamp(g.rem(20), 3vw, g.rem(28));
+  position: relative;
 }
+.item:first-child .itemName {
+  margin-top: -14px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(2) .itemName {
+  margin-top: -6px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(3) .itemName {
+  margin-top: -3px;
+
+  @include g.mq("md") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(4) .itemName {
+  margin-top: -3px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(5) .itemName {
+  margin-top: -4px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(6) .itemName {
+  margin-top: -6px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(7) .itemName {
+  margin-top: -5px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(8) .itemName {
+  margin-top: -35px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(9) .itemName {
+  margin-top: -5px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
+  }
+}
+
 // 「無料」アイコン
 .item:nth-child(-n + 3) {
   .itemName {
@@ -198,6 +285,20 @@
 
   @include g.mq("md") {
     width: calc(100% - 280px);
+  }
+}
+.item:first-child .itemDescription {
+  margin-top: 3px;
+
+  @include g.mq("md") {
+    margin-top: 0;
+  }
+}
+.item:nth-child(8) .itemDescription {
+  margin-top: -8px;
+
+  @include g.mq("sm") {
+    margin-top: 0;
   }
 }
 

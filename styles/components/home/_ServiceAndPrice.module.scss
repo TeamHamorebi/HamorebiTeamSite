@@ -6,7 +6,7 @@
 }
 
 .lead {
-  margin-top: 43.83px;
+  margin-top: 51px;
   text-align: center;
   line-height: math.div(25.6, 16);
 
@@ -79,7 +79,7 @@
 }
 
 .serviceContentsWrap {
-  padding: 24px 18px;
+  padding: 30px 18px 24px;
 
   @include g.mq("md") {
     padding: 15px 24px 15px 24px;
@@ -114,7 +114,11 @@
   max-width: 425px;
   margin-left: auto;
   margin-right: auto;
-  gap: 25px;
+  gap: 20px;
+
+  @include g.mq("md") {
+    gap: 25px;
+  }
 }
 .siteExampleItem {
   width: 100%;
@@ -152,7 +156,7 @@
 // サイト制作のみ
 .serviceItem:first-child {
   .serviceContentsWrap {
-    padding-top: 24px;
+    padding-top: 31px;
 
     @include g.mq("md") {
       padding-top: 32px;
@@ -205,6 +209,14 @@
       margin-top: 7px;
     }
   }
+
+  .serviceDescription {
+    margin-top: 16px;
+
+    @include g.mq("lg") {
+      margin-top: 12px;
+    }
+  }
 }
 .attention {
   display: block;
@@ -213,8 +225,12 @@
 }
 
 .contactBtnWrap {
-  margin-top: 48px;
+  margin-top: 50px;
   width: 239px;
   margin-left: auto;
   margin-right: auto;
+
+  @include g.mq("md") {
+    margin-top: 48px;
+  }
 }
