@@ -8,8 +8,8 @@
   padding-bottom: 50px;
 
   @include g.mq("lg") {
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 89px;
+    padding-bottom: 42px;
   }
 }
 
@@ -94,7 +94,7 @@
 
   @include g.mq("lg") {
     width: calc(50% - 98px * 1 / 2);
-    margin-top: 40px;
+    margin-top: 43px;
   }
 }
 
@@ -106,7 +106,7 @@
 
   @include g.mq("lg") {
     justify-content: flex-start;
-    gap: 16px 40px;
+    gap: 23px 40px;
   }
 }
 
@@ -129,6 +129,6 @@
   margin-top: 50px;
 
   @include g.mq("lg") {
-    margin-top: 85px;
+    margin-top: 89px;
   }
 }

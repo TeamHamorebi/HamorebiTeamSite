@@ -47,7 +47,7 @@
 }
 
 .toTopArrowWrap {
-  width: clamp(22.09px, 3vw, 29.46px);
+  width: clamp(22.09px, 3vw, 30px);
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -55,7 +55,7 @@
   transition: transform 0.3s ease;
 
   @include g.mq("xl") {
-    top: 0;
+    top: 3px;
     transform: translateY(0);
     margin: 14.65px auto 0;
   }
@@ -65,7 +65,7 @@
     transform: translateY(-70%);
 
     @include g.mq("xl") {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
     }
   }
 }

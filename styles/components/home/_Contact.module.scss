@@ -11,7 +11,7 @@
 }
 
 .lead {
-  margin-top: 54px;
+  margin-top: 63px;
   text-align: center;
   line-height: math.div(25.6, 16);
 }
@@ -41,6 +41,9 @@
   &:not(:first-child) {
     margin-top: 24px;
   }
+  &:last-child {
+    margin-top: 27px;
+  }
 }
 
 .formLabel {
@@ -50,6 +53,7 @@
   @include g.mq("sm") {
     width: 200px;
     justify-content: space-between;
+    margin-top: 2px;
   }
 }
 .optionalLabel,
@@ -188,12 +192,14 @@
 
 // radio
 .formRadioWrap {
+  margin-top: 3px;
+
   label {
     display: block;
     position: relative;
 
     &:not(:first-child) {
-      margin-top: 10px;
+      margin-top: 15px;
     }
   }
 

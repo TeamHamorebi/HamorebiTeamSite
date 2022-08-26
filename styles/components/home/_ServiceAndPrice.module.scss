@@ -11,7 +11,7 @@
   line-height: math.div(25.6, 16);
 
   @include g.mq("md") {
-    margin-top: 54px;
+    margin-top: 63px;
   }
 }
 
@@ -26,7 +26,7 @@
   justify-content: space-around;
 
   @include g.mq("md") {
-    gap: 16px;
+    gap: 16.5px;
   }
 
   @include g.mq("lg") {
@@ -82,7 +82,7 @@
   padding: 24px 18px;
 
   @include g.mq("md") {
-    padding: 15px 24px 16px 24px;
+    padding: 15px 24px 15px 24px;
   }
 }
 
@@ -100,13 +100,13 @@
 }
 .serviceDescription {
   line-height: math.div(23.17, 16);
-  margin-top: 15px;
+  margin-top: 12px;
   display: inline-block;
   text-align: left;
 }
 
 .siteExampleList {
-  margin-top: 24px;
+  margin-top: 26px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -130,7 +130,7 @@
   font-weight: 500;
 }
 .examplePrice {
-  margin-top: 15px;
+  margin-top: 14px;
   font-weight: 500;
 }
 .exampleBoldface {
@@ -139,9 +139,14 @@
   color: g.$color-font-price;
 }
 .configurationExample {
-  margin-top: 10px;
+  margin-top: 9px;
   font-size: g.rem(12);
-  line-height: math.div(17.38, 12);
+  line-height: math.div(17.1, 12);
+
+  span {
+    display: block;
+    margin-top: 3px;
+  }
 }
 
 // サイト制作のみ
@@ -161,7 +166,7 @@
     margin-right: auto;
 
     @include g.mq("md") {
-      margin-top: 35px;
+      margin-top: 32px;
     }
   }
 }
@@ -197,18 +202,18 @@
     margin-top: 42px;
 
     @include g.mq("lg") {
-      margin: 0;
+      margin-top: 7px;
     }
   }
 }
 .attention {
   display: block;
   font-size: g.rem(12);
-  margin-top: 6px;
+  margin-top: 7px;
 }
 
 .contactBtnWrap {
-  margin-top: 50px;
+  margin-top: 48px;
   width: 239px;
   margin-left: auto;
   margin-right: auto;

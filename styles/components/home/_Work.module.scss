@@ -6,7 +6,7 @@
 }
 
 .lead {
-  margin-top: 54px;
+  margin-top: 63px;
   line-height: math.div(25.6, 16);
   text-align: center;
 }
@@ -31,6 +31,6 @@
   margin-right: auto;
 
   @include g.mq("sm") {
-    margin-top: 52px;
+    margin-top: 50px;
   }
 }

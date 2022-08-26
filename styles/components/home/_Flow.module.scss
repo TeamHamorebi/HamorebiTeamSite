@@ -6,7 +6,7 @@
 }
 
 .list {
-  margin-top: 54px;
+  margin-top: 61px;
   width: 100%;
   max-width: 1024px;
   margin-left: auto;
@@ -51,7 +51,7 @@
   }
   &::after {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 1px);
     transform: translateY(-50%);
     left: 30px;
     font-size: g.rem(28);
@@ -69,11 +69,13 @@
     }
   }
   &:not(:first-child) {
-    margin-top: -39px;
-    padding-top: 27px;
+    padding-top: 31px;
     &::after {
-      top: calc(50% + 16px);
+      top: calc(50% + 17px);
     }
+  }
+  &:nth-child(n + 3) {
+    margin-top: -40px;
   }
   &:first-child {
     z-index: g.zi(flowIcon1);
@@ -85,6 +87,7 @@
     }
   }
   &:nth-child(2) {
+    margin-top: -39px;
     z-index: g.zi(flowIcon2);
     &::before {
       background-color: g.$color-flowIcon-background2;
