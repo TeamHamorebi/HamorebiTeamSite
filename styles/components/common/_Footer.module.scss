@@ -5,11 +5,11 @@
   background-color: g.$color-globalFooter-background;
   color: g.$color-font-globalFooter;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 52px;
 
   @include g.mq("lg") {
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 89px;
+    padding-bottom: 42px;
   }
 }
 
@@ -51,8 +51,10 @@
   margin-left: 16px;
   font-weight: 500;
   font-size: g.rem(24);
+  margin-top: 5px;
 
   @include g.mq("sm") {
+    margin-top: 0;
     font-size: g.rem(32);
   }
 }
@@ -61,11 +63,13 @@
   font-size: g.rem(16);
   text-align: center;
   margin-top: 4px;
+  padding-left: 6px;
 
   @include g.mq("sm") {
     display: inline;
     font-size: g.rem(24);
     text-align: left;
+    padding-left: 0;
   }
 }
 
@@ -79,7 +83,7 @@
 .infoText {
   text-align: left;
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 24px;
   font-size: g.rem(12);
   line-height: math.div(17.38, 12);
 
@@ -90,11 +94,11 @@
 
 .navigation {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 52px;
 
   @include g.mq("lg") {
     width: calc(50% - 98px * 1 / 2);
-    margin-top: 40px;
+    margin-top: 43px;
   }
 }
 
@@ -102,11 +106,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px 32px;
+  gap: 32px;
 
   @include g.mq("lg") {
     justify-content: flex-start;
-    gap: 16px 40px;
+    gap: 23px 40px;
   }
 }
 
@@ -126,9 +130,9 @@
   font-weight: 500;
   font-size: g.rem(12);
   text-align: center;
-  margin-top: 50px;
+  margin-top: 58px;
 
   @include g.mq("lg") {
-    margin-top: 85px;
+    margin-top: 89px;
   }
 }

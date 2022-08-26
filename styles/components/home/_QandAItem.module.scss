@@ -25,7 +25,7 @@
   cursor: pointer;
 
   @include g.mq("lg") {
-    padding: 16px 50px 16px 133px;
+    padding: 17px 50px 15px 133px;
   }
 
   // 矢印
@@ -38,18 +38,18 @@
       center/contain;
     position: absolute;
     top: 50%;
-    left: 16px;
+    left: 13px;
     transform: translateY(-50%) rotate(180deg);
     transition: all 0.3s;
-
+    
     @include g.mq("lg") {
-      left: 50px;
+      left: 45px;
     }
   }
 }
 .itemBody {
   padding: 0 16px 0 52px;
-  line-height: math.div(38.4, 24);
+  line-height: math.div(39, 24);
   background-color: g.$color-qa-itemBody-background;
   height: 0;
   overflow: hidden;

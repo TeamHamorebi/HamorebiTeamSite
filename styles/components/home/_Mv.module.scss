@@ -8,12 +8,12 @@
 
   // 768px~
   @include g.mq("md") {
-    height: clamp(415px, 54vw, 720px);
+    height: clamp(415px, 54vw, 722px);
   }
   // 1024px~
   @include g.mq("lg") {
     padding-bottom: 0;
-    height: clamp(415px, 51vw, 720px);
+    height: clamp(415px, 51vw, 722px);
   }
   // 1200px~
   @include g.mq("xl") {
@@ -23,14 +23,14 @@
 
 .imagesWrap {
   position: relative;
-  top: 24px;
-  width: math.div(314px, 375px) * 100vw;
+  top: 18px;
+  width: math.div(332px, 375px) * 100vw;
   margin-left: auto;
   margin-right: auto;
 
   @include g.mq("md") {
-    right: 25px;
-    width: clamp(314px, 53vw, 752px);
+    right: 15px;
+    width: clamp(314px, 55vw, 773px);
     position: absolute;
     transform: translateX(0);
     margin-left: 0;
@@ -38,7 +38,7 @@
   }
 
   @include g.mq("lg") {
-    top: 0;
+    top: -10px;
   }
 }
 
@@ -50,7 +50,7 @@
   width: math.div(159px, 375px) * 100vw;
   position: absolute;
   top: 23%;
-  right: 53%;
+  right: 52%;
   transform: translateX(50%);
 
   @include g.mq("md") {
@@ -61,13 +61,13 @@
   }
 
   @include g.mq("layout") {
-    top: 170px;
-    right: 209px;
+    top: 190px;
+    right: 220px;
   }
 }
 
 .mvContentsWrap {
-  margin-top: 26px;
+  margin-top: 23px;
 
   @include g.mq("md") {
     margin-left: 6%;
@@ -84,7 +84,7 @@
 
 .mvTitleWrap {
   margin: auto;
-  width: clamp(313px, 35vw, 509px);
+  width: clamp(313px, 36vw, 509px);
 
   @include g.mq("md") {
     margin: 0;
@@ -98,7 +98,6 @@
   margin-right: auto;
 
   @include g.mq("md") {
-    margin-top: 52px;
     margin-left: 22px;
   }
 }

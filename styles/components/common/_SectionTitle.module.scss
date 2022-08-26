@@ -6,20 +6,30 @@
   padding-top: 44px;
   text-align: center;
   font-weight: 500;
-  font-size: clamp(g.rem(24), 4vw, g.rem(36));
+  font-size: clamp(g.rem(24), 5vw, g.rem(36));
+  margin-top: 27px;
+
+  @include g.mq("md") {
+    margin-top: 22px;
+  }
 
   span {
-    font-size: clamp(g.rem(16), 3vw, g.rem(24));
+    font-size: clamp(g.rem(16), 4vw, g.rem(24));
   }
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -4px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
     height: 58px;
-    background: transparent url(/img/common/title-reception.png) no-repeat center center /cover;
+    background: transparent url(/img/common/title-reception.png) no-repeat
+      center center / cover;
+
+    @include g.mq("md") {
+      top: 2px;
+    }
   }
 }

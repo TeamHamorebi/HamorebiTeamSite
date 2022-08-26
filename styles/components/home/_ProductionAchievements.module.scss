@@ -4,20 +4,25 @@
 .productionAchievements {
   @extend %sectionLayout;
   background-color: g.$color-productionAchievements-background;
+
+  @include g.mq("md") {
+    padding-bottom: 103px;
+  }
 }
 
 .list {
   width: 100%;
   max-width: 1140px;
-  margin-top: 54px;
+  margin-top: 59px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px 15px;
+  gap: 28.1px 15px;
 
   @include g.mq("md") {
-    gap: 50px 15px;
+    gap: 53px 15px;
+    margin-top: 63px;
   }
 }
 
@@ -44,8 +49,8 @@
   &::before {
     content: "";
     position: absolute;
-    top: -7%;
-    left: -6%;
+    top: -8%;
+    left: -1%;
     width: 100%;
     height: 100%;
     background: transparent url(/img/top/hamorebi_logo_color--big.png) no-repeat
@@ -62,17 +67,17 @@
 }
 
 @media (hover: hover) {
-  .link:hover .imgWrap {
-    &::before {
-      visibility: visible;
-      opacity: 1;
-      transform: scale(1.16);
-    }
-
-    img {
-      transform: scale(0.8);
-    }
+.link:hover .imgWrap {
+  &::before {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.12);
   }
+
+  img {
+    transform: scale(0.8);
+  }
+}
 }
 
 .clientName {
@@ -82,6 +87,10 @@
 }
 
 .category {
-  margin-top: 8px;
+  margin-top: 7px;
   font-size: g.rem(14);
+
+  @include g.mq("md") {
+    margin-top: 11px;
+  }
 }

@@ -4,14 +4,9 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding-left: 31px;
-  padding-right: 30px;
-
-  @include g.mq("sm") {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
+  padding-left: 16px;
+  padding-right: 16px;
+  
   @include g.mq("md") {
     padding: 0;
   }

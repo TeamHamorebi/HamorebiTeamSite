@@ -87,18 +87,19 @@ export default function ServiceAndPrice() {
                 </p>
                 <p className={styles.configurationExample}>
                   トップページ＋下層4ページ
-                  <br />
-                  TOP
-                  <br />
-                  商品情報
-                  <br />
-                  店舗情報
-                  <br />
-                  お問い合わせ
-                  <br />
-                  プライバシーポリシー
-                  <br />
-                  （ショッピング機能は含みません）
+                  <span>
+                    TOP
+                    <br />
+                    商品情報
+                    <br />
+                    店舗情報
+                    <br />
+                    お問い合わせ
+                    <br />
+                    プライバシーポリシー
+                    <br />
+                    （ショッピング機能は含みません）
+                  </span>
                 </p>
               </li>
               {/* /example item */}
@@ -110,18 +111,19 @@ export default function ServiceAndPrice() {
                 </p>
                 <p className={styles.configurationExample}>
                   トップページ＋下層5ページ
-                  <br />
-                  TOP
-                  <br />
-                  企業情報
-                  <br />
-                  会社概要
-                  <br />
-                  お知らせ
-                  <br />
-                  お問い合わせ
-                  <br />
-                  プライバシーポリシー
+                  <span>
+                    TOP
+                    <br />
+                    企業情報
+                    <br />
+                    会社概要
+                    <br />
+                    お知らせ
+                    <br />
+                    お問い合わせ
+                    <br />
+                    プライバシーポリシー
+                  </span>
                 </p>
               </li>
               {/* /example item */}

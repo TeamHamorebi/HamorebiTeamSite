@@ -3,6 +3,12 @@
 
 .contact {
   @extend %sectionLayout;
+  padding-bottom: 75px;
+
+  @include g.mq("md") {
+    padding-bottom: 100px;
+  }
+
   background: linear-gradient(
     56.57deg,
     g.$color-contactSection-background1 0%,
@@ -11,13 +17,17 @@
 }
 
 .lead {
-  margin-top: 54px;
+  margin-top: 61px;
   text-align: center;
   line-height: math.div(25.6, 16);
+
+  @include g.mq("md") {
+    margin-top: 63px;
+  }
 }
 
 .form {
-  margin-top: 26px;
+  margin-top: 27px;
   width: 100%;
   max-width: 616px;
   margin-left: auto;
@@ -39,7 +49,18 @@
   }
 
   &:not(:first-child) {
-    margin-top: 24px;
+    margin-top: 27px;
+
+    @include g.mq("lg") {
+      margin-top: 24px;
+    }
+  }
+  &:last-child {
+    margin-top: 31px;
+
+    @include g.mq("lg") {
+      margin-top: 27px;
+    }
   }
 }
 
@@ -50,6 +71,7 @@
   @include g.mq("sm") {
     width: 200px;
     justify-content: space-between;
+    margin-top: 2px;
   }
 }
 .optionalLabel,
@@ -126,7 +148,11 @@
   }
 }
 .input {
-  padding: 3.5px 8px;
+  padding: 10px 8px 13px;
+
+  @include g.mq("lg") {
+    padding: 3.5px 8px;
+  }
 }
 
 // textarea
@@ -188,12 +214,22 @@
 
 // radio
 .formRadioWrap {
+  margin-top: 11px;
+
+  @include g.mq("sm") {
+    margin-top: 3px;
+  }
+
   label {
     display: block;
     position: relative;
 
     &:not(:first-child) {
-      margin-top: 10px;
+      margin-top: 23px;
+
+      @include g.mq("sm") {
+        margin-top: 15px;
+      }
     }
   }
 
@@ -278,7 +314,7 @@
 
 //contact btn
 .contactBtnWrap {
-  margin-top: 25px;
+  margin-top: 23px;
   width: 319px;
   margin-left: auto;
   margin-right: auto;
