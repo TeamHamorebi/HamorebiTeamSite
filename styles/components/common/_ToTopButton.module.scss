@@ -12,7 +12,7 @@
   transition: opacity 0.3s ease;
   z-index: g.zi(toTopBtn);
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden; // 読み込み後、一瞬isFadeOutのアニメが表示されるため追加
 
   @include g.mq("3xl") {
     right: calc(50vw - 750px);
