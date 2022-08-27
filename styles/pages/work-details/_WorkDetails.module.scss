@@ -2,48 +2,53 @@
 @use "sass:math";
 
 .workDetails {
+  padding-top: 105px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 102px;
   background: linear-gradient(
     0.9deg,
     g.$color-work-details-background1 0%,
     g.$color-work-details-background2 100%
   );
 
-  padding-top: 105px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 50px;
-
-  @include g.mq("md") {
+  @include g.mq("lg") {
+    padding-bottom: 100px;
     background: linear-gradient(
       24.91deg,
       g.$color-work-details-background1 0%,
       g.$color-work-details-background2 100%
     );
+  }
 
-    padding-top: 130px;
-    padding-bottom: 100px;
+  @include g.mq("xl") {
+    padding-top: 133px;
   }
 }
 
 .sectionTitleWrap {
   @include g.mq("lg") {
-    margin-top: 50px;
+    margin-top: 74px;
   }
 }
 
 .contentsWrap {
-  margin-top: 50px;
+  margin-top: 59px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 983px;
+  max-width: 1034px;
 
   @include g.mq("lg") {
-    margin-top: 54px;
+    margin-top: 62px;
   }
 }
 
 .mainInfo {
+  width: 100%;
+  max-width: 932px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,6 +56,9 @@
   gap: 25px;
 
   @include g.mq("lg") {
+    max-width: 983px;
+    margin-left: auto;
+    margin-right: 0;
     flex-direction: row;
     align-items: flex-start;
   }
@@ -75,7 +83,7 @@
 
 .caseName {
   font-weight: 700;
-  font-size: clamp(g.rem(20), 5vw, g.rem(24));
+  font-size: clamp(g.rem(20), 4vw, g.rem(24));
   line-height: math.div(34.75, 24);
 }
 
@@ -97,14 +105,28 @@
 
 // 各line-hight
 .siteLink,
-.infoText,
-.caseSummary {
+.infoText {
   line-height: math.div(23.17, 16);
 }
 .personName,
 .engineerComments,
 .webDesignerComments {
   line-height: math.div(25.6, 16);
+}
+.caseSummary {
+  line-height: math.div(25.6, 16);
+
+  @include g.mq("md") {
+    line-height: math.div(23.17, 16);
+  }
+}
+.engineerComments,
+.webDesignerComments {
+  line-height: math.div(25.9, 16);
+
+  @include g.mq("md") {
+    line-height: math.div(25.6, 16);
+  }
 }
 
 // 最初の.infoTextのみ適用
@@ -134,18 +156,17 @@
 
 // 概要
 .outlineInfo {
-  margin-top: 50px;
   width: 100%;
-
-  @include g.mq("xxl") {
-    max-width: 932px;
-  }
+  max-width: 932px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 51px;
 }
 
 .productionOutlineTile {
-  margin-top: 50px;
+  margin-top: 52px;
   font-weight: 700;
-  font-size: g.rem(24);
+  font-size: clamp(g.rem(20), 4vw, g.rem(24));
   line-height: math.div(34.75, 24);
 
   @include g.mq("lg") {
@@ -154,9 +175,9 @@
 }
 .productionOutlineSubTile {
   font-weight: 700;
-  font-size: g.rem(20);
+  font-size: clamp(g.rem(18), 4vw, g.rem(20));
   line-height: math.div(32, 20);
-  margin-top: 10px;
+  margin-top: 11px;
   color: g.$color-font-work-details-point;
 }
 
@@ -167,19 +188,20 @@
 
 // カンプ
 .compImgList {
-  margin-top: 50px;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 25px 18px;
+  gap: 23px 18px;
   width: 100%;
+  max-width: 930px;
+  margin-left: auto;
+  margin-right: auto;
 
   @include g.mq("md") {
     flex-direction: row;
-  }
-
-  @include g.mq("xxl") {
-    max-width: 930px;
+    margin-top: 50px;
+    gap: 25px 18px;
   }
 }
 
@@ -206,10 +228,14 @@
 }
 
 .btnWrap {
-  margin-top: 50px;
+  margin-top: 48px;
   width: 239px;
   margin-left: auto;
   margin-right: auto;
+
+  @include g.mq("md") {
+    margin-top: 50px;
+  }
 }
 
 // 後で削除予定 エンジニアコメントで使用
