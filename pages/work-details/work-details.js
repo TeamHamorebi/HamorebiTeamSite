@@ -23,7 +23,7 @@ export default function WorkDetails() {
         "株式会社プロフィットバンク様より自社ホームページの制作を承り、ディレクション、デザイン、コーディングを行いました。",
       engineerComments: [
         "SPA(Single Page Application)を採用し、WordPressによる制作よりも高速なページ遷移を実現しました。",
-        <br key="br" className={styles.br} />,
+        <br key="br" />,
         "アニメーション部分は、GSAPを採用しています。ユーザーが見やすいタイミングでコンテンツが表示されるように工夫をしました。",
       ],
       webDesignerComments:
@@ -66,7 +66,7 @@ export default function WorkDetails() {
                   {/* main info */}
                   <div className={styles.mainInfoTextWrap}>
                     {/* 案件名 */}
-                    <p className={styles.caseName}>{value.caseName}</p>
+                    <h3 className={styles.caseName}>{value.caseName}</h3>
                     {/* /案件名 */}
 
                     {/* サイトリンク */}
@@ -82,37 +82,64 @@ export default function WorkDetails() {
 
                     {/* クライアント名 */}
                     <p className={styles.infoText}>
-                      クライアント：
+                      <span className={styles.infoTextBoldface}>
+                        クライアント：
+                      </span>
                       <br className={styles.infoTextBr} />
                       {value.clientName}
                     </p>
                     {/* /クライアント名 */}
 
                     {/* カテゴリ */}
-                    <p className={styles.infoText}>{value.category}</p>
+                    <p className={styles.infoText}>
+                      <span className={styles.infoTextBoldface}>
+                        カテゴリ：
+                      </span>
+                      <br className={styles.infoTextBr} />
+                      {value.category}
+                    </p>
                     {/* /カテゴリ */}
 
                     {/* 制作期間 */}
-                    <p
-                      className={styles.infoText}
-                    >{`制作期間：${value.productionTimeTotal}（デザイン：${value.productionTimeDesign}、構築：${value.productionTimeConstruction}）`}</p>
+                    <p className={styles.infoText}>
+                      <span className={styles.infoTextBoldface}>
+                        制作期間：
+                      </span>
+                      {value.productionTimeTotal}（デザイン：
+                      {value.productionTimeDesign}、構築：
+                      {value.productionTimeConstruction}）
+                    </p>
                     {/* /制作期間 */}
 
                     {/* 使用ツール */}
-                    <p className={styles.infoText}>{value.tools}</p>
+                    <p className={styles.infoText}>
+                      <span className={styles.infoTextBoldface}>
+                        使用言語・ツール：
+                      </span>
+                      {value.tools}
+                    </p>
                     {/* /使用ツール */}
 
                     {/* 担当者 */}
                     <div className={styles.personWrap}>
-                      <p
-                        className={styles.personName}
-                      >{`ディレクター：${value.director}`}</p>
-                      <p
-                        className={styles.personName}
-                      >{`エンジニア：${value.engineer}`}</p>
-                      <p
-                        className={styles.personName}
-                      >{`Webデザイナー：${value.webDesigner}`}</p>
+                      <p className={styles.personName}>
+                        <span className={styles.infoTextBoldface}>
+                          ディレクター：
+                        </span>
+                        {value.director}
+                      </p>
+                      <p className={styles.personName}>
+                        <span className={styles.infoTextBoldface}>
+                          エンジニア：
+                        </span>
+                        {value.engineer}
+                      </p>
+                      <p className={styles.personName}>
+                        <span className={styles.infoTextBoldface}>
+                          Webデザイナー：
+                        </span>
+                        {value.webDesigner}
+                      </p>
                     </div>
                     {/* /担当者 */}
                   </div>
@@ -124,10 +151,12 @@ export default function WorkDetails() {
                 <div className={styles.outlineInfo}>
                   <p className={styles.caseSummary}>{value.caseSummary}</p>
 
-                  <p className={styles.productionOutlineTile}>制作概要</p>
+                  <h4 className={styles.productionOutlineTile}>制作概要</h4>
+                  <h5 className={styles.productionOutlineSubTile}>構築</h5>
                   <p className={styles.engineerComments}>
                     {value.engineerComments}
                   </p>
+                  <h5 className={styles.productionOutlineSubTile}>デザイン</h5>
                   <p className={styles.webDesignerComments}>
                     {value.webDesignerComments}
                   </p>
