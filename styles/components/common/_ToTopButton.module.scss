@@ -11,10 +11,19 @@
   overflow: hidden;
   transition: opacity 0.3s ease;
   z-index: g.zi(toTopBtn);
-  //   opacity: 0;
+  opacity: 0;
+  visibility: hidden;
 
   @include g.mq("3xl") {
     right: calc(50vw - 750px);
+  }
+
+  &.isFadeIn {
+    visibility: visible;
+    animation: fadeInAnime 0.5s forwards;
+  }
+  &.isFadeOut {
+    animation: fadeOutAnime 0.3s forwards;
   }
 }
 
