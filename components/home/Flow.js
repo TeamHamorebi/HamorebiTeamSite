@@ -2,6 +2,7 @@ import styles from "../../styles/components/home/_Flow.module.scss";
 import SectionTitle from "../common/SectionTitle";
 import Link from "next/link";
 import Button from "../common/Button";
+import AnimationTrigger from "../common/AnimationTrigger";
 
 export default function Flow() {
   const data = [
@@ -68,25 +69,31 @@ export default function Flow() {
   ];
 
   return (
-    <section id="work-flow" className={styles.flow}>
-      <SectionTitle title={"制作の流れ"} />
+    <AnimationTrigger
+      animation={styles.isFadeUp}
+      rootMargin="-15%"
+      triggerOnce
+    >
+      <section id="work-flow" className={styles.flow}>
+        <SectionTitle title={"制作の流れ"} />
 
-      <ul className={styles.list}>
-        {data.map((value, index) => {
-          return (
-            <li key={index} className={styles.item}>
-              <p className={styles.itemName}>{value.name}</p>
-              <p className={styles.itemDescription}>{value.description}</p>
-            </li>
-          );
-        })}
-      </ul>
+        <ul className={styles.list}>
+          {data.map((value, index) => {
+            return (
+              <li key={index} className={styles.item}>
+                <p className={styles.itemName}>{value.name}</p>
+                <p className={styles.itemDescription}>{value.description}</p>
+              </li>
+            );
+          })}
+        </ul>
 
-      <Button
-        styles={styles.btnWrap}
-        text={"お問い合わせをする"}
-        link={"#contact"}
-      />
-    </section>
+        <Button
+          styles={styles.btnWrap}
+          text={"お問い合わせをする"}
+          link={"#contact"}
+        />
+      </section>
+    </AnimationTrigger>
   );
 }

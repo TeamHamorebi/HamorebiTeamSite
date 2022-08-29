@@ -1,4 +1,5 @@
 import styles from "../../styles/components/home/_AboutAndPromise.module.scss";
+import AnimationTrigger from "../common/AnimationTrigger";
 
 export default function AboutAndPromise() {
   const cardInfo = [
@@ -41,47 +42,67 @@ export default function AboutAndPromise() {
   ];
 
   return (
-    <section id="about" className={styles.aboutAndPromise}>
-      <div className={styles.contentsWrap}>
-        <p className={styles.textTop}>
-          私達はWeb制作を承る
-          <br />
-          フリーランスチームの
-          <span className={styles.textBoldface}>Hamorebi ーはもれびー</span>です
-        </p>
-        <p className={styles.textBottom}>
-          Webサイト、ECサイト、ランディングページ
-          <br />
-          UIデザイン等の制作を行っております
-          <br />
-          日本各地のクリエーター達が
-          <br />
-          皆様のお悩みやお困りごとに寄り添って
-          <br />
-          解決のお手伝いをします
-        </p>
-      </div>
+    <AnimationTrigger
+      animation={styles.isFadeIn}
+      rootMargin="-10%"
+      triggerOnce
+    >
+      <section id="about" className={styles.aboutAndPromise}>
+        <AnimationTrigger
+          animation={styles.isFadeUp}
+          rootMargin="-15%"
+          triggerOnce
+        >
+          <div className={styles.contentsWrap}>
+            <p className={styles.textTop}>
+              私達はWeb制作を承る
+              <br />
+              フリーランスチームの
+              <span className={styles.textBoldface}>Hamorebi ーはもれびー</span>
+              です
+            </p>
+            <p className={styles.textBottom}>
+              Webサイト、ECサイト、ランディングページ
+              <br />
+              UIデザイン等の制作を行っております
+              <br />
+              日本各地のクリエーター達が
+              <br />
+              皆様のお悩みやお困りごとに寄り添って
+              <br />
+              解決のお手伝いをします
+            </p>
+          </div>
 
-      {/* promise */}
-      <h2 className={styles.promiseTitle}>
-        Hamorebiの
-        <span className={styles.titleBoldface}>３</span>
-        つのお約束
-      </h2>
-      <ul className={styles.promiseCardWrap}>
-        {cardInfo.map((value, index) => {
-          return (
-            <li key={index} className={styles.promiseCard}>
-              <div className={styles.cardImgWrap}>
-                <img src={value.img} />
-              </div>
-              <p className={styles.cardTitle}>{value.title}</p>
-              <p className={styles.cardText}>{value.text}</p>
-            </li>
-          );
-        })}
-      </ul>
-      {/* /promise */}
-    </section>
+          {/* promise */}
+          <h2 className={styles.promiseTitle}>
+            Hamorebiの
+            <span className={styles.titleBoldface}>３</span>
+            つのお約束
+          </h2>
+        </AnimationTrigger>
+
+        <AnimationTrigger
+          animation={styles.isFadeUp}
+          rootMargin="-15%"
+          triggerOnce
+        >
+          <ul className={styles.promiseCardWrap}>
+            {cardInfo.map((value, index) => {
+              return (
+                <li key={index} className={styles.promiseCard}>
+                  <div className={styles.cardImgWrap}>
+                    <img src={value.img} />
+                  </div>
+                  <p className={styles.cardTitle}>{value.title}</p>
+                  <p className={styles.cardText}>{value.text}</p>
+                </li>
+              );
+            })}
+          </ul>
+          {/* /promise */}
+        </AnimationTrigger>
+      </section>
+    </AnimationTrigger>
   );
 }

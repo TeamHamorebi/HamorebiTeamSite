@@ -1,6 +1,11 @@
 @use "../../global" as g;
 @use "sass:math";
 
+// スクロールアニメーション用
+.isFadeUp {
+  @extend %isFadeUp;
+}
+
 .flow {
   @extend %sectionLayout;
 }

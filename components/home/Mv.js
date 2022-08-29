@@ -1,13 +1,27 @@
 import styles from "../../styles/components/home/_Mv.module.scss";
 import Button from "../common/Button";
 import InnerLarge from "../common/InnerLarge";
+import { useState } from "react";
 
 export default function Mv() {
+  // 読み込み後アニメーション発動
+  const [isVisible, setIsVisible] = useState(false);
+  const onLoadAnime = () => {
+    if (isVisible) {
+      return;
+    }
+    setIsVisible(true);
+  };
+
   return (
     <InnerLarge>
-      <div className={styles.mv}>
+      <div className={styles.mv} onLoad={onLoadAnime()}>
         {/* image wrap */}
-        <div className={styles.imagesWrap}>
+        <div
+          className={`${styles.imagesWrap}  ${
+            isVisible ? styles.isFadeIn1 : undefined
+          }`}
+        >
           {/* people */}
           <div className={styles.peopleImgWrap}>
             <picture>
@@ -20,7 +34,11 @@ export default function Mv() {
           </div>
           {/* /people */}
           {/* pc image */}
-          <div className={styles.pcImgWrap}>
+          <div
+            className={`${styles.pcImgWrap} ${
+              isVisible ? styles.isFadeIn2 : undefined
+            }`}
+          >
             <img src="/img/top/MV_pc-mockup.png" />
           </div>
           {/* /pc image */}
@@ -28,7 +46,11 @@ export default function Mv() {
         {/* /image wrap */}
 
         {/* contents */}
-        <div className={styles.mvContentsWrap}>
+        <div
+          className={`${styles.mvContentsWrap} ${
+            isVisible ? styles.isFadeIn3 : undefined
+          }`}
+        >
           <div className={styles.mvTitleWrap}>
             <picture>
               <source
