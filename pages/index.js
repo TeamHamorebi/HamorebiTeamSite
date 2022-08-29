@@ -10,14 +10,15 @@ import Flow from "../components/home/Flow";
 import Member from "../components/home/Member";
 import QandA from "../components/home/QandA";
 import Contact from "../components/home/Contact";
+import { client } from "../lib/client";
 
-export default function Home() {
+export default function Home({ iconData }) {
   return (
     <Layout>
       <Mv />
       <AboutAndPromise />
       <TeamName />
-      <Work />
+      <Work data={iconData} />
       <ProductionAchievements />
       <ServiceAndPrice />
       <Flow />
@@ -30,3 +31,15 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps = async () => {
+  const iconData = await client.get({
+    endpoint: "work",
+  });
+
+  return {
+    props: {
+      iconData,
+    },
+  };
+};
