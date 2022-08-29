@@ -27,6 +27,7 @@
   width: math.div(332px, 375px) * 100vw;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
 
   @include g.mq("md") {
     right: 15px;
@@ -40,6 +41,14 @@
   @include g.mq("lg") {
     top: -10px;
   }
+
+  &.isFadeIn1 {
+    animation-name: fadeInAnime;
+    animation-duration: 1.1s;
+    animation-delay: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
 }
 
 .peopleImgWrap {
@@ -52,6 +61,7 @@
   top: 23%;
   right: 52%;
   transform: translateX(50%);
+  opacity: 0;
 
   @include g.mq("md") {
     width: clamp(159px, 26vw, 362px);
@@ -64,10 +74,19 @@
     top: 190px;
     right: 220px;
   }
+
+  &.isFadeIn2 {
+    animation-name: fadeInAnime;
+    animation-duration: 1.1s;
+    animation-delay: 1.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
 }
 
 .mvContentsWrap {
   margin-top: 23px;
+  opacity: 0;
 
   @include g.mq("md") {
     margin-left: 6%;
@@ -79,6 +98,14 @@
 
   @include g.mq("lg") {
     margin-left: math.div(150px, 1440px) * 100%;
+  }
+
+    &.isFadeIn3 {
+    animation-name: fadeInAnime;
+    animation-duration: 1.1s;
+    animation-delay: 2.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
   }
 }
 

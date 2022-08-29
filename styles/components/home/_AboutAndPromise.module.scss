@@ -1,10 +1,18 @@
 @use "../../global" as g;
 @use "sass:math";
 
+// スクロールアニメーション用
+.isFadeIn {
+  @extend %isFadeIn;
+}
+.isFadeUp {
+  @extend %isFadeUp;
+}
+
 .aboutAndPromise {
   @extend %sectionLayout;
 
-  @include g.mq('md') {
+  @include g.mq("md") {
     padding-top: 100px;
   }
 

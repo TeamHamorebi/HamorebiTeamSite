@@ -1,6 +1,14 @@
 @use "../../global" as g;
 @use "sass:math";
 
+// スクロールアニメーション用
+.isFadeIn {
+  @extend %isFadeIn;
+}
+.isFadeUp {
+  @extend %isFadeUp;
+}
+
 .workDetails {
   padding-top: 105px;
   padding-left: 24px;

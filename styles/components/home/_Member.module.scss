@@ -1,6 +1,14 @@
 @use "../../global" as g;
 @use "sass:math";
 
+// スクロールアニメーション用
+.isFadeIn {
+  @extend %isFadeIn;
+}
+.isFadeUp {
+  @extend %isFadeUp;
+}
+
 .member {
   @extend %sectionLayout;
   background: transparent url(/img/top/Hamorebi_sun--sp.png) no-repeat top 312px

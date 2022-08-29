@@ -69,7 +69,7 @@
   @include m.mq("md") {
     padding-bottom: 100px;
   }
-  
+
   @include m.mq("lg") {
     padding-top: 100px;
   }
@@ -78,4 +78,21 @@
 // card
 %cardRadius {
   border-radius: 20px 20px 60px 20px;
+}
+
+// animation
+%isFadeIn {
+  animation-name: fadeInAnime;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+%isFadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.8s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }

@@ -3,6 +3,7 @@ import Layout from "../../components/common/Layout";
 import Breadcrumb from "../../components/common/Breadcrumb";
 import SectionTitle from "../../components/common/SectionTitle";
 import Button from "../../components/common/Button";
+import AnimationTrigger from "../../components/common/AnimationTrigger";
 
 export default function WorkDetails() {
   const infoData = [
@@ -44,152 +45,166 @@ export default function WorkDetails() {
 
   return (
     <Layout>
-      <section className={styles.workDetails}>
-        <Breadcrumb />
+      <AnimationTrigger
+        animation={styles.isFadeIn}
+        rootMargin="-10%"
+        triggerOnce
+      >
+        <section className={styles.workDetails}>
+          <Breadcrumb />
 
-        <div className={styles.sectionTitleWrap}>
-          <SectionTitle title={"制作実績"} />
-        </div>
+          <AnimationTrigger
+            animation={styles.isFadeUp}
+            rootMargin="-15%"
+            triggerOnce
+          >
+            <div className={styles.sectionTitleWrap}>
+              <SectionTitle title={"制作実績"} />
+            </div>
 
-        <div className={styles.contentsWrap}>
-          {infoData.map((value, index) => {
-            return (
-              <>
-                {/* 2カラム */}
-                <div key={index} className={styles.mainInfo}>
-                  {/* img */}
-                  <div className={styles.mainImgWrap}>
-                    <img src={value.mainImg} />
-                  </div>
-                  {/* /img */}
+            <div className={styles.contentsWrap}>
+              {infoData.map((value, index) => {
+                return (
+                  <>
+                    {/* 2カラム */}
+                    <div key={index} className={styles.mainInfo}>
+                      {/* img */}
+                      <div className={styles.mainImgWrap}>
+                        <img src={value.mainImg} />
+                      </div>
+                      {/* /img */}
 
-                  {/* main info */}
-                  <div className={styles.mainInfoTextWrap}>
-                    {/* 案件名 */}
-                    <h3 className={styles.caseName}>{value.caseName}</h3>
-                    {/* /案件名 */}
+                      {/* main info */}
+                      <div className={styles.mainInfoTextWrap}>
+                        {/* 案件名 */}
+                        <h3 className={styles.caseName}>{value.caseName}</h3>
+                        {/* /案件名 */}
 
-                    {/* サイトリンク */}
-                    <a
-                      className={styles.siteLink}
-                      href={value.siteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {value.siteUrl}
-                    </a>
-                    {/* /サイトリンク */}
+                        {/* サイトリンク */}
+                        <a
+                          className={styles.siteLink}
+                          href={value.siteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {value.siteUrl}
+                        </a>
+                        {/* /サイトリンク */}
 
-                    {/* クライアント名 */}
-                    <p className={styles.infoText}>
-                      <span className={styles.infoTextBoldface}>
-                        クライアント：
-                      </span>
-                      <br className={styles.infoTextBr} />
-                      {value.clientName}
-                    </p>
-                    {/* /クライアント名 */}
+                        {/* クライアント名 */}
+                        <p className={styles.infoText}>
+                          <span className={styles.infoTextBoldface}>
+                            クライアント：
+                          </span>
+                          <br className={styles.infoTextBr} />
+                          {value.clientName}
+                        </p>
+                        {/* /クライアント名 */}
 
-                    {/* カテゴリ */}
-                    <p className={styles.infoText}>
-                      <span className={styles.infoTextBoldface}>
-                        カテゴリ：
-                      </span>
-                      <br className={styles.infoTextBr} />
-                      {value.category}
-                    </p>
-                    {/* /カテゴリ */}
+                        {/* カテゴリ */}
+                        <p className={styles.infoText}>
+                          <span className={styles.infoTextBoldface}>
+                            カテゴリ：
+                          </span>
+                          <br className={styles.infoTextBr} />
+                          {value.category}
+                        </p>
+                        {/* /カテゴリ */}
 
-                    {/* 制作期間 */}
-                    <p className={styles.infoText}>
-                      <span className={styles.infoTextBoldface}>
-                        制作期間：
-                      </span>
-                      {value.productionTimeTotal}（デザイン：
-                      {value.productionTimeDesign}、構築：
-                      {value.productionTimeConstruction}）
-                    </p>
-                    {/* /制作期間 */}
+                        {/* 制作期間 */}
+                        <p className={styles.infoText}>
+                          <span className={styles.infoTextBoldface}>
+                            制作期間：
+                          </span>
+                          {value.productionTimeTotal}（デザイン：
+                          {value.productionTimeDesign}、構築：
+                          {value.productionTimeConstruction}）
+                        </p>
+                        {/* /制作期間 */}
 
-                    {/* 使用ツール */}
-                    <p className={styles.infoText}>
-                      <span className={styles.infoTextBoldface}>
-                        使用言語・ツール：
-                      </span>
-                      {value.tools}
-                    </p>
-                    {/* /使用ツール */}
+                        {/* 使用ツール */}
+                        <p className={styles.infoText}>
+                          <span className={styles.infoTextBoldface}>
+                            使用言語・ツール：
+                          </span>
+                          {value.tools}
+                        </p>
+                        {/* /使用ツール */}
 
-                    {/* 担当者 */}
-                    <div className={styles.personWrap}>
-                      <p className={styles.personName}>
-                        <span className={styles.infoTextBoldface}>
-                          ディレクター：
-                        </span>
-                        {value.director}
+                        {/* 担当者 */}
+                        <div className={styles.personWrap}>
+                          <p className={styles.personName}>
+                            <span className={styles.infoTextBoldface}>
+                              ディレクター：
+                            </span>
+                            {value.director}
+                          </p>
+                          <p className={styles.personName}>
+                            <span className={styles.infoTextBoldface}>
+                              エンジニア：
+                            </span>
+                            {value.engineer}
+                          </p>
+                          <p className={styles.personName}>
+                            <span className={styles.infoTextBoldface}>
+                              Webデザイナー：
+                            </span>
+                            {value.webDesigner}
+                          </p>
+                        </div>
+                        {/* /担当者 */}
+                      </div>
+                      {/* /main info */}
+                    </div>
+                    {/* /2カラム */}
+
+                    {/* 概要 */}
+                    <div className={styles.outlineInfo}>
+                      <p className={styles.caseSummary}>{value.caseSummary}</p>
+
+                      <h4 className={styles.productionOutlineTile}>制作概要</h4>
+                      <h5 className={styles.productionOutlineSubTile}>構築</h5>
+                      <p className={styles.engineerComments}>
+                        {value.engineerComments}
                       </p>
-                      <p className={styles.personName}>
-                        <span className={styles.infoTextBoldface}>
-                          エンジニア：
-                        </span>
-                        {value.engineer}
-                      </p>
-                      <p className={styles.personName}>
-                        <span className={styles.infoTextBoldface}>
-                          Webデザイナー：
-                        </span>
-                        {value.webDesigner}
+                      <h5 className={styles.productionOutlineSubTile}>
+                        デザイン
+                      </h5>
+                      <p className={styles.webDesignerComments}>
+                        {value.webDesignerComments}
                       </p>
                     </div>
-                    {/* /担当者 */}
-                  </div>
-                  {/* /main info */}
-                </div>
-                {/* /2カラム */}
+                    {/* /概要 */}
+                  </>
+                );
+              })}
 
-                {/* 概要 */}
-                <div className={styles.outlineInfo}>
-                  <p className={styles.caseSummary}>{value.caseSummary}</p>
+              {/* カンプ */}
+              <ul className={styles.compImgList}>
+                {compData.map((value, index) => {
+                  return (
+                    <li key={index} className={styles.compImgItem}>
+                      <div className={styles.compImgWrapPc}>
+                        <img src={value.pcImg} />
+                      </div>
+                      <div className={styles.compImgWrapSp}>
+                        <img src={value.spImg} />
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+              {/* /カンプ */}
+            </div>
 
-                  <h4 className={styles.productionOutlineTile}>制作概要</h4>
-                  <h5 className={styles.productionOutlineSubTile}>構築</h5>
-                  <p className={styles.engineerComments}>
-                    {value.engineerComments}
-                  </p>
-                  <h5 className={styles.productionOutlineSubTile}>デザイン</h5>
-                  <p className={styles.webDesignerComments}>
-                    {value.webDesignerComments}
-                  </p>
-                </div>
-                {/* /概要 */}
-              </>
-            );
-          })}
-
-          {/* カンプ */}
-          <ul className={styles.compImgList}>
-            {compData.map((value, index) => {
-              return (
-                <li key={index} className={styles.compImgItem}>
-                  <div className={styles.compImgWrapPc}>
-                    <img src={value.pcImg} />
-                  </div>
-                  <div className={styles.compImgWrapSp}>
-                    <img src={value.spImg} />
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-          {/* /カンプ */}
-        </div>
-
-        <Button
-          styles={styles.btnWrap}
-          text={"トップページに戻る"}
-          link={"/"}
-        />
-      </section>
+            <Button
+              styles={styles.btnWrap}
+              text={"トップページに戻る"}
+              link={"/"}
+            />
+          </AnimationTrigger>
+        </section>
+      </AnimationTrigger>
     </Layout>
   );
 }
