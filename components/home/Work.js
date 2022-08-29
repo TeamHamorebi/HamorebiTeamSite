@@ -4,13 +4,11 @@ import Button from "../common/Button";
 import WorkStatusItem from "./WorkStatusItem";
 import AnimationTrigger from "../common/AnimationTrigger";
 
-export default function Work() {
+export default function Work(props) {
+  const icons = props.data;
+
   return (
-    <AnimationTrigger
-      animation={styles.isFadeUp}
-      rootMargin="-15%"
-      triggerOnce
-    >
+    <AnimationTrigger animation={styles.isFadeUp} rootMargin="-15%" triggerOnce>
       <section className={styles.work}>
         <div className={styles.sectionTitleWrap}>
           <SectionTitle
@@ -30,9 +28,18 @@ export default function Work() {
 
         {/* work status list */}
         <ul className={styles.workStatusList}>
-          <WorkStatusItem date={"thisMonth"} />
-          <WorkStatusItem date={"nextMonth"} />
-          <WorkStatusItem date={"comeAgainMonth"} />
+          <WorkStatusItem
+            dateText={"thisMonth"}
+            iconNum={icons.thisMonthIcon}
+          />
+          <WorkStatusItem
+            dateText={"nextMonth"}
+            iconNum={icons.nextMonthIcon}
+          />
+          <WorkStatusItem
+            dateText={"comeAgainMonth"}
+            iconNum={icons.comeAgainMonthIcon}
+          />
         </ul>
         {/* /work status list */}
 

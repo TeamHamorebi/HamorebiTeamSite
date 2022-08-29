@@ -65,31 +65,36 @@
     width: clamp(46px, 9vw, 70px);
   }
 
-  &.isActive {
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent url(/img/common/hamorebi_logo_color.png) no-repeat
-        center center / contain;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent url(/img/common/hamorebi_logo_color.png) no-repeat
+      center center / contain;
+    opacity: 0;
   }
 
-  // テスト用
-  &:nth-child(-n + 3) {
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent url(/img/common/hamorebi_logo_color.png) no-repeat
-        center center / contain;
-    }
+  // icon check
+  &[check-icon="0"]::after {
+    opacity: 0;
+  }
+  &[check-icon="1"]:first-child::after {
+    opacity: 1;
+  }
+  &[check-icon="2"]:not(:nth-child(n + 3))::after {
+    opacity: 1;
+  }
+  &[check-icon="3"]:not(:nth-child(n + 4))::after {
+    opacity: 1;
+  }
+  &[check-icon="4"]:not(:nth-child(n + 5))::after {
+    opacity: 1;
+  }
+  &[check-icon="5"]::after {
+    opacity: 1;
   }
 }
 .statusText {
