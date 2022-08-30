@@ -2,6 +2,10 @@ import styles from "../../styles/components/home/_Contact.module.scss";
 import SectionTitle from "../common/SectionTitle";
 import { useState } from "react";
 import AnimationTrigger from "../common/AnimationTrigger";
+// contact送信関連に必要
+import { useForm, Controller } from "react-hook-form";
+import { ContactGoogleForm } from "../../lib/ContactGoogleForm";
+import axios from "axios";
 
 export default function Contact() {
   // テキストエリアのplaceholderの改行対応
@@ -18,12 +22,13 @@ export default function Contact() {
     }
   };
 
+  // useForm
+  const { register, handleSubmit } = useForm({
+    mode: "onChange",
+  });
+
   return (
-    <AnimationTrigger
-      animation={styles.isFadeIn}
-      rootMargin="-10%"
-      triggerOnce
-    >
+    <AnimationTrigger animation={styles.isFadeIn} rootMargin="-10%" triggerOnce>
       <section id="contact" className={styles.contact}>
         <AnimationTrigger
           animation={styles.isFadeUp}
@@ -48,7 +53,11 @@ export default function Contact() {
           rootMargin="-150px"
           triggerOnce
         >
-          <form action="#" method="POST" className={styles.form}>
+          <form
+            noValidate
+            onSubmit={handleSubmit(submit)}
+            className={styles.form}
+          >
             <dl className={styles.formList}>
               {/* 社名 */}
               <div className={styles.formItem}>
@@ -58,10 +67,11 @@ export default function Contact() {
                 <dd className={styles.formInputWrap}>
                   <input
                     id="companyName"
-                    type="text"
-                    name="dummy"
+                    type={"text"}
+                    name={"companyName"}
                     placeholder="株式会社ハモレビ"
                     className={styles.input}
+                    ref={register()}
                   />
                 </dd>
               </div>
@@ -75,11 +85,12 @@ export default function Contact() {
                 <dd className={styles.formInputWrap}>
                   <input
                     id="name"
-                    type="text"
-                    name="dummy"
+                    type={"text"}
+                    name={"name"}
                     required
                     placeholder="山田 太郎"
                     className={styles.input}
+                    ref={register()}
                   />
                 </dd>
               </div>
@@ -93,11 +104,12 @@ export default function Contact() {
                 <dd className={styles.formInputWrap}>
                   <input
                     id="mail"
-                    type="email"
-                    name="dummy"
+                    type={"email"}
+                    name={"mail"}
                     required
                     placeholder="000000000@gmail.com"
                     className={styles.input}
+                    ref={register()}
                   />
                 </dd>
               </div>
@@ -111,30 +123,47 @@ export default function Contact() {
                 <dd className={styles.formRadioWrap}>
                   <label>
                     <input
-                      type="radio"
-                      name="dummy"
+                      type={"radio"}
+                      name={"radio"}
                       value="Webサイト制作について"
+                      ref={register()}
                     />
                     <span>Webサイト制作について</span>
                   </label>
                   <label>
-                    <input type="radio" name="dummy" value="LPについて" />
+                    <input
+                      type={"radio"}
+                      name={"radio"}
+                      value="LPについて"
+                      ref={register()}
+                    />
                     <span>LPについて</span>
                   </label>
                   <label>
-                    <input type="radio" name="dummy" value="ECサイトについて" />
+                    <input
+                      type={"radio"}
+                      name={"radio"}
+                      value="ECサイトについて"
+                      ref={register()}
+                    />
                     <span>ECサイトについて</span>
                   </label>
                   <label>
                     <input
-                      type="radio"
-                      name="dummy"
+                      type={"radio"}
+                      name={"radio"}
                       value="UIデザインについて"
+                      ref={register()}
                     />
                     <span>UIデザインについて</span>
                   </label>
                   <label>
-                    <input type="radio" name="dummy" value="その他" />
+                    <input
+                      type={"radio"}
+                      name={"radio"}
+                      value="その他"
+                      ref={register()}
+                    />
                     <span>その他</span>
                   </label>
                 </dd>
@@ -152,12 +181,13 @@ export default function Contact() {
                   <div className={styles.dedicatedTextareaAndPlaceholderWrap}>
                     <textarea
                       id="textarea"
-                      name="dummy"
+                      name={"textarea"}
                       placeholder=""
                       className={`${styles.textarea} ${
                         isActive ? styles.isActive : undefined
                       }`}
                       onChange={bgChange}
+                      ref={register()}
                     />
                     <p className={styles.placeholderText}>
                       新しく飲食店をオープンするのでホームページを作りたい
@@ -177,9 +207,10 @@ export default function Contact() {
               className={`${styles.contactBtnWrap} ${styles.contactBtnArrow}`}
             >
               <input
-                type="submit"
+                type={"submit"}
                 className={styles.contactBtn}
                 value="この内容でお問い合わせをする"
+                onClick={submit}
               />
               <div className={styles.contactBtnDecoration}></div>
             </div>
@@ -190,3 +221,38 @@ export default function Contact() {
     </AnimationTrigger>
   );
 }
+
+const submit = (values) => {
+  const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
+  // CORS対策
+  const CORS_PROXY = "https://floating-bayou-34569.herokuapp.com/";
+
+  // PostのParam生成
+  const submitParams = new FormData();
+  submitParams.append(ContactGoogleForm.companyName, values.companyName);
+  submitParams.append(ContactGoogleForm.name, values.name);
+  submitParams.append(ContactGoogleForm.mail, values.mail);
+  submitParams.append(ContactGoogleForm.radio, values.radio);
+  submitParams.append(ContactGoogleForm.textarea, values.textarea);
+
+  // 実行
+  axios
+    .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+    .then(() => {
+      window.location.href = "/thanks"; // 成功時
+    })
+    .catch((error) => {
+      console.log(error); // 失敗時
+      // if (error.request) {
+      //   console.log(error.request);
+      //   console.log("リクエスト");
+      // } else if (error.message) {
+      //   console.log(error.message);
+      //   console.log("メッセージ");
+      // } else if (error.response) {
+      //   console.log(error.response);
+      //   console.log("レスポンス");
+      // }
+    });
+  console.log(submitParams);
+};
