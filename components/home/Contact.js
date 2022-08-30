@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "../../styles/components/home/_Contact.module.scss";
 import SectionTitle from "../common/SectionTitle";
 import { useState } from "react";
@@ -11,7 +12,29 @@ export default function Contact() {
   // テキストエリアのplaceholderの改行対応
   const [isActive, setIsActive] = useState(false);
 
-  const bgChange = (e) => {
+  // useForm
+  const [companyName, setCompanyName] = useState("");
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [radio, setRadio] = useState("");
+  const [textarea, setTextarea] = useState("");
+
+  const changeCompanyName = (e) => {
+    setCompanyName(e.target.value);
+  };
+  const changeName = (e) => {
+    setName(e.target.value);
+  };
+  const changeMail = (e) => {
+    setMail(e.target.value);
+  };
+  const changeRadio = (e) => {
+    setRadio(e.target.value);
+  };
+  const changeTextarea = (e) => {
+    setTextarea(e.target.value);
+
+    // placeholderの改行対応
     if (e.target.value.length !== 0) {
       if (isActive === true) {
         return;
@@ -22,10 +45,34 @@ export default function Contact() {
     }
   };
 
-  // useForm
-  const { register, handleSubmit } = useForm({
+  const { handleSubmit } = useForm({
     mode: "onChange",
   });
+
+  const submit = () => {
+    const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
+    // CORS対策
+    const CORS_PROXY = "https://floating-bayou-34569.herokuapp.com/";
+
+    // PostのParam生成
+    const submitParams = new FormData();
+    submitParams.append(ContactGoogleForm.companyName, companyName);
+    submitParams.append(ContactGoogleForm.name, name);
+    submitParams.append(ContactGoogleForm.mail, mail);
+    submitParams.append(ContactGoogleForm.radio, radio);
+    submitParams.append(ContactGoogleForm.textarea, textarea);
+
+    // 実行
+    axios
+      .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+      .then(() => {
+        // window.location.href = "/thanks"; // 成功時
+        console.log("成功！");
+      })
+      .catch((error) => {
+        console.log(error.response); // 失敗時
+      });
+  };
 
   return (
     <AnimationTrigger animation={styles.isFadeIn} rootMargin="-10%" triggerOnce>
@@ -71,7 +118,8 @@ export default function Contact() {
                     name={"companyName"}
                     placeholder="株式会社ハモレビ"
                     className={styles.input}
-                    ref={register()}
+                    value={companyName}
+                    onChange={changeCompanyName}
                   />
                 </dd>
               </div>
@@ -90,7 +138,8 @@ export default function Contact() {
                     required
                     placeholder="山田 太郎"
                     className={styles.input}
-                    ref={register()}
+                    value={name}
+                    onChange={changeName}
                   />
                 </dd>
               </div>
@@ -109,7 +158,8 @@ export default function Contact() {
                     required
                     placeholder="000000000@gmail.com"
                     className={styles.input}
-                    ref={register()}
+                    value={mail}
+                    onChange={changeMail}
                   />
                 </dd>
               </div>
@@ -126,7 +176,8 @@ export default function Contact() {
                       type={"radio"}
                       name={"radio"}
                       value="Webサイト制作について"
-                      ref={register()}
+                      onChange={changeRadio}
+                      checked={radio === "Webサイト制作について"}
                     />
                     <span>Webサイト制作について</span>
                   </label>
@@ -135,7 +186,8 @@ export default function Contact() {
                       type={"radio"}
                       name={"radio"}
                       value="LPについて"
-                      ref={register()}
+                      onChange={changeRadio}
+                      checked={radio === "LPについて"}
                     />
                     <span>LPについて</span>
                   </label>
@@ -144,7 +196,8 @@ export default function Contact() {
                       type={"radio"}
                       name={"radio"}
                       value="ECサイトについて"
-                      ref={register()}
+                      onChange={changeRadio}
+                      checked={radio === "ECサイトについて"}
                     />
                     <span>ECサイトについて</span>
                   </label>
@@ -153,7 +206,8 @@ export default function Contact() {
                       type={"radio"}
                       name={"radio"}
                       value="UIデザインについて"
-                      ref={register()}
+                      onChange={changeRadio}
+                      checked={radio === "UIデザインについて"}
                     />
                     <span>UIデザインについて</span>
                   </label>
@@ -162,7 +216,8 @@ export default function Contact() {
                       type={"radio"}
                       name={"radio"}
                       value="その他"
-                      ref={register()}
+                      onChange={changeRadio}
+                      checked={radio === "その他"}
                     />
                     <span>その他</span>
                   </label>
@@ -186,8 +241,9 @@ export default function Contact() {
                       className={`${styles.textarea} ${
                         isActive ? styles.isActive : undefined
                       }`}
-                      onChange={bgChange}
-                      ref={register()}
+                      value={textarea}
+                      onChange={changeTextarea}
+                      // onChange={bgChange}
                     />
                     <p className={styles.placeholderText}>
                       新しく飲食店をオープンするのでホームページを作りたい
@@ -210,7 +266,6 @@ export default function Contact() {
                 type={"submit"}
                 className={styles.contactBtn}
                 value="この内容でお問い合わせをする"
-                onClick={submit}
               />
               <div className={styles.contactBtnDecoration}></div>
             </div>
@@ -221,38 +276,3 @@ export default function Contact() {
     </AnimationTrigger>
   );
 }
-
-const submit = (values) => {
-  const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
-  // CORS対策
-  const CORS_PROXY = "https://floating-bayou-34569.herokuapp.com/";
-
-  // PostのParam生成
-  const submitParams = new FormData();
-  submitParams.append(ContactGoogleForm.companyName, values.companyName);
-  submitParams.append(ContactGoogleForm.name, values.name);
-  submitParams.append(ContactGoogleForm.mail, values.mail);
-  submitParams.append(ContactGoogleForm.radio, values.radio);
-  submitParams.append(ContactGoogleForm.textarea, values.textarea);
-
-  // 実行
-  axios
-    .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
-    .then(() => {
-      window.location.href = "/thanks"; // 成功時
-    })
-    .catch((error) => {
-      console.log(error); // 失敗時
-      // if (error.request) {
-      //   console.log(error.request);
-      //   console.log("リクエスト");
-      // } else if (error.message) {
-      //   console.log(error.message);
-      //   console.log("メッセージ");
-      // } else if (error.response) {
-      //   console.log(error.response);
-      //   console.log("レスポンス");
-      // }
-    });
-  console.log(submitParams);
-};
