@@ -69,6 +69,7 @@ export default function Contact() {
         window.location.href = "/thanks"; // 成功時
       })
       .catch((error) => {
+        window.location.href = "/error";
         console.log(error.response); // 失敗時
       });
   };
@@ -100,7 +101,6 @@ export default function Contact() {
           triggerOnce
         >
           <form
-            noValidate
             onSubmit={handleSubmit(submit)}
             className={styles.form}
           >
