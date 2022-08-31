@@ -4,7 +4,7 @@ import SectionTitle from "../common/SectionTitle";
 import { useState } from "react";
 import AnimationTrigger from "../common/AnimationTrigger";
 // contact送信関連に必要
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { ContactGoogleForm } from "../../lib/ContactGoogleForm";
 import axios from "axios";
 
@@ -18,6 +18,7 @@ export default function Contact() {
   const [mail, setMail] = useState("");
   const [radio, setRadio] = useState("");
   const [textarea, setTextarea] = useState("");
+  const [btnText, setBtnText] = useState("この内容でお問い合わせをする");
 
   const changeCompanyName = (e) => {
     setCompanyName(e.target.value);
@@ -33,7 +34,6 @@ export default function Contact() {
   };
   const changeTextarea = (e) => {
     setTextarea(e.target.value);
-
     // placeholderの改行対応
     if (e.target.value.length !== 0) {
       if (isActive === true) {
@@ -43,6 +43,12 @@ export default function Contact() {
     } else {
       setIsActive(false);
     }
+  };
+  const changeBtnText = () => {
+    if (name === "" || mail === "") {
+      return
+    }
+    setBtnText("送信中・・・");
   };
 
   const { handleSubmit } = useForm({
@@ -99,10 +105,7 @@ export default function Contact() {
           rootMargin="-150px"
           triggerOnce
         >
-          <form
-            onSubmit={handleSubmit(submit)}
-            className={styles.form}
-          >
+          <form onSubmit={handleSubmit(submit)} className={styles.form}>
             <dl className={styles.formList}>
               {/* 社名 */}
               <div className={styles.formItem}>
@@ -263,7 +266,8 @@ export default function Contact() {
               <input
                 type={"submit"}
                 className={styles.contactBtn}
-                value="この内容でお問い合わせをする"
+                value={btnText}
+                onClick={changeBtnText}
               />
               <div className={styles.contactBtnDecoration}></div>
             </div>
