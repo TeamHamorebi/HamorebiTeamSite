@@ -12,12 +12,14 @@ export default function Contact() {
   // テキストエリアのplaceholderの改行対応
   const [isActive, setIsActive] = useState(false);
 
-  // useForm
+  // inputの入力値更新
   const [companyName, setCompanyName] = useState("");
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [radio, setRadio] = useState("");
   const [textarea, setTextarea] = useState("");
+
+  // 送信ボタンクリック後、テキストを「送信中・・・」に変更
   const [btnText, setBtnText] = useState("この内容でお問い合わせをする");
 
   const changeCompanyName = (e) => {
@@ -44,13 +46,15 @@ export default function Contact() {
       setIsActive(false);
     }
   };
+  // 送信ボタンクリック後「送信中・・・」にテキストを変更
   const changeBtnText = () => {
     if (name === "" || mail === "") {
-      return
+      return;
     }
     setBtnText("送信中・・・");
   };
 
+  // useForm
   const { handleSubmit } = useForm({
     mode: "onChange",
   });
@@ -244,7 +248,6 @@ export default function Contact() {
                       }`}
                       value={textarea}
                       onChange={changeTextarea}
-                      // onChange={bgChange}
                     />
                     <p className={styles.placeholderText}>
                       新しく飲食店をオープンするのでホームページを作りたい
