@@ -1,0 +1,54 @@
+@use "../global" as g;
+@use "sass:math";
+
+.thanks {
+  @extend %sectionLayout;
+  background: g.$color-thanks-background url(/img/top/hamorebi_logo_white.png)
+    no-repeat bottom 0 right 0 /50% auto;
+
+  @include g.mq("layout") {
+    background: g.$color-thanks-background url(/img/top/hamorebi_logo_white.png)
+      no-repeat bottom 0 left calc(50vw + 50px) / 550px auto;
+  }
+}
+
+.title {
+  margin-top: 50px;
+  font-weight: 700;
+  text-align: center;
+  font-size: clamp(g.rem(24), 4vw, g.rem(36));
+  line-height: 1.3;
+}
+.titleBr {
+  @include g.mq("sm") {
+    display: none;
+  }
+}
+
+.text {
+  text-align: center;
+  line-height: math.div(25.6, 16);
+  padding-left: 10px;
+  padding-right: 11px;
+}
+.text:first-of-type {
+  margin-top: 40px;
+
+  @include g.mq("sm") {
+    margin-top: 60px;
+  }
+}
+.text:not(:first-of-type) {
+  margin-top: 40px;
+}
+.textBrPC {
+    display: none;
+    @include g.mq('sm') {
+        display: block;
+    }
+}
+
+.btnWrap {
+  width: 239px;
+  margin: 50px auto 0;
+}

@@ -100,7 +100,6 @@ export default function Contact() {
           triggerOnce
         >
           <form
-            noValidate
             onSubmit={handleSubmit(submit)}
             className={styles.form}
           >
