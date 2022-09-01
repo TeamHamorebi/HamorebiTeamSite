@@ -12,17 +12,17 @@ import QandA from "../components/home/QandA";
 import Contact from "../components/home/Contact";
 import { client } from "../lib/client";
 
-export default function Home({ iconData }) {
+export default function Home({ work, member }) {
   return (
     <Layout>
       <Mv />
       <AboutAndPromise />
       <TeamName />
-      <Work data={iconData} />
+      <Work data={work} />
       <ProductionAchievements />
       <ServiceAndPrice />
       <Flow />
-      <Member />
+      <Member data={member} />
       <QandA />
       <Contact />
       <Link href="/work-details/work-details">
@@ -36,10 +36,14 @@ export const getStaticProps = async () => {
   const iconData = await client.get({
     endpoint: "work",
   });
+  const memberData = await client.get({
+    endpoint: "member"
+  })
 
   return {
     props: {
-      iconData,
+      work: iconData,
+      member: memberData.contents,
     },
   };
 };
