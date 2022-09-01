@@ -38,8 +38,8 @@ export const getStaticProps = async () => {
     endpoint: "work",
   });
   const memberData = await client.get({
-    endpoint: "member"
-  })
+    endpoint: "member",
+  });
   const workDetailsData = await client.get({
     endpoint: "work-details",
   });
@@ -48,7 +48,7 @@ export const getStaticProps = async () => {
     props: {
       work: iconData,
       member: memberData.contents,
-      workDetails: workDetailsData.contents
+      workDetails: workDetailsData.contents,
     },
   };
 };
