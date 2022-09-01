@@ -10,16 +10,17 @@ import Flow from "../components/home/Flow";
 import Member from "../components/home/Member";
 import QandA from "../components/home/QandA";
 import Contact from "../components/home/Contact";
+// microCMSとの連携
 import { client } from "../lib/client";
 
-export default function Home({ work, member }) {
+export default function Home({ work, member, workDetails }) {
   return (
     <Layout>
       <Mv />
       <AboutAndPromise />
       <TeamName />
       <Work data={work} />
-      <ProductionAchievements />
+      <ProductionAchievements data={workDetails} />
       <ServiceAndPrice />
       <Flow />
       <Member data={member} />
@@ -39,11 +40,15 @@ export const getStaticProps = async () => {
   const memberData = await client.get({
     endpoint: "member"
   })
+  const workDetailsData = await client.get({
+    endpoint: "work-details",
+  });
 
   return {
     props: {
       work: iconData,
       member: memberData.contents,
+      workDetails: workDetailsData.contents
     },
   };
 };
