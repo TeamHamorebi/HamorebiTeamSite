@@ -3,118 +3,11 @@ import SectionTitle from "../common/SectionTitle";
 import Button from "../common/Button";
 import AnimationTrigger from "../common/AnimationTrigger";
 
-export default function Member() {
-  const data = [
-    {
-      memberImg: "img/top/member/gontaku.jpg",
-      portfolioLink: "",
-      memberName: "ごんたく",
-      positionName: "ディレクター / エンジニア",
-      tradeName: "",
-      skills: "WordPress / Python / Shopify",
-      twitterUrl: "https://twitter.com/gontadev",
-      instagramUrl: "",
-      facebookUrl: "",
-      mailAddress: "",
-    },
-    {
-      memberImg: "img/top/member/okadatomoya.jpg",
-      portfolioLink: "https://o-kraft.com/",
-      memberName: "岡田 智哉",
-      positionName: "フロントエンジニア",
-      tradeName: "KRAFT",
-      skills:
-        "HTML / CSS / Vue.js / github / ESLint webpack /PHP (WordPress) microcms",
-      twitterUrl: "https://twitter.com/create_toom",
-      instagramUrl: "",
-      facebookUrl: "",
-      mailAddress: "t.design@linkrec.net",
-    },
-    {
-      memberImg: "img/top/member/hosen.jpg",
-      portfolioLink:
-        "https://azure-sundae-d3f.notion.site/6a535ffaa2fa48d0bf86b94f4bbb1723",
-      memberName: "ほうせん",
-      positionName: "フロントエンジニア",
-      tradeName: "",
-      skills: "HTML / CSS(Sass) / JavaScript / React / Next.js / GitHub etc…",
-      twitterUrl: "https://twitter.com/tanusen17",
-      instagramUrl: "https://www.instagram.com/asukahosen",
-      facebookUrl: "",
-      mailAddress: "araaiko.122@gmail.com",
-    },
-    {
-      memberImg: "img/top/member/mayumelon.jpg",
-      portfolioLink: "",
-      memberName: "まゆめろん",
-      positionName: "エンジニア",
-      tradeName: "夢彩tech",
-      skills: [
-        "Next.js(TypeScript) + Tailwind CSS + headless CMS etc.",
-        <br key="br" />,
-        "塾講師・ヘルプデスク経験で培った「わかりやすく伝える技術」",
-      ],
-      twitterUrl: "https://twitter.com/mayoumelon",
-      instagramUrl: "",
-      facebookUrl: "",
-      mailAddress: "mayoumelon@gmail.com",
-    },
-    {
-      memberImg: "img/top/member/ayasai.jpg",
-      portfolioLink: "",
-      memberName: "あやさい",
-      positionName: "Webデザイナー",
-      tradeName: "Ayasai Design",
-      skills: "Figma / Photoshop /STUDIO",
-      twitterUrl: "https://twitter.com/ayasai27",
-      instagramUrl: "",
-      facebookUrl: "",
-      mailAddress: "",
-    },
-    {
-      memberImg: "img/top/member/shimadamana.jpg",
-      portfolioLink: "",
-      memberName: "島田 愛",
-      positionName: "Webデザイナー",
-      tradeName: "たおやかでざいん",
-      skills: "Figma / Photoshop",
-      twitterUrl: "https://twitter.com/taoyaka_design",
-      instagramUrl: "",
-      facebookUrl: "",
-      mailAddress: "taoyaka.design@gmail.com",
-    },
-    {
-      memberImg: "img/top/member/su-gi.jpg",
-      portfolioLink: "https://design-libero.studio.site/",
-      memberName: "杉本 崇幸",
-      positionName: "UIデザイナー",
-      tradeName: "Design Libero",
-      skills: "Figma / AdobeXD / STUDIO",
-      twitterUrl: "https://twitter.com/sugi_1127",
-      instagramUrl: "https://z-p15.www.instagram.com/sugi_uidesign/",
-      facebookUrl: "https://www.facebook.com/profile.php?id=100066533881012",
-      mailAddress: "sugi.libero@gmail.com",
-    },
-    {
-      memberImg: "img/top/member/yanaginatsu.jpg",
-      portfolioLink: "https://72-webdesign.com/",
-      memberName: "ヤナギナツ",
-      positionName: "Webデザイナー",
-      tradeName: "フチドルデザイン",
-      skills: "Figma / Photoshop / Illustrator",
-      twitterUrl: "https://twitter.com/natsu_design",
-      instagramUrl: "",
-      facebookUrl: "",
-      mailAddress: "yanagi.natsu86@gmail.com",
-    },
-  ];
+export default function Member(props) {
+  const memberData = props.data;
 
   return (
-    <AnimationTrigger
-      animation={styles.isFadeIn}
-      rootMargin="-10%"
-      triggerOnce
-    >
+    <AnimationTrigger animation={styles.isFadeIn} rootMargin="-10%" triggerOnce>
       <section id="member" className={styles.member}>
         <AnimationTrigger
           animation={styles.isFadeUp}
@@ -155,14 +48,14 @@ export default function Member() {
           triggerOnce
         >
           <ul className={styles.memberList}>
-            {data.map((value, index) => {
+            {memberData.map((value, index) => {
               return (
                 <li key={index} className={styles.memberItem}>
                   <div className={styles.memberImgWrap}>
-                    <img src={value.memberImg} />
+                    <img src={value.memberImg.url} />
                   </div>
                   <p className={styles.memberName}>
-                    {value.portfolioLink !== "" ? (
+                    {value.portfolioLink !== undefined ? (
                       <a
                         className={styles.portfolioLink}
                         href={value.portfolioLink}
@@ -177,15 +70,20 @@ export default function Member() {
                   </p>
                   <p className={styles.positionName}>{value.positionName}</p>
                   <p className={styles.tradeName}>{value.tradeName}</p>
-                  <p className={styles.skills}>{value.skills}</p>
+                  <div
+                    className={styles.skills}
+                    dangerouslySetInnerHTML={{
+                      __html: `${value.skills}`,
+                    }}
+                  />
 
                   {/* sns */}
-                  {value.twitterUrl !== "" ||
-                  value.instagramUrl !== "" ||
-                  value.facebookUrl !== "" ||
-                  value.mailAddress !== "" ? (
+                  {value.twitterUrl !== undefined ||
+                  value.instagramUrl !== undefined ||
+                  value.facebookUrl !== undefined ||
+                  value.mailAddress !== undefined ? (
                     <ul className={styles.snsList}>
-                      {value.twitterUrl !== "" ? (
+                      {value.twitterUrl !== undefined ? (
                         <li className={styles.snsItem}>
                           <a
                             className={styles.snsItemLink}
@@ -197,7 +95,7 @@ export default function Member() {
                           </a>
                         </li>
                       ) : undefined}
-                      {value.instagramUrl !== "" ? (
+                      {value.instagramUrl !== undefined ? (
                         <li className={styles.snsItem}>
                           <a
                             className={styles.snsItemLink}
@@ -209,7 +107,7 @@ export default function Member() {
                           </a>
                         </li>
                       ) : undefined}
-                      {value.facebookUrl !== "" ? (
+                      {value.facebookUrl !== undefined ? (
                         <li className={styles.snsItem}>
                           <a
                             className={styles.snsItemLink}
@@ -221,7 +119,7 @@ export default function Member() {
                           </a>
                         </li>
                       ) : undefined}
-                      {value.mailAddress !== "" ? (
+                      {value.mailAddress !== undefined ? (
                         <li className={styles.snsItem}>
                           <a
                             className={styles.snsItemLink}
