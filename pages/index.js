@@ -26,9 +26,6 @@ export default function Home({ work, member, workDetails }) {
       <Member data={member} />
       <QandA />
       <Contact />
-      <Link href="/work-details/work-details">
-        <a>制作実績ページのリンク（microCMSと連携したら削除するよ）</a>
-      </Link>
     </Layout>
   );
 }
