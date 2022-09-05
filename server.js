@@ -2,7 +2,7 @@ const express = require("express");
 const next = require("next");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
-// const port = parseInt(process.env.PORT, 10) || 3000;
+const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== "production";
 const API_URL =
   process.env.API_URL ||
@@ -29,8 +29,8 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-//   server.listen(port, (err) => {
-//     if (err) throw err;
-//     console.log(`> Ready on http://localhost:${port}`);
-//   });
+  server.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`> Ready on http://localhost:${port}`);
+  });
 });
