@@ -18,7 +18,6 @@ export default function Contact() {
   const [mail, setMail] = useState("");
   const [radio, setRadio] = useState("");
   const [textarea, setTextarea] = useState("");
-
   // 送信ボタンクリック後、テキストを「送信中・・・」に変更
   const [btnText, setBtnText] = useState("この内容でお問い合わせをする");
 
@@ -59,12 +58,11 @@ export default function Contact() {
     mode: "onChange",
   });
 
-  
   const submit = () => {
     const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
     // CORS対策
     const CORS_PROXY = "https://floating-bayou-34569.herokuapp.com/";
-    
+
     // PostのParam生成
     const submitParams = new FormData();
     submitParams.append(ContactGoogleForm.companyName, companyName);
@@ -72,16 +70,20 @@ export default function Contact() {
     submitParams.append(ContactGoogleForm.mail, mail);
     submitParams.append(ContactGoogleForm.radio, radio);
     submitParams.append(ContactGoogleForm.textarea, textarea);
-    
+
     // 実行
     axios
-      .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+      .post(`/api`, submitParams, {
+      })
       .then(() => {
         window.location.href = "/thanks"; // 成功時
+        // console.log("成功");
       })
       .catch((error) => {
         console.log(error.response); // 失敗時
       });
+
+    // axios.post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams);
   };
 
   return (
