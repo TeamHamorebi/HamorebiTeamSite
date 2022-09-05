@@ -76,8 +76,8 @@ export default function Contact() {
       .post(`/api`, submitParams, {
       })
       .then(() => {
-        window.location.href = "/thanks"; // 成功時
-        // console.log("成功");
+        // window.location.href = "/thanks"; // 成功時
+        console.log("成功");
       })
       .catch((error) => {
         console.log(error.response); // 失敗時
@@ -94,7 +94,7 @@ export default function Contact() {
           rootMargin="-15%"
           triggerOnce
         >
-          <SectionTitle title={"お問い合わせ　テストです！！"} />
+          <SectionTitle title={"お問い合わせ　これはどう？"} />
 
           <p className={styles.lead}>
             この度は「Hamorebi」チームサイトをご覧いただきましてありがとうございます
