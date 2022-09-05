@@ -75,7 +75,7 @@ export default function Contact() {
     axios
       .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
       .then(() => {
-        // window.location.href = "/thanks"; // 成功時
+        window.location.href = "/thanks"; // 成功時
         console.log("成功");
       })
       .catch((error) => {
