@@ -94,7 +94,7 @@ export default function Contact() {
           rootMargin="-15%"
           triggerOnce
         >
-          <SectionTitle title={"お問い合わせ"} />
+          <SectionTitle title={"お問い合わせ　テストです！！"} />
 
           <p className={styles.lead}>
             この度は「Hamorebi」チームサイトをご覧いただきましてありがとうございます
