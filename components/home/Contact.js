@@ -73,8 +73,7 @@ export default function Contact() {
 
     // 実行
     axios
-      .post("api/proxy/cors", submitParams, {
-      })
+      .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
       .then(() => {
         // window.location.href = "/thanks"; // 成功時
         console.log("成功");
@@ -82,8 +81,6 @@ export default function Contact() {
       .catch((error) => {
         console.log(error.response); // 失敗時
       });
-
-    // axios.post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams);
   };
 
   return (
