@@ -73,7 +73,7 @@ export default function Contact() {
 
     // 実行
     axios
-      .post(`/api`, submitParams, {
+      .post("api/proxy/cors", submitParams, {
       })
       .then(() => {
         // window.location.href = "/thanks"; // 成功時
