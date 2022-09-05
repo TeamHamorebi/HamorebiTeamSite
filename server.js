@@ -18,9 +18,9 @@ app.prepare().then(() => {
     "/api",
     createProxyMiddleware({
       target: API_URL,
-      pathRewrite: {
-        "^/api": "",
-      },
+      //   pathRewrite: {
+      //     "^/api": "",
+      //   },
       changeOrigin: true,
     })
   );
