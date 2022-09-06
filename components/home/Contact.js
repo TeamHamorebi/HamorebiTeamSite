@@ -59,7 +59,6 @@ export default function Contact() {
   });
 
   const submit = async () => {
-
     // PostのParam生成
     const submitParams = new FormData();
     submitParams.append(ContactGoogleForm.companyName, companyName);
@@ -72,7 +71,8 @@ export default function Contact() {
     await axios
       .post("/api/proxy/cors", submitParams)
       .then(() => {
-        window.location.href = "/thanks"; // 成功時
+        // window.location.href = "/thanks"; // 成功時
+        console.log("成功");
       })
       .catch((error) => {
         console.log(error.response); // 失敗時
