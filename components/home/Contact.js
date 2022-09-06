@@ -58,10 +58,7 @@ export default function Contact() {
     mode: "onChange",
   });
 
-  const submit = () => {
-    const GOOGLE_FORM_ACTION = ContactGoogleForm.action;
-    // CORS対策
-    const CORS_PROXY = "https://floating-bayou-34569.herokuapp.com/";
+  const submit = async () => {
 
     // PostのParam生成
     const submitParams = new FormData();
@@ -72,11 +69,10 @@ export default function Contact() {
     submitParams.append(ContactGoogleForm.textarea, textarea);
 
     // 実行
-    axios
-      .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+    await axios
+      .post("/api/proxy/cors", submitParams)
       .then(() => {
         window.location.href = "/thanks"; // 成功時
-        console.log("成功");
       })
       .catch((error) => {
         console.log(error.response); // 失敗時
