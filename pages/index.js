@@ -1,5 +1,4 @@
 import Layout from "../components/common/Layout";
-import Link from "next/link";
 import Mv from "../components/home/Mv";
 import AboutAndPromise from "../components/home/AboutAndPromise";
 import TeamName from "../components/home/TeamName";
@@ -12,10 +11,20 @@ import QandA from "../components/home/QandA";
 import Contact from "../components/home/Contact";
 // microCMSとの連携
 import { client } from "../lib/client";
+// OGP
+import Seo from "../components/common/Seo";
 
 export default function Home({ work, member, workDetails }) {
   return (
     <Layout>
+      <Seo
+        pagePath={"https://hamorebi-team-site.netlify.app"}
+        pageImg={
+          "https://hamorebi-team-site.netlify.app/img/top/hamorebi_logo_color--big.png"
+        }
+        pageImgWidth={804}
+        pageImgHeight={562}
+      />
       <Mv />
       <AboutAndPromise />
       <TeamName />

@@ -6,10 +6,21 @@ import Button from "../../components/common/Button";
 import AnimationTrigger from "../../components/common/AnimationTrigger";
 // microCMSとの連携
 import { client } from "../../lib/client";
+// OGP
+import Seo from "../../components/common/Seo";
 
 export default function WorkDetails({ workDetailsData }) {
   return (
     <Layout>
+      <Seo
+        pageTitle={workDetailsData.caseName}
+        pageDescription={workDetailsData.caseSummary}
+        pagePath={`https://hamorebi-team-site.netlify.app/work-details/${workDetailsData.id}`}
+        pageImg={workDetailsData.mainImg.url}
+        pageImgWidth={workDetailsData.mainImg.width}
+        pageImgHeight={workDetailsData.mainImg.height}
+      />
+
       <AnimationTrigger
         animation={styles.isFadeIn}
         rootMargin="-10%"
