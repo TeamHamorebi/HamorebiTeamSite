@@ -1,0 +1,11 @@
+@use "../../global" as g;
+
+.scrollPosition {
+  margin-top: -55px;
+  padding-top: 55px;
+
+  @include g.mq("xl") {
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+}

@@ -40,9 +40,6 @@ export default function WorkDetails({ workDetailsData }) {
             </div>
 
             <div className={styles.contentsWrap}>
-              {/* {infoData.map((workDetailsData, index) => { */}
-              {/* return (
-                  <> */}
               {/* 2カラム */}
               <div className={styles.mainInfo}>
                 {/* img */}
@@ -156,9 +153,6 @@ export default function WorkDetails({ workDetailsData }) {
                 />
               </div>
               {/* /概要 */}
-              {/* </>
-                );
-              })} */}
 
               {/* カンプ */}
               <ul className={styles.compImgList}>
@@ -192,8 +186,8 @@ export default function WorkDetails({ workDetailsData }) {
 
             <Button
               styles={styles.btnWrap}
-              text={"トップページに戻る"}
-              link={"/"}
+              text={"制作実績一覧に戻る"}
+              link={"/#work"}
             />
           </AnimationTrigger>
         </section>
