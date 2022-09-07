@@ -2,6 +2,7 @@ import styles from "../../styles/components/common/_Header.module.scss";
 import Button from "./Button";
 import InnerBase from "./InnerBase";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header(props) {
   const data = props.list; // Layout.jsで使用
@@ -16,10 +17,15 @@ export default function Header(props) {
             <h1 className={styles.brand}>
               <Link href="/">
                 <a className={styles.brandLink}>
-                  <img
+                  <Image
                     src="/img/common/hamorebi_logo_color.png"
                     alt="はもれび"
+                    layout="fill"
                   />
+                  {/* <img
+                    src="/img/common/hamorebi_logo_color.png"
+                    alt="はもれび"
+                  /> */}
                 </a>
               </Link>
             </h1>
