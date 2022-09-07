@@ -12,7 +12,7 @@ export default function Seo({
     const defaultTitle = "Web制作チーム Hamorebiーはもれびー"
     const defaultDescription = "私達はWeb制作を承るフリーランスチームのHamorebi ーはもれびーです。Webサイト、ECサイト、ランディングページ、UIデザイン等の制作を行っております。日本各地のクリエーター達が、皆様のお悩みやお困りごとに寄り添って、解決のお手伝いをします"
 
-    const title = pageTitle ? `制作実績|${pageTitle}` : defaultTitle;
+    const title = pageTitle ? `【制作実績】${pageTitle} | ${defaultTitle}` : defaultTitle;
     const description = pageDescription ? pageDescription : defaultDescription;
     const url = pagePath;
     const imgUrl = pageImg;
