@@ -13,7 +13,7 @@
   // 1024px~
   @include g.mq("lg") {
     padding-bottom: 0;
-    height: clamp(415px, 51vw, 722px);
+    height: clamp(415px, 52.5vw, 722px);
   }
   // 1200px~
   @include g.mq("xl") {
@@ -39,7 +39,7 @@
   }
 
   @include g.mq("lg") {
-    top: -10px;
+    top: -2px;
   }
 
   &.isFadeIn1 {
