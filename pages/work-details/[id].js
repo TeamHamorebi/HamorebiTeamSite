@@ -15,6 +15,7 @@ export default function WorkDetails({ workDetailsData }) {
       <Seo
         pageTitle={workDetailsData.caseName}
         pageDescription={workDetailsData.caseSummary}
+        pageType={"article"}
         pagePath={`https://hamorebi-team-site.netlify.app/work-details/${workDetailsData.id}`}
         pageImg={workDetailsData.mainImg.url}
         pageImgWidth={workDetailsData.mainImg.width}

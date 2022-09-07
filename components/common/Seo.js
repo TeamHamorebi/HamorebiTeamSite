@@ -4,6 +4,7 @@ export default function Seo({
     pageTitle,
     pageDescription,
     pagePath,
+    pageType,
     pageImg,
     pageImgWidth,
     pageImgHeight,
@@ -14,6 +15,7 @@ export default function Seo({
 
     const title = pageTitle ? `【制作実績】${pageTitle} | ${defaultTitle}` : defaultTitle;
     const description = pageDescription ? pageDescription : defaultDescription;
+    const type = pageType ? pageType : "website"; 
     const url = pagePath;
     const imgUrl = pageImg;
     const imgWidth = pageImgWidth ? pageImgWidth : 1280;
@@ -28,7 +30,7 @@ export default function Seo({
         <meta property="og:title" content={title} />
         <meta property="og:site_name" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={type} />
         <meta property="og:image" content={imgUrl} />
         <meta property="og:image:width" content={String(imgWidth)} />
         <meta property="og:image:height" content={String(imgHeight)} />
