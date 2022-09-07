@@ -248,9 +248,11 @@ export default function Contact() {
                       />
                       <p className={styles.placeholderText}>
                         新しく飲食店をオープンするのでホームページを作りたい
-                        <br className={styles.placeholderTextareaBr} />
+                        <br />
+                        <br />
                         ネットショップを開店したい
-                        <br className={styles.placeholderTextareaBr} />
+                        <br />
+                        <br />
                         コーポレートサイトの詳しい料金を知りたい
                       </p>
                     </div>
