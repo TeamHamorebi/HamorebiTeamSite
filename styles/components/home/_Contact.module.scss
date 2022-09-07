@@ -207,7 +207,7 @@
   background-color: g.$color-itemInput-background;
   z-index: g.zi(textarea-placeholder);
   width: 100%;
-  height: calc(100% - 6px); // textareaから6pxはみ出すので調整
+  height: calc(100% - 4.5px); // textareaから少しはみ出すので調整
   border-radius: 2px; // textareaの角丸に合わせて
 
   @include g.mq("sm") {
