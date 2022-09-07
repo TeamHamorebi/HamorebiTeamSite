@@ -3,6 +3,7 @@ import SectionTitle from "../common/SectionTitle";
 import Button from "../common/Button";
 import AnimationTrigger from "../common/AnimationTrigger";
 import ScrollPosition from "./ScrollPosition";
+import Image from "next/image";
 
 export default function ServiceAndPrice() {
   const data = [
@@ -136,7 +137,12 @@ export default function ServiceAndPrice() {
                 </ul>
                 {/* example list */}
                 <div className={styles.serviceImgWrap}>
-                  <img src="/img/top/service_site-site.png" />
+                  <Image
+                    alt=""
+                    src="/img/top/service_site-site.png"
+                    layout="fill"
+                  />
+                  {/* <img src="/img/top/service_site-site.png" /> */}
                 </div>
               </div>
             </li>
@@ -161,7 +167,8 @@ export default function ServiceAndPrice() {
                       </div>
                     </div>
                     <div className={styles.serviceImgWrap}>
-                      <img src={value.img} />
+                      <Image alt="" src={value.img} layout="fill" />
+                      {/* <img src={value.img} /> */}
                     </div>
                   </div>
                 </li>
