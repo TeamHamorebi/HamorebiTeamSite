@@ -1,7 +1,6 @@
 import styles from "../../styles/components/home/_AboutAndPromise.module.scss";
 import AnimationTrigger from "../common/AnimationTrigger";
 import ScrollPosition from "./ScrollPosition";
-import Image from "next/image";
 
 export default function AboutAndPromise() {
   const cardInfo = [
@@ -93,13 +92,7 @@ export default function AboutAndPromise() {
                 return (
                   <li key={index} className={styles.promiseCard}>
                     <div className={styles.cardImgWrap}>
-                      <Image
-                        src={value.img}
-                        width={120}
-                        height={120}
-                        alt=""
-                      />
-                      {/* <img src={value.img} /> */}
+                      <img src={value.img} />
                     </div>
                     <p className={styles.cardTitle}>{value.title}</p>
                     <p className={styles.cardText}>{value.text}</p>

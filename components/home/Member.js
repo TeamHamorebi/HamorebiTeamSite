@@ -3,7 +3,6 @@ import SectionTitle from "../common/SectionTitle";
 import Button from "../common/Button";
 import AnimationTrigger from "../common/AnimationTrigger";
 import ScrollPosition from "./ScrollPosition";
-import Image from "next/image";
 
 export default function Member(props) {
   const memberData = props.data;
@@ -95,12 +94,7 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Image
-                                alt=""
-                                layout="fill"
-                                src="/img/top/twitter-icon.png"
-                              />
-                              {/* <img src="img/top/twitter-icon.png" /> */}
+                              <img src="img/top/twitter-icon.png" />
                             </a>
                           </li>
                         ) : undefined}
@@ -112,13 +106,7 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Image
-                                alt=""
-                                layout="fill"
-                                src="/img/top/instagram-icon.png"
-                              />
-
-                              {/* <img src="img/top/instagram-icon.png" /> */}
+                              <img src="img/top/instagram-icon.png" />
                             </a>
                           </li>
                         ) : undefined}
@@ -130,13 +118,7 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Image
-                                alt=""
-                                layout="fill"
-                                src="/img/top/facebook-icon.png"
-                              />
-
-                              {/* <img src="img/top/facebook-icon.png" /> */}
+                              <img src="img/top/facebook-icon.png" />
                             </a>
                           </li>
                         ) : undefined}
@@ -148,13 +130,7 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Image
-                                alt=""
-                                layout="fill"
-                                src="/img/top/mail-icon.png"
-                              />
-
-                              {/* <img src="img/top/mail-icon.png" /> */}
+                              <img src="img/top/mail-icon.png" />
                             </a>
                           </li>
                         ) : undefined}

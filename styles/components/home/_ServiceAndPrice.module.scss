@@ -169,10 +169,8 @@
   }
 
   .serviceImgWrap {
-    position: relative;
     margin-top: 18px;
     width: 195px;
-    height: 155px;
     margin-left: auto;
     margin-right: auto;
 
@@ -195,16 +193,13 @@
     }
   }
   .serviceImgWrap {
-    position: relative;
     width: 195px;
-    height: 155px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 24px;
 
     @include g.mq("lg") {
       width: 132px;
-      height: 105px;
       margin: 0;
     }
   }
