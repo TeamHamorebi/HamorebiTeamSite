@@ -19,6 +19,7 @@ export default function WorkDetails({ workDetailsData }) {
         pageImg={workDetailsData.mainImg.url}
         pageImgWidth={workDetailsData.mainImg.width}
         pageImgHeight={workDetailsData.mainImg.height}
+        twitterCard={"summary_large_image"}
       />
 
       <AnimationTrigger

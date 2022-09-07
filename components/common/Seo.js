@@ -6,7 +6,8 @@ export default function Seo({
     pagePath,
     pageImg,
     pageImgWidth,
-    pageImgHeight
+    pageImgHeight,
+    twitterCard
 }) {
     const defaultTitle = "Web制作チーム Hamorebiーはもれびー"
     const defaultDescription = "私達はWeb制作を承るフリーランスチームのHamorebi ーはもれびーです。Webサイト、ECサイト、ランディングページ、UIデザイン等の制作を行っております。日本各地のクリエーター達が、皆様のお悩みやお困りごとに寄り添って、解決のお手伝いをします"
@@ -17,6 +18,7 @@ export default function Seo({
     const imgUrl = pageImg;
     const imgWidth = pageImgWidth ? pageImgWidth : 1280;
     const imgHeight = pageImgHeight ? pageImgHeight : 640;
+    const card = twitterCard
 
     return (
       <Head>
@@ -30,7 +32,7 @@ export default function Seo({
         <meta property="og:image" content={imgUrl} />
         <meta property="og:image:width" content={String(imgWidth)} />
         <meta property="og:image:height" content={String(imgHeight)} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content={card} />
         <link rel="canonical" href={url} />
       </Head>
     );

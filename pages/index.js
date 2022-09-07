@@ -22,8 +22,9 @@ export default function Home({ work, member, workDetails }) {
         pageImg={
           "https://hamorebi-team-site.netlify.app/img/top/hamorebi_logo_color--big.png"
         }
-        pageImgWidth={804}
-        pageImgHeight={562}
+        pageImgWidth={402}
+        pageImgHeight={281}
+        twitterCard={"summary"}
       />
       <Mv />
       <AboutAndPromise />
