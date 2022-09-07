@@ -6,6 +6,14 @@
   background: g.$color-thanks-background url(/img/top/hamorebi_logo_white.png)
     no-repeat bottom 0 right 0 /50% auto;
 
+  @include g.mq('md') {
+    padding-top: 80px;
+  }
+
+  @include g.mq('lg') {
+    padding-top: 100px;
+  }
+
   @include g.mq("layout") {
     background: g.$color-thanks-background url(/img/top/hamorebi_logo_white.png)
       no-repeat bottom 0 left calc(50vw + 50px) / 550px auto;

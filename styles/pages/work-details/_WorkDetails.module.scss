@@ -130,7 +130,7 @@
 }
 .engineerComments,
 .webDesignerComments {
-  line-height: math.div(25.9, 16);
+  line-height: 1.628;
 
   @include g.mq("md") {
     line-height: math.div(25.6, 16);
