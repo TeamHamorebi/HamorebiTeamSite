@@ -48,7 +48,7 @@ export default function Contact() {
   };
   // 送信ボタンクリック後「送信中・・・」にテキストを変更
   const changeBtnText = () => {
-    if (name === "" || mail === "") {
+    if (name === "" || mail === "" || radio === "" || textarea === "") {
       return;
     }
     setBtnText("送信中・・・");
@@ -169,7 +169,7 @@ export default function Contact() {
 
                 {/* お問い合わせの種類 */}
                 <div className={styles.formItem}>
-                  <dt className={`${styles.formLabel} ${styles.optionalLabel}`}>
+                  <dt className={`${styles.formLabel} ${styles.requiredLabel}`}>
                     <label>お問い合わせの種類</label>
                   </dt>
                   <dd className={styles.formRadioWrap}>
@@ -178,6 +178,7 @@ export default function Contact() {
                         type={"radio"}
                         name={"radio"}
                         value="Webサイト制作について"
+                        required
                         onChange={changeRadio}
                         checked={radio === "Webサイト制作について"}
                       />
@@ -230,7 +231,7 @@ export default function Contact() {
                 {/* お問い合わせ内容 */}
                 <div className={styles.formItem}>
                   <dt
-                    className={`${styles.formLabel} ${styles.optionalLabel} ${styles.formLabelTextarea}`}
+                    className={`${styles.formLabel} ${styles.requiredLabel} ${styles.formLabelTextarea}`}
                   >
                     <label htmlFor="textarea">お問い合わせ内容</label>
                   </dt>
@@ -243,6 +244,7 @@ export default function Contact() {
                         className={`${styles.textarea} ${
                           isActive ? styles.isActive : undefined
                         }`}
+                        required
                         value={textarea}
                         onChange={changeTextarea}
                       />
