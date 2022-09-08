@@ -6,6 +6,7 @@ export default function AboutAndPromise() {
   const cardInfo = [
     {
       img: "/img/top/promise-1.png",
+      webpImg: "/img/top/promise-1.webp",
       title: [
         <span className={styles.cardTitleDecoration} key="index">
           型にとらわれない制作
@@ -16,6 +17,7 @@ export default function AboutAndPromise() {
     },
     {
       img: "/img/top/promise-2.png",
+      webpImg: "/img/top/promise-2.webp",
       title: [
         <span className={styles.cardTitleDecoration} key="index">
           末永く継続的にサポート
@@ -32,6 +34,7 @@ export default function AboutAndPromise() {
     },
     {
       img: "/img/top/promise-3.png",
+      webpImg: "/img/top/promise-3.webp",
       title: [
         <span className={styles.cardTitleDecoration} key="index">
           同じ目線
@@ -92,7 +95,10 @@ export default function AboutAndPromise() {
                 return (
                   <li key={index} className={styles.promiseCard}>
                     <div className={styles.cardImgWrap}>
-                      <img src={value.img} />
+                      <picture>
+                        <source srcSet={value.webpImg} />
+                        <img src={value.img} alt="" />
+                      </picture>
                     </div>
                     <p className={styles.cardTitle}>{value.title}</p>
                     <p className={styles.cardText}>{value.text}</p>

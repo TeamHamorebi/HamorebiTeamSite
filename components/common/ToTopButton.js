@@ -30,7 +30,7 @@ export default function ToTopButton() {
                 media="(min-width: 768px)"
                 srcSet="/img/common/toTop-arrow--pc.svg"
               />
-              <img src="/img/common/toTop-arrow--sp.svg" />
+              <img src="/img/common/toTop-arrow--sp.svg" alt="" />
             </picture>
           </div>
           <span className={styles.toTopText}>TOP</span>

@@ -94,7 +94,10 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <img src="img/top/twitter-icon.png" />
+                              <picture>
+                                <source srcSet="/img/top/twitter-icon.webp" />
+                                <img src="img/top/twitter-icon.png" alt="" />
+                              </picture>
                             </a>
                           </li>
                         ) : undefined}
@@ -106,7 +109,10 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <img src="img/top/instagram-icon.png" />
+                              <picture>
+                                <source srcSet="/img/top/instagram-icon.webp" />
+                                <img src="img/top/instagram-icon.png" alt="" />
+                              </picture>
                             </a>
                           </li>
                         ) : undefined}
@@ -118,7 +124,10 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <img src="img/top/facebook-icon.png" />
+                              <picture>
+                                <source srcSet="/img/top/facebook-icon.webp" />
+                                <img src="img/top/facebook-icon.png" alt="" />
+                              </picture>
                             </a>
                           </li>
                         ) : undefined}
@@ -130,7 +139,10 @@ export default function Member(props) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <img src="img/top/mail-icon.png" />
+                              <picture>
+                                <source srcSet="/img/top/mail-icon.webp" />
+                                <img src="img/top/mail-icon.png" alt="" />
+                              </picture>
                             </a>
                           </li>
                         ) : undefined}

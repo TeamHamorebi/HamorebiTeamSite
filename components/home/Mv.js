@@ -27,9 +27,14 @@ export default function Mv() {
             <picture>
               <source
                 media="(min-width: 640px)"
+                srcSet="/img/top/MV_people--pc.webp"
+              />
+              <source
+                media="(min-width: 640px)"
                 srcSet="/img/top/MV_people--pc.png"
               />
-              <img src="/img/top/MV_people--sp.png" />
+              <source srcSet="/img/top/MV_people--sp.webp" />
+              <img src="/img/top/MV_people--sp.png" alt="" />
             </picture>
           </div>
           {/* /people */}
@@ -39,7 +44,10 @@ export default function Mv() {
               isVisible ? styles.isFadeIn2 : undefined
             }`}
           >
-            <img src="/img/top/MV_pc-mockup.png" />
+            <picture>
+              <source srcSet="/img/top/MV_pc-mockup.webp" />
+              <img src="/img/top/MV_pc-mockup.png" alt="" />
+            </picture>
           </div>
           {/* /pc image */}
         </div>
@@ -55,8 +63,13 @@ export default function Mv() {
             <picture>
               <source
                 media="(min-width: 768px)"
+                srcSet="/img/top/MV_title--pc.webp"
+              />
+              <source
+                media="(min-width: 768px)"
                 srcSet="/img/top/MV_title--pc.png"
               />
+              <source srcSet="/img/top/MV_title--sp.webp" />
               <img
                 src="/img/top/MV_title--sp.png"
                 alt="はもれびは 何がわからないか わからない に 寄り添うWeb制作チームです"

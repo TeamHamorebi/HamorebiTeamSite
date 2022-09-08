@@ -16,10 +16,13 @@ export default function Header(props) {
             <h1 className={styles.brand}>
               <Link href="/">
                 <a className={styles.brandLink}>
+                  <picture>
+                    <source srcSet="/img/common/hamorebi_logo_color.webp" />
                   <img
                     src="/img/common/hamorebi_logo_color.png"
                     alt="はもれび"
                   />
+                  </picture>
                 </a>
               </Link>
             </h1>

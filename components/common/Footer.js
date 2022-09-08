@@ -13,10 +13,13 @@ export default function Footer(props) {
           {/* logo */}
           <div className={styles.brandWrap}>
             <div className={styles.brandImgWrap}>
+              <picture>
+                <source srcSet="/img/common/hamorebi_footer-logo_white.webp" />
               <img
                 src="/img/common/hamorebi_footer-logo_white.png"
                 alt="はもれび"
               />
+              </picture>
             </div>
             <p className={styles.brandName}>
               Hamorebi <span className={styles.brandSubName}>ーはもれびー</span>

@@ -86,7 +86,10 @@ export default function WorkStatusItem({ dateText, iconNum }) {
   for (let i = 1; i <= 5; i++) {
     icons.push(
       <div className={styles.imgWrap} key={i} check-icon={num}>
-        <img src="/img/top/hamorebi_logo_monocro.png" />
+        <picture>
+          <source srcSet="/img/top/hamorebi_logo_monocro.webp" />
+          <img src="/img/top/hamorebi_logo_monocro.png" alt="" />
+        </picture>
       </div>
     );
   }

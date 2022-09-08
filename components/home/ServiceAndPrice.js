@@ -17,6 +17,7 @@ export default function ServiceAndPrice() {
       description:
         "LP(ランディングページ)は、集客・商品やサービスの購入・お問い合わせへの誘導に特化した縦に長い1枚のページです",
       img: "/img/top/service_site-lp.png",
+      webpImg: "/img/top/service_site-lp.webp",
     },
     {
       serviceName: "ECサイト",
@@ -29,6 +30,7 @@ export default function ServiceAndPrice() {
       description:
         "商品を販売するための通販サイトです。オンラインショッププラットフォーム「Shopify」で制作いたします",
       img: "/img/top/service_site-ec.png",
+      webpImg: "/img/top/service_site-ec.webp",
     },
     {
       serviceName: "UIデザイン",
@@ -44,6 +46,7 @@ export default function ServiceAndPrice() {
       description:
         "ユーザーにとって使いやすいWebサービスやアプリのデザインを提供します",
       img: "/img/top/service_site-ui.png",
+      webpImg: "/img/top/service_site-ui.webp",
     },
   ];
 
@@ -136,7 +139,10 @@ export default function ServiceAndPrice() {
                 </ul>
                 {/* example list */}
                 <div className={styles.serviceImgWrap}>
-                  <img src="/img/top/service_site-site.png" />
+                  <picture>
+                    <source srcSet="/img/top/service_site-site.webp" />
+                    <img src="/img/top/service_site-site.png" alt="" />
+                  </picture>
                 </div>
               </div>
             </li>
@@ -161,7 +167,10 @@ export default function ServiceAndPrice() {
                       </div>
                     </div>
                     <div className={styles.serviceImgWrap}>
-                      <img src={value.img} />
+                      <picture>
+                        <source srcSet={value.webpImg} />
+                        <img src={value.img} alt="" />
+                      </picture>
                     </div>
                   </div>
                 </li>

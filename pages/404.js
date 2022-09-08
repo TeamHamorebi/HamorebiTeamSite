@@ -8,7 +8,9 @@ export default function Custom404() {
       <div className={styles.contentsWrap}>
         <div className={styles.imgWrap}>
           <picture>
+            <source media="(min-width: 640px)" srcSet="/img/404/404_pc.webp" />
             <source media="(min-width: 640px)" srcSet="/img/404/404_pc.png" />
+            <source srcSet="/img/404/404_sp.webp" />
             <img src="/img/404/404_sp.png" alt="404" />
           </picture>
         </div>
