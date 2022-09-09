@@ -55,7 +55,13 @@ export default function Member(props) {
                 return (
                   <li key={index} className={styles.memberItem}>
                     <div className={styles.memberImgWrap}>
+                      <picture>
+                        <source
+                          srcSet={`${value.memberImg.url}?fm=webp`}
+                          type="image/webp"
+                        />
                       <img src={value.memberImg.url} alt="" />
+                      </picture>
                     </div>
                     <p className={styles.memberName}>
                       {value.portfolioLink !== undefined ? (

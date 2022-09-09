@@ -25,7 +25,13 @@ export default function ProductionAchievements(props) {
                     <Link href={`/work-details/${value.id}`}>
                       <a className={styles.link}>
                         <div className={styles.imgWrap}>
-                          <img src={value.mainImg.url} />
+                          <picture>
+                            <source
+                              srcSet={`${value.mainImg.url}?fm=webp`}
+                              type="image/webp"
+                            />
+                            <img src={value.mainImg.url} alt="" />
+                          </picture>
                         </div>
                         <h3 className={styles.clientName}>{value.caseName}</h3>
                         <p className={styles.category}>{value.category}</p>

@@ -45,7 +45,13 @@ export default function WorkDetails({ workDetailsData }) {
               <div className={styles.mainInfo}>
                 {/* img */}
                 <div className={styles.mainImgWrap}>
-                  <img src={workDetailsData.mainImg.url} />
+                  <picture>
+                    <source
+                      srcSet={`${workDetailsData.mainImg.url}?fm=webp`}
+                      type="image/webp"
+                    />
+                    <img src={workDetailsData.mainImg.url} alt="" />
+                  </picture>
                 </div>
                 {/* /img */}
 
@@ -159,10 +165,22 @@ export default function WorkDetails({ workDetailsData }) {
               <ul className={styles.compImgList}>
                 <li className={styles.compImgItem}>
                   <div className={styles.compImgWrapPc}>
-                    <img src={workDetailsData.pcImg.url} />
+                    <picture>
+                      <source
+                        srcSet={`${workDetailsData.pcImg.url}?fm=webp`}
+                        type="image/webp"
+                      />
+                      <img src={workDetailsData.pcImg.url} alt="" />
+                    </picture>
                   </div>
                   <div className={styles.compImgWrapSp}>
-                    <img src={workDetailsData.spImg.url} />
+                    <picture>
+                      <source
+                        srcSet={`${workDetailsData.spImg.url}?fm=webp`}
+                        type="image/webp"
+                      />
+                      <img src={workDetailsData.spImg.url} alt="" />
+                    </picture>
                   </div>
                 </li>
                 {/* 2枚目のPC・SPカンプがあれば表示 */}
@@ -171,12 +189,24 @@ export default function WorkDetails({ workDetailsData }) {
                   <li className={styles.compImgItem}>
                     {workDetailsData.pcImg2 !== undefined ? (
                       <div className={styles.compImgWrapPc}>
-                        <img src={workDetailsData.pcImg2.url} />
+                        <picture>
+                          <source
+                            srcSet={`${workDetailsData.pcImg2.url}?fm=webp`}
+                            type="image/webp"
+                          />
+                          <img src={workDetailsData.pcImg2.url} alt="" />
+                        </picture>
                       </div>
                     ) : undefined}
                     {workDetailsData.spImg2 !== undefined ? (
                       <div className={styles.compImgWrapSp}>
-                        <img src={workDetailsData.spImg2.url} />
+                        <picture>
+                          <source
+                            srcSet={`${workDetailsData.spImg2.url}?fm=webp`}
+                            type="image/webp"
+                          />
+                          <img src={workDetailsData.spImg2.url} alt="" />
+                        </picture>
                       </div>
                     ) : undefined}
                   </li>
