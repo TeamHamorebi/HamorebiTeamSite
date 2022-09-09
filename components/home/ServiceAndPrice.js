@@ -140,7 +140,10 @@ export default function ServiceAndPrice() {
                 {/* example list */}
                 <div className={styles.serviceImgWrap}>
                   <picture>
-                    <source srcSet="/img/top/service_site-site.webp" />
+                    <source
+                      srcSet="/img/top/service_site-site.webp"
+                      type="image/webp"
+                    />
                     <img src="/img/top/service_site-site.png" alt="" />
                   </picture>
                 </div>
@@ -168,7 +171,7 @@ export default function ServiceAndPrice() {
                     </div>
                     <div className={styles.serviceImgWrap}>
                       <picture>
-                        <source srcSet={value.webpImg} />
+                        <source srcSet={value.webpImg} type="image/webp" />
                         <img src={value.img} alt="" />
                       </picture>
                     </div>

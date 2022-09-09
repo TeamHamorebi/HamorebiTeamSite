@@ -95,7 +95,10 @@ export default function Member(props) {
                               rel="noopener noreferrer"
                             >
                               <picture>
-                                <source srcSet="/img/top/twitter-icon.webp" />
+                                <source
+                                  srcSet="/img/top/twitter-icon.webp"
+                                  type="image/webp"
+                                />
                                 <img src="img/top/twitter-icon.png" alt="" />
                               </picture>
                             </a>
@@ -110,7 +113,10 @@ export default function Member(props) {
                               rel="noopener noreferrer"
                             >
                               <picture>
-                                <source srcSet="/img/top/instagram-icon.webp" />
+                                <source
+                                  srcSet="/img/top/instagram-icon.webp"
+                                  type="image/webp"
+                                />
                                 <img src="img/top/instagram-icon.png" alt="" />
                               </picture>
                             </a>
@@ -125,7 +131,10 @@ export default function Member(props) {
                               rel="noopener noreferrer"
                             >
                               <picture>
-                                <source srcSet="/img/top/facebook-icon.webp" />
+                                <source
+                                  srcSet="/img/top/facebook-icon.webp"
+                                  type="image/webp"
+                                />
                                 <img src="img/top/facebook-icon.png" alt="" />
                               </picture>
                             </a>
@@ -140,7 +149,10 @@ export default function Member(props) {
                               rel="noopener noreferrer"
                             >
                               <picture>
-                                <source srcSet="/img/top/mail-icon.webp" />
+                                <source
+                                  srcSet="/img/top/mail-icon.webp"
+                                  type="image/webp"
+                                />
                                 <img src="img/top/mail-icon.png" alt="" />
                               </picture>
                             </a>

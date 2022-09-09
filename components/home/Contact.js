@@ -118,7 +118,7 @@ export default function Contact() {
                       id="companyName"
                       type={"text"}
                       name={"companyName"}
-                      placeholder="株式会社ハモレビ"
+                      placeholder="はもれび株式会社"
                       className={styles.input}
                       value={companyName}
                       onChange={changeCompanyName}

@@ -21,7 +21,7 @@ export default function Drawer(props) {
             <a className={styles.brandLink}>
               <div className={styles.brandImgWrap}>
                 <picture>
-                <source srcSet="/img/common/hamorebi_logo_color.webp" />
+                <source srcSet="/img/common/hamorebi_logo_color.webp" type="image/webp" />
                 <img src="/img/common/hamorebi_logo_color.png" alt="はもれび" />
                 </picture>
               </div>

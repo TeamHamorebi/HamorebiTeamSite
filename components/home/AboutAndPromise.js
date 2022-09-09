@@ -96,7 +96,7 @@ export default function AboutAndPromise() {
                   <li key={index} className={styles.promiseCard}>
                     <div className={styles.cardImgWrap}>
                       <picture>
-                        <source srcSet={value.webpImg} />
+                        <source srcSet={value.webpImg} type="image/webp" />
                         <img src={value.img} alt="" />
                       </picture>
                     </div>

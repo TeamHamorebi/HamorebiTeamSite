@@ -28,12 +28,13 @@ export default function Mv() {
               <source
                 media="(min-width: 640px)"
                 srcSet="/img/top/MV_people--pc.webp"
+                type="image/webp"
               />
               <source
                 media="(min-width: 640px)"
                 srcSet="/img/top/MV_people--pc.png"
               />
-              <source srcSet="/img/top/MV_people--sp.webp" />
+              <source srcSet="/img/top/MV_people--sp.webp" type="image/webp" />
               <img src="/img/top/MV_people--sp.png" alt="" />
             </picture>
           </div>
@@ -45,7 +46,7 @@ export default function Mv() {
             }`}
           >
             <picture>
-              <source srcSet="/img/top/MV_pc-mockup.webp" />
+              <source srcSet="/img/top/MV_pc-mockup.webp" type="image/webp" />
               <img src="/img/top/MV_pc-mockup.png" alt="" />
             </picture>
           </div>
@@ -64,12 +65,13 @@ export default function Mv() {
               <source
                 media="(min-width: 768px)"
                 srcSet="/img/top/MV_title--pc.webp"
+                type="image/webp"
               />
               <source
                 media="(min-width: 768px)"
                 srcSet="/img/top/MV_title--pc.png"
               />
-              <source srcSet="/img/top/MV_title--sp.webp" />
+              <source srcSet="/img/top/MV_title--sp.webp" type="image/webp" />
               <img
                 src="/img/top/MV_title--sp.png"
                 alt="はもれびは 何がわからないか わからない に 寄り添うWeb制作チームです"
