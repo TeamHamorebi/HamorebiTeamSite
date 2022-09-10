@@ -60,7 +60,7 @@ export default function Member(props) {
                           srcSet={`${value.memberImg.url}?fm=webp`}
                           type="image/webp"
                         />
-                      <img src={value.memberImg.url} alt="" />
+                        <img src={value.memberImg.url} alt="" />
                       </picture>
                     </div>
                     <p className={styles.memberName}>
